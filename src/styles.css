@@ -132,6 +132,7 @@ header {
     img {
       width: min(640px, 100%);
       max-width: 1200px;
+      height: auto;
 
       @media screen and (width <= 520px) {
         width: 100%;
