@@ -10,10 +10,19 @@
 
 @keyframes gradient-shift {
   0% {
-    background-position: 50% 0;
+    background-position-y: 0;
+  }
+  25% {
+    background-position-y: 20%;
+  }
+  50% {
+    background-position-y: 0%;
+  }
+  75% {
+    background-position-y: -10%;
   }
   100% {
-    background-position: 50% 100%;
+    background-position-y: 0;
   }
 }
 
@@ -27,7 +36,7 @@ html {
   );
   background-repeat: repeat-y;
   background-size: 100vw 250vh;
-  animation: gradient-shift 45s ease infinite;
+  animation: gradient-shift 30s infinite;
 }
 
 @font-face {
