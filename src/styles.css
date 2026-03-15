@@ -58,7 +58,7 @@ html {
 
 body {
   margin: 0;
-  min-height: 300vh;
+  min-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -73,7 +73,7 @@ body {
 
   font-family: "DM Sans", sans-serif;
   color: var(--white);
-  font-size: 1.5rem;
+  font-size: 1.875rem;
   font-weight: 200;
   letter-spacing: -2%;
   text-rendering: geometricPrecision;
@@ -106,7 +106,7 @@ header {
   inset-block-start: var(--outer-spacing);
 
   margin-block-start: 30vh;
-  margin-block-end: 50vh;
+  margin-block-end: 30vh;
   display: flex;
   flex-direction: column;
 
@@ -142,26 +142,108 @@ main {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  flex: 3;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+main section {
+  opacity: 0;
+  animation: fade-in ease both;
+  animation-timeline: scroll();
+  animation-range: entry 0vh entry 40vh;
 }
 
 #about-section {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  column-gap: 8rem;
+
+  @media screen and (width <= 1024px) {
+    grid-template-columns: 1fr;
+    row-gap: 4rem;
+  }
+}
+
+#about-section .text-column {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   row-gap: 2rem;
+
+  h2 {
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1.28;
+  }
+
+  p {
+    text-align: left;
+    line-height: 1.325;
+    text-wrap: pretty;
+  }
 }
 
-#about-section h2 {
-  font-size: 4rem;
-  font-weight: 300;
-  line-height: 1.28;
+#about-section .image-column {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    background-color: #e3e3e3;
+    border-radius: 48px;
+  }
+
+  img:nth-child(1) {
+    width: 85%;
+    align-self: flex-start;
+    background-color: #c0bebe;
+  }
+
+  img:nth-child(2) {
+    width: 67%;
+    align-self: flex-end;
+    translate: 0 -30%;
+  }
 }
 
-#about-section p {
-  text-align: left;
-  line-height: 1.325;
-  text-wrap: pretty;
+@keyframes scale-x-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.underlined {
+  position: relative;
+
+  &::after {
+    content: "";
+    border-block-end: 3px solid currentColor;
+    position: absolute;
+    inline-size: 100%;
+    inset-block-start: 100%;
+    inset-inline-start: 0;
+    transform-origin: left;
+
+    @supports (animation-timeline: scroll()) {
+      transform: scaleX(0);
+      animation: scale-x-grow 0.5s ease both;
+      animation-timeline: scroll();
+      animation-range: entry 25vh entry 40vh;
+    }
+  }
 }
 
 #queer-owned {
