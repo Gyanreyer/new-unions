@@ -8,6 +8,13 @@
   box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
 @keyframes gradient-shift {
   0% {
     background-position-y: 0;
@@ -37,6 +44,8 @@ html {
   background-repeat: repeat-y;
   background-size: 100vw 250vh;
   animation: gradient-shift 30s infinite;
+
+  scroll-timeline: --root-timeline;
 }
 
 @font-face {
@@ -49,7 +58,7 @@ html {
 
 body {
   margin: 0;
-  min-height: 100vh;
+  min-height: 300vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -82,7 +91,94 @@ body {
   padding-block-end: 3rem;
 }
 
+@keyframes header-shrink {
+  0% {
+    scale: 1;
+  }
+  100% {
+    /* width: var(--scrolled-width); */
+    scale: 0.5;
+  }
+}
+
+header {
+  position: sticky;
+  inset-block-start: var(--outer-spacing);
+
+  margin-block-start: 30vh;
+  margin-block-end: 50vh;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    margin-block-start: auto;
+    display: flex;
+    justify-content: center;
+
+    img {
+      --default-width: min(640px, 100%);
+      --scrolled-width: min(360px, 50%);
+      width: var(--default-width);
+      max-width: 1200px;
+      height: auto;
+      transform-origin: top center;
+
+      @media screen and (width <= 520px) {
+        --default-width: 100%;
+        --scrolled-width: 50%;
+        min-width: auto;
+      }
+
+      animation: header-shrink ease both;
+      animation-timeline: scroll();
+      animation-range: entry 0vh entry 50vh;
+    }
+  }
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+}
+
+#about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 2rem;
+}
+
+#about-section h2 {
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1.28;
+}
+
+#about-section p {
+  text-align: left;
+  line-height: 1.325;
+  text-wrap: pretty;
+}
+
+#queer-owned {
+  font-size: 1rem;
+  margin-block-start: auto;
+}
+
 footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+}
+
+/** Footer icons wrapper adds lines to form the bottom of the page border
+    with a break for the footer icons */
+#footer-icons-wrapper {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
@@ -93,12 +189,14 @@ footer {
   translate: 0 50%;
 }
 
-footer::before,
-footer::after {
-  content: "";
-  display: block;
-  height: var(--page-border-width);
-  background-color: var(--white);
+#footer-icons-wrapper {
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    height: var(--page-border-width);
+    background-color: var(--white);
+  }
 }
 
 #footer-icons {
@@ -116,59 +214,4 @@ footer::after {
     width: 1.25rem;
     height: auto;
   }
-}
-
-header {
-  flex: 2;
-  margin-block-end: 1.5rem;
-  display: flex;
-  flex-direction: column;
-
-  h1 {
-    margin-block-start: auto;
-    display: flex;
-    justify-content: center;
-
-    img {
-      width: min(640px, 100%);
-      max-width: 1200px;
-      height: auto;
-
-      @media screen and (width <= 520px) {
-        width: 100%;
-        min-width: auto;
-      }
-    }
-  }
-}
-
-main {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  flex: 3;
-}
-
-main p {
-  text-align: center;
-  margin: 0;
-  line-height: 1.325;
-}
-
-#mission-statement {
-  text-wrap: pretty;
-}
-
-#coming-soon {
-  font-weight: 300;
-  font-size: 5rem;
-  margin-block: 3rem;
-  line-height: 0.825;
-}
-
-#queer-owned {
-  font-size: 1rem;
-  margin-block-start: auto;
 }
