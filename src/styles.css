@@ -15,6 +15,12 @@ p {
   margin: 0;
 }
 
+h2 {
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1.28;
+}
+
 @keyframes gradient-shift {
   0% {
     background-position-y: 0;
@@ -83,55 +89,50 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+  padding-inline: var(--outer-spacing);
   flex: 1;
   --page-border-width: 3px;
   border: var(--page-border-width) solid var(--white);
   border-bottom: none;
-  padding: 1.5rem;
   padding-block-end: 3rem;
 }
 
 @keyframes header-shrink {
-  0% {
+  from {
     scale: 1;
   }
-  100% {
-    /* width: var(--scrolled-width); */
+  to {
     scale: 0.5;
   }
 }
 
-header {
-  position: sticky;
-  inset-block-start: var(--outer-spacing);
-
-  margin-block-start: 30vh;
-  margin-block-end: 30vh;
+#header {
+  margin-block: 30vh 1.5rem;
   display: flex;
   flex-direction: column;
+  z-index: 1000;
 
   h1 {
-    margin-block-start: auto;
     display: flex;
     justify-content: center;
+    transform-origin: top center;
 
     img {
       --default-width: min(640px, 100%);
-      --scrolled-width: min(360px, 50%);
       width: var(--default-width);
       max-width: 1200px;
       height: auto;
-      transform-origin: top center;
+      z-index: 100;
+
+      animation: header-shrink ease both;
+      animation-timeline: scroll();
+      animation-range: exit 10vh exit 40vh;
 
       @media screen and (width <= 520px) {
         --default-width: 100%;
         --scrolled-width: 50%;
         min-width: auto;
       }
-
-      animation: header-shrink ease both;
-      animation-timeline: scroll();
-      animation-range: entry 0vh entry 50vh;
     }
   }
 }
@@ -144,20 +145,22 @@ main {
   flex-direction: column;
 }
 
-@keyframes fade-in {
+@keyframes slide-fade-in {
   0% {
     opacity: 0;
+    transform: translateY(15%);
   }
   100% {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
 main section {
   opacity: 0;
-  animation: fade-in ease both;
+  animation: slide-fade-in ease both;
   animation-timeline: scroll();
-  animation-range: entry 0vh entry 40vh;
+  animation-range: entry 10vh entry 35vh;
 }
 
 #about-section {
@@ -176,12 +179,6 @@ main section {
   flex-direction: column;
   align-items: flex-start;
   row-gap: 2rem;
-
-  h2 {
-    font-size: 4rem;
-    font-weight: 300;
-    line-height: 1.28;
-  }
 
   p {
     text-align: left;
@@ -239,9 +236,9 @@ main section {
 
     @supports (animation-timeline: scroll()) {
       transform: scaleX(0);
-      animation: scale-x-grow 0.5s ease both;
+      animation: scale-x-grow ease both;
       animation-timeline: scroll();
-      animation-range: entry 25vh entry 40vh;
+      animation-range: exit 20vh exit 35vh;
     }
   }
 }
