@@ -125,8 +125,8 @@ body {
       z-index: 100;
 
       animation: header-shrink ease both;
-      animation-timeline: scroll();
-      animation-range: exit 10vh exit 40vh;
+      animation-timeline: view();
+      animation-range: contain 55% contain 85%;
 
       @media screen and (width <= 520px) {
         --default-width: 100%;
@@ -148,7 +148,7 @@ main {
 @keyframes slide-fade-in {
   0% {
     opacity: 0;
-    transform: translateY(15%);
+    transform: translateY(100px);
   }
   100% {
     opacity: 1;
@@ -156,11 +156,11 @@ main {
   }
 }
 
-main section {
+main {
   opacity: 0;
   animation: slide-fade-in ease both;
   animation-timeline: scroll();
-  animation-range: entry 10vh entry 35vh;
+  animation-range: contain 5vh contain 25vh;
 }
 
 #about-section {
@@ -234,11 +234,11 @@ main section {
     inset-inline-start: 0;
     transform-origin: left;
 
-    @supports (animation-timeline: scroll()) {
+    @supports (animation-timeline: view()) {
       transform: scaleX(0);
       animation: scale-x-grow ease both;
-      animation-timeline: scroll();
-      animation-range: exit 20vh exit 35vh;
+      animation-timeline: view();
+      animation-range: contain 25% contain 60%;
     }
   }
 }
@@ -293,4 +293,103 @@ footer {
     width: 1.25rem;
     height: auto;
   }
+}
+
+.action-btn {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 24px;
+  cursor: pointer;
+
+  &.primary {
+    background-color: var(--white);
+    color: var(--blue);
+
+    &:is(:hover, :focus-visible) {
+      background-color: color-mix(in srgb, var(--white), black 10%);
+
+      @media (prefers-reduced-motion: no-preference) {
+        scale: 1.05;
+      }
+    }
+
+    transition-property: background-color, scale;
+    transition-duration: 0.2s, 0.75s;
+    transition-timing-function:
+      ease,
+      linear(
+        0,
+        1.114 8.5%,
+        1.37 12.9%,
+        1.315 16.2%,
+        0.941 24%,
+        0.869 27.8%,
+        0.882 30.7%,
+        1.012 38.3%,
+        1.046 42.7%,
+        0.984,
+        1.006 72.2%,
+        1
+      );
+  }
+  &.secondary {
+    background: none;
+    color: var(--white);
+    border: 1px solid currentColor;
+  }
+}
+
+@property --scroll-progress {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+@keyframes carousel-scroll {
+  from {
+    --scroll-progress: 0;
+  }
+  to {
+    --scroll-progress: 1;
+  }
+}
+
+.carousel-images {
+  --scroll-progress: 0;
+  @supports (animation-timeline: view()) {
+    animation: carousel-scroll linear both;
+    animation-timeline: view();
+    animation-range: cover;
+  }
+
+  .images {
+    display: flex;
+    gap: 42px;
+    /* TODO: make sure this gets to the last image, currently doesn't seem to */
+    transform: translateX(calc((var(--scroll-progress) * -100%)));
+  }
+
+  img {
+    background-color: #e3e3e3;
+    border-radius: 48px;
+  }
+}
+
+.business-info {
+  p {
+    margin-block-end: 0.5rem;
+  }
+
+  [itemprop="email"] a {
+    color: currentColor;
+    text-decoration: none;
+  }
+}
+
+address {
+  font-style: normal;
 }
