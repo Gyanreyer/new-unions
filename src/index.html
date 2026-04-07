@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/Store">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -53,12 +53,14 @@
     <div id="page-wrapper">
       <header id="header">
         <h1>
+          <meta itemprop="name" content="New Unions Bridal" />
           <img
             src="/logo.png"
             alt="New Unions Bridal Logo"
             width="1510"
             height="420"
             fetchpriority="high"
+            itemprop="logo"
           />
         </h1>
         <div id="header-mask"></div>
@@ -83,69 +85,70 @@
             <a class="action-btn primary">Book an Appointment</a>
           </div>
           <aside class="image-column">
-            <img src="/about-image.png" alt="" width="426" height="510" />
-            <img src="/about-image.png" alt="" width="340" height="392" />
+            <img
+              src="/img/harrison-tongue.jpg"
+              alt=""
+              width="720"
+              height="956"
+            />
+            <img src="/img/harrison-mad.jpg" alt="" width="720" height="956" />
           </aside>
         </section>
         <section id="offerings-section">
           <h2>
-            Long&nbsp;&amp;&nbsp;Short Dresses | Bridal&nbsp;Separates<br />
-            Unique&nbsp;Wedding&nbsp;Outfits | Veils | Accessories
+            We carry a variety of new, pre&#8209;loved, and vintage pieces.
           </h2>
           <div class="carousel-images">
             <div class="images">
               <img
                 src="/img/harrison-tongue.jpg"
                 alt=""
-                width="3072"
-                height="4080"
+                width="720"
+                height="956"
               />
               <img
                 src="/img/harrison-mad.jpg"
                 alt=""
-                width="3072"
-                height="4080"
+                width="720"
+                height="956"
               />
               <img
                 src="/img/harrison-regal.jpg"
                 alt=""
-                width="3072"
-                height="4080"
+                width="720"
+                height="956"
               />
               <img
                 src="/img/harrison-tongue.jpg"
                 alt=""
-                width="3072"
-                height="4080"
+                width="720"
+                height="956"
               />
               <img
                 src="/img/harrison-mad.jpg"
                 alt=""
-                width="3072"
-                height="4080"
+                width="720"
+                height="956"
               />
               <img
                 src="/img/harrison-regal.jpg"
                 alt=""
-                width="3072"
-                height="4080"
+                width="720"
+                height="956"
               />
             </div>
           </div>
           <p class="subtext">
-            We carry a variety of new, used, and vintage pieces.
+            Long&nbsp;&amp;&nbsp;Short Dresses | Bridal&nbsp;Separates<br />
+            Unique&nbsp;Wedding&nbsp;Outfits | Veils | Accessories
           </p>
         </section>
-        <section>
-          <h2>
-            We can't wait<br />
-            <span class="underlined">to meet you.</span>
-          </h2>
-          <div
-            itemscope
-            itemtype="http://schema.org/Store"
-            class="business-info"
-          >
+        <section id="business-info">
+          <div class="business-info-column">
+            <h2>
+              We can't wait<br />
+              <span class="underlined">to meet you.</span>
+            </h2>
             <address>
               <p
                 itemprop="address"
@@ -169,11 +172,17 @@
             <p>12-5 Wed-Friday</p>
             <meta itemprop="openingHours" content="Sa-Su 11:00-18:00" />
             <p>11-6 Sat-Sun</p>
+            <a class="action-btn primary">Book an Appointment</a>
           </div>
-          <a class="action-btn primary">Book an Appointment</a>
+          <img src="/img/harrison-regal.jpg" alt="" width="720" height="956" />
         </section>
       </main>
       <footer>
+        <nav id="footer-links">
+          <a href="/about">About Us</a>
+          <span class="spacer"></span>
+          <a href="/faq">FAQ</a>
+        </nav>
         <p id="queer-owned">
           Queer woman-owned local business in Southeast Michigan
         </p>
