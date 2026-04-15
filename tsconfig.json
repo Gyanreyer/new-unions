@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "target": "ESNext",
+    "module": "nodenext",
+    "strict": true,
+    "moduleResolution": "nodenext",
+    "types": ["node"],
+    "maxNodeModuleJsDepth": 1,
+    "allowImportingTsExtensions": true
+  },
+  "include": ["**/*.js", "**/*.ts"],
+  "exclude": ["node_modules", "dist", "tests/**/_site", "tests/**/_expected"]
+}

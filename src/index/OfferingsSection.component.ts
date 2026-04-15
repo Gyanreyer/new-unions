@@ -1,0 +1,56 @@
+import { css, html } from "yeti-js";
+import { ScrollingImageCarousel } from "../_components/ScrollingImageCarousel.component.ts";
+import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
+
+export const OfferingsSection = () => html`
+  <section id="offerings">
+    <h2>
+      We carry a variety of new, pre&#8209;loved, and vintage pieces.
+    </h2>
+    <${ScrollingImageCarousel}>
+      <${ResponsiveImage}
+        src="/img/offerings/ColorfulAccessories.jpg"
+        alt=""
+      />
+      <${ResponsiveImage}
+        src="/img/offerings/Floralshoulderdetaildress.jpg"
+        alt=""
+      />
+      <${ResponsiveImage}
+        src="/img/offerings/Accessories2.jpg"
+        alt=""
+      />
+      <${ResponsiveImage}
+        src="/img/offerings/SparkleDressandBag.jpg"
+        alt=""
+      />
+      <${ResponsiveImage}
+        src="/img/offerings/DavidJefferyBag2.jpg"
+        alt=""
+      />
+    </${ScrollingImageCarousel}>
+    <p class="subtext">
+      Long&nbsp;&amp;&nbsp;Short Dresses | Bridal&nbsp;Separates<br />
+      Unique&nbsp;Wedding&nbsp;Outfits | Veils | Accessories
+    </p>
+  </section>
+`;
+
+OfferingsSection.css = css`
+  #offerings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+    text-align: center;
+
+    h2 {
+      margin-block-end: 24px;
+    }
+
+    .subtext {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+  }
+`;

@@ -1,3 +1,5 @@
 The website for [New Unions Bridal](https://newunionsbridal.com).
 
-Serve locally with `npx http-server ./src -o`
+Built with 11ty + Yeti.
+
+Serve locally with `npm run serve`, build with `npm run build`.

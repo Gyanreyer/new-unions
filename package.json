@@ -1,0 +1,24 @@
+{
+  "name": "new-unions",
+  "version": "1.0.0",
+  "description": "New Unions Website",
+  "homepage": "https://newunionsbridal.com",
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "serve": "npx @11ty/eleventy --config=eleventy.config.ts --serve",
+    "build": "npx @11ty/eleventy --config=eleventy.config.ts"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.5",
+    "sharp": "^0.34.5",
+    "yeti-js": "file:../yeti-js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0",
+    "lightningcss": "^1.32.0",
+    "marked": "^18.0.0"
+  }
+}
