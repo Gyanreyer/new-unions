@@ -30,7 +30,7 @@ export const BusinessInfoSection = () => html`
       <p>11-6 Sat-Sun</p>
       <a class="action-btn primary">Book an Appointment</a>
     </div>
-    <${ResponsiveImage} src="/img/jess_headshot.jpg" alt="" />
+    <${ResponsiveImage} src="/img/headshots/jess_1.jpg" alt="" />
   </section>
 `;
 

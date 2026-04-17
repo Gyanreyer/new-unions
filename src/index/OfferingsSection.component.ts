@@ -30,8 +30,8 @@ export const OfferingsSection = () => html`
       />
     </${ScrollingImageCarousel}>
     <p class="subtext">
-      Long&nbsp;&amp;&nbsp;Short Dresses | Bridal&nbsp;Separates<br />
-      Unique&nbsp;Wedding&nbsp;Outfits | Veils | Accessories
+      Long &amp; Short Dresses&nbsp;|&nbsp;Bridal Separates&nbsp;|&nbsp;
+      Unique Wedding Outfits&nbsp;|&nbsp;Veils&nbsp;|&nbsp;Accessories
     </p>
   </section>
 `;
@@ -46,6 +46,7 @@ OfferingsSection.css = css`
 
     .subtext {
       font-weight: 500;
+      max-width: 600px;
     }
   }
 `;

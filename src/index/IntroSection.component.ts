@@ -21,7 +21,7 @@ export const IntroSection = () => html`<section id="intro">
   </div>
   <aside class="image-column">
     <${ResponsiveImage}
-      src="/img/jess_headshot2.jpg"
+      src="/img/headshots/jess_2.jpg"
       alt=""
       loading="eager"
     />
