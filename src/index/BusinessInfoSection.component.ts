@@ -74,7 +74,7 @@ BusinessInfoSection.css = css`
       min-width: 240px;
       max-width: 520px;
       background-color: #e3e3e3;
-      border-radius: 48px;
+      border-radius: 24px;
       aspect-ratio: 96 / 100;
       object-fit: cover;
       box-shadow: var(--image-drop-shadow);

@@ -78,7 +78,7 @@ IntroSection.css = css`
         max-width: 400px;
         height: auto;
         background-color: #e3e3e3;
-        border-radius: 48px;
+        border-radius: 24px;
         aspect-ratio: 82 / 100;
         object-fit: cover;
         box-shadow: var(--image-drop-shadow);

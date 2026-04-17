@@ -72,7 +72,7 @@ ScrollingImageCarousel.css = css`
 
     img {
       background-color: #e3e3e3;
-      border-radius: 48px;
+      border-radius: 24px;
       aspect-ratio: 9/10;
       height: 100%;
       width: auto;
