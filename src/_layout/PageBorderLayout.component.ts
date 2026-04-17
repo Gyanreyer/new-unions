@@ -44,39 +44,32 @@ body {
   );
   background-repeat: repeat-y;
   background-size: 100vw 250vh;
-
-  --outer-spacing: 72px;
-  padding: var(--outer-spacing);
-  @media screen and (width <= 1024px) {
-    --outer-spacing: 48px;
-  }
-  @media screen and (width <= 640px) {
-    --outer-spacing: 24px;
-  }
 }
 
 #page-wrapper {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding-inline: var(--outer-spacing);
+  margin: var(--space-s-2xl);
+  padding-inline: var(--space-s-2xl);
   flex: 1;
   --page-border-width: 3px;
   border: var(--page-border-width) solid var(--white);
   border-bottom: none;
-  padding-block-end: 3rem;
+  padding-block-end: var(--space-l);
 }
 
 #page-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 1rem;
+  row-gap: var(--space-s);
+  margin-block-start: var(--space-xl-2xl);
 
   nav {
     display: flex;
     align-items: center;
-    column-gap: 1rem;
+    column-gap: var(--space-s);
 
     .spacer {
       height: 0.8lh;
@@ -86,8 +79,9 @@ body {
   }
 
   .queer-owned {
-    font-size: 1rem;
-    margin-block-start: auto;
+    font-size: var(--font-size-xs);
+    text-align: center;
+    text-wrap: balance;
   }
 
   /** Footer icons wrapper adds lines to form the bottom of the page border
@@ -112,10 +106,15 @@ body {
   }
 
   .links-wrapper {
-    padding-inline: 2.5rem;
+    padding-inline: var(--space-m);
     display: flex;
     align-items: center;
-    column-gap: 2.25rem;
+    column-gap: var(--space-m);
+
+    a {
+      display: flex;
+      align-items: center;
+    }
 
     .fb svg {
       width: 0.8125rem;

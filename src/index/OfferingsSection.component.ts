@@ -41,15 +41,10 @@ OfferingsSection.css = css`
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 2rem;
+    row-gap: var(--space-m-l);
     text-align: center;
 
-    h2 {
-      margin-block-end: 24px;
-    }
-
     .subtext {
-      font-size: 1.5rem;
       font-weight: 500;
     }
   }

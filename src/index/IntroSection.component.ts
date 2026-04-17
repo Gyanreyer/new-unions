@@ -1,4 +1,5 @@
 import { css, html } from "yeti-js";
+import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 
 export const IntroSection = () => html`<section id="intro">
   <div class="text-column">
@@ -19,13 +20,16 @@ export const IntroSection = () => html`<section id="intro">
     <a class="action-btn primary">Book an Appointment</a>
   </div>
   <aside class="image-column">
-    <img
-      src="/img/harrison-tongue.jpg"
+    <${ResponsiveImage}
+      src="/img/jess_headshot2.jpg"
       alt=""
-      width="720"
-      height="956"
+      loading="eager"
     />
-    <img src="/img/harrison-mad.jpg" alt="" width="720" height="956" />
+    <${ResponsiveImage}
+      src="/img/offerings/ColorfulBeadedDresses.jpg"
+      alt=""
+      loading="eager"
+    />
   </aside>
 </section>`;
 
@@ -33,18 +37,18 @@ IntroSection.css = css`
   #intro {
     display: grid;
     grid-template-columns: 1.15fr 1fr;
-    column-gap: 8rem;
+    column-gap: var(--space-2xl);
+    row-gap: var(--space-m-l);
 
     @media screen and (width <= 1200px) {
       grid-template-columns: 1fr;
-      row-gap: 4rem;
     }
 
     .text-column {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      row-gap: 2rem;
+      row-gap: var(--space-m);
 
       p {
         text-align: left;

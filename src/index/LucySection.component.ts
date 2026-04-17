@@ -38,21 +38,24 @@ export const LucySection = () => html`
 
 LucySection.css = css`
   #lucy-cant-dance {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-m-l);
+
     h2 {
       text-align: center;
-      margin-block-end: 4rem;
 
       img {
         display: block;
-        width: 100%;
-        max-width: 40rem;
+        width: 16ch;
+        max-width: 100%;
         height: auto;
-        margin: 1rem auto 0;
+        margin-block-start: var(--space-s);
+        margin-inline: auto;
       }
     }
 
     p {
-      margin-block-start: 4rem;
       text-align: center;
       text-wrap: balance;
     }

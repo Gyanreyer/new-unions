@@ -37,8 +37,10 @@ ScrollingImageCarousel.css = css`
   }
 
   .scrolling-image-carousel {
-    --carousel-height: 420px;
-    height: var(--carousel-height);
+    /** Flex from 320px->420px
+     * @link https://utopia.fyi/clamp/calculator?a=360,1240,320—420
+     */
+    height: clamp(20rem, 17.4432rem + 11.3636vw, 26.25rem);
     width: 100vw;
     margin-inline: calc(50% - 50vw);
     position: relative;
@@ -48,7 +50,7 @@ ScrollingImageCarousel.css = css`
       position: absolute;
       height: 100%;
       display: flex;
-      gap: 42px;
+      column-gap: var(--space-l);
       /* Center on page by default; this will be enhanced to a fancy scrolling effect if supported */
       transform: translateX(-50%);
       left: 50%;

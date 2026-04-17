@@ -1,3 +1,8 @@
+/** Import design system variable files */
+@import "./font-size.css";
+@import "./spacing.css";
+@import "./colors.css";
+
 @font-face {
   font-family: "DM Sans";
   src: url("/font/DMSans.ttf") format("truetype");
@@ -7,9 +12,6 @@
 }
 
 :root {
-  --white: #f3ebe2;
-  --orange: #ef946c;
-  --blue: #454372;
   --image-drop-shadow:
     0px 0.5px 0.6px rgba(0, 0, 0, 0.12),
     0px 1.6px 1.8px -0.8px rgba(0, 0, 0, 0.12),
@@ -29,14 +31,10 @@ p {
 }
 
 h2 {
-  font-size: 4rem;
-  font-weight: 300;
-  line-height: 1.28;
+  font-size: var(--font-size-2xl-3xl);
+  font-weight: 500;
+  line-height: 1;
   text-wrap: balance;
-
-  @media screen and (width <= 520px) {
-    font-size: 3rem;
-  }
 }
 
 a {
@@ -45,15 +43,13 @@ a {
 }
 
 body {
+  /*  Baseline default font styles */
   font-family: "DM Sans", sans-serif;
-  color: var(--white);
-  font-size: 1.75rem;
-  @media screen and (width <= 520px) {
-    font-size: 1.4rem;
-  }
-  font-weight: 200;
+  font-weight: 300;
   letter-spacing: -2%;
   text-rendering: geometricPrecision;
+  color: var(--white);
+  font-size: var(--font-size-m);
 
   min-height: 100vh;
   margin: 0;
@@ -75,10 +71,13 @@ body {
 
 .underlined {
   position: relative;
+  display: inline-block;
+  --underline-width: 3px;
+  margin-block-end: var(--underline-width);
 
   &::after {
     content: "";
-    border-block-end: 3px solid currentColor;
+    border-block-end: var(--underline-width) solid currentColor;
     position: absolute;
     inline-size: 100%;
     inset-block-start: 100%;
@@ -98,8 +97,8 @@ body {
 .action-btn {
   display: inline-block;
   border: none;
-  padding: 1rem 2.5rem;
-  font-size: 1.75rem;
+  padding: var(--space-xs-s) var(--space-s-m);
+  font-size: var(--font-size-l);
   font-weight: 500;
   line-height: 1;
   border-radius: 24px;

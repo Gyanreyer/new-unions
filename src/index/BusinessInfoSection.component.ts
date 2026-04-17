@@ -43,9 +43,8 @@ BusinessInfoSection.css = css`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    column-gap: 6rem;
-    row-gap: 2rem;
-    margin-block-end: 5rem;
+    column-gap: var(--space-2xl);
+    row-gap: var(--space-m);
 
     .business-info-column {
       max-width: 100%;
@@ -56,15 +55,16 @@ BusinessInfoSection.css = css`
     }
 
     h2 {
-      margin-block-end: 2.5rem;
+      margin-block-end: var(--space-l);
     }
 
     p {
-      margin-block-end: 1rem;
+      margin-block-end: var(--space-s);
     }
 
     .action-btn {
-      margin-block-start: 1rem;
+      display: block;
+      margin-block-start: var(--space-m);
     }
 
     img {

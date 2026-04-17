@@ -36,9 +36,10 @@ IndexPage.css = css`
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+
     display: flex;
     flex-direction: column;
-    row-gap: 8rem;
+    row-gap: var(--space-2xl-3xl);
 
     @media screen and (width >= 1200px) {
       @supports (animation-timeline: view()) {
