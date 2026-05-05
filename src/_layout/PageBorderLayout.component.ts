@@ -34,7 +34,8 @@ export const PageBorderLayout: YetiComponent = ({ children, ...spreadAttrs }) =>
 };
 
 PageBorderLayout.css = css`
-body {
+${css.bundle("critical")}
+:root {
   background-image: linear-gradient(
     to bottom,
     var(--orange),
@@ -57,8 +58,10 @@ body {
   border: var(--page-border-width) solid var(--white);
   border-bottom: none;
   padding-block-end: var(--space-l);
+  view-transition-name: page-wrapper;
 }
 
+${css.bundle(css.getDefaultBundleName())}
 #page-footer {
   display: flex;
   flex-direction: column;
