@@ -4,7 +4,7 @@ import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 
 export const OfferingsSection = () => html`
   <section id="offerings">
-    <h2>
+    <h2 class="section-heading">
       We carry a variety of new, pre&#8209;loved, and vintage pieces.
     </h2>
     <${ScrollingImageCarousel}>
@@ -37,6 +37,7 @@ export const OfferingsSection = () => html`
 `;
 
 OfferingsSection.css = css`
+  ${css.bundle("home")}
   #offerings {
     display: flex;
     flex-direction: column;

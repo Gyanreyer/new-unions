@@ -4,7 +4,7 @@ import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 
 export const LucySection = () => html`
   <section id="lucy-cant-dance">
-    <h2>
+    <h2 class="section-heading">
       Exclusively with us!
       <${ResponsiveImage} alt="Lucy Can't Dance" src="/img/lucy/logo.png" />
     </h2>
@@ -37,6 +37,7 @@ export const LucySection = () => html`
 `;
 
 LucySection.css = css`
+  ${css.bundle("home")}
   #lucy-cant-dance {
     display: flex;
     flex-direction: column;

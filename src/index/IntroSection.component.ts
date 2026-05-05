@@ -3,7 +3,7 @@ import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 
 export const IntroSection = () => html`<section id="intro">
   <div class="text-column">
-    <h2>
+    <h2 class="section-heading">
       We celebrate love <br />
       <span class="underlined">differently.</span>
     </h2>
@@ -17,7 +17,7 @@ export const IntroSection = () => html`<section id="intro">
       We welcome everyone and anyone to shop with us to find a wedding
       outfit that is as unique as you.
     </p>
-    <a class="action-btn primary">Book an Appointment</a>
+    <a class="action-btn primary" href="https://calendar.proton.me/u/0/bookings#94R1UdAukt3JdhyTwciYyyJRLxn81skWQARs_E2CPb8=">Book an Appointment</a>
   </div>
   <aside class="image-column">
     <${ResponsiveImage}
@@ -34,6 +34,7 @@ export const IntroSection = () => html`<section id="intro">
 </section>`;
 
 IntroSection.css = css`
+  ${css.bundle("home")}
   #intro {
     display: grid;
     grid-template-columns: 1.15fr 1fr;

@@ -4,7 +4,7 @@ import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 export const BusinessInfoSection = () => html`
   <section id="business-info">
     <div class="business-info-column">
-      <h2>
+      <h2 class="section-heading">
         We can't wait<br />
         <span class="underlined">to meet you.</span>
       </h2>
@@ -35,6 +35,7 @@ export const BusinessInfoSection = () => html`
 `;
 
 BusinessInfoSection.css = css`
+  ${css.bundle("home")}
   address {
     font-style: normal;
   }

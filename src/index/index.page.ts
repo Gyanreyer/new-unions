@@ -21,6 +21,7 @@ const IndexPage: YetiPageComponent = () => html`<${PageBorderLayout} itemscope i
 </${PageBorderLayout}>`;
 
 IndexPage.css = css`
+  ${css.bundle("home")}
   @keyframes slide-fade-in {
     0% {
       opacity: 0;

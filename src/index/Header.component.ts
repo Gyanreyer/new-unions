@@ -12,11 +12,13 @@ export const Header = () => html`<header>
       fetchpriority="high"
       itemprop="logo"
       loading="eager"
+      sizes="(width >= 850px) 640px, 95vw"
     />
   </h1>
 </header>`;
 
 Header.css = css`
+  ${css.bundle("home")}
   @keyframes header-shrink {
     from {
       scale: 1;
@@ -45,7 +47,6 @@ Header.css = css`
 
       img {
         width: min(640px, 100%);
-        max-width: 1200px;
         height: auto;
         z-index: 100;
 
