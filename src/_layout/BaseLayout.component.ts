@@ -76,3 +76,18 @@ export const BaseLayout: YetiComponent<{
 BaseLayout.css = css`
   ${css.import("/_styles/reset.css", "critical")}
 `;
+
+BaseLayout.js = js`
+${js.bundle("critical")}
+{
+  const areInvokersSupported = (
+    typeof HTMLButtonElement !== "undefined" &&
+    "command" in HTMLButtonElement.prototype &&
+    "source" in ((globalThis.CommandEvent || {}).prototype || {})
+  );
+  if (!areInvokersSupported) {
+    // Load invoker polyfill for browsers that don't support it natively
+    import("/js/polyfill/invokers.js");
+  }
+}
+`;
