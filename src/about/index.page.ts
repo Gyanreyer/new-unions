@@ -2,21 +2,22 @@ import { css, html, type YetiPageComponent } from 'yeti-js';
 import { PageBorderLayout } from '../_layout/PageBorderLayout.component.ts';
 import { EmployeeSection } from './Employee.component.ts';
 import { ResponsiveImage } from '../_components/ResponsiveImage.component.ts';
+import { BackLink } from '../_components/BackLink.component.ts';
 
 const AboutPage: YetiPageComponent = () => html`<${PageBorderLayout}>
   <header>
-    <a href="/">&lt; Back</a>
-    <a href="/" aria-label="New Unions Home Page">
-      <${ResponsiveImage}
-        src="/img/logo.png"
-        alt="New Unions Bridal"
-        width="1510"
-        height="420"
-        fetchpriority="high"
-        loading="eager"
-        sizes="(width >= 575px) 420px, 95vw"
-      />
-    </a>
+    <nav>
+      <${BackLink} href="/" label="Home" />
+    </nav>
+    <${ResponsiveImage}
+      src="/img/logo.png"
+      alt="New Unions Bridal"
+      width="1510"
+      height="420"
+      fetchpriority="high"
+      loading="eager"
+      sizes="(width >= 575px) 420px, 95vw"
+    />
   </header>
   <main>
     <h1 class="section-heading underlined">Here’s a little about us.</h1>
@@ -52,28 +53,32 @@ const AboutPage: YetiPageComponent = () => html`<${PageBorderLayout}>
 
 AboutPage.css = css`
 ${css.bundle("about")}
-  header {
-    img {
-      display: block;
-      margin-inline: auto;
-      margin-block-start: var(--space-l-xl);
-      width: min(420px, 100%);
-      height: auto;
-      z-index: 100;
-      view-transition-name: header-logo;
-    }
+header {
+  nav {
+    margin-block-start: var(--space-m-l);
   }
 
-  h1 {
-    margin-block: var(--space-xl-2xl) var(--space-l-3xl);
+  img {
+    display: block;
     margin-inline: auto;
+    margin-block-start: var(--space-l-xl);
+    width: min(420px, 100%);
+    height: auto;
+    z-index: 100;
+    view-transition-name: header-logo;
   }
+}
 
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+h1 {
+  margin-block: var(--space-xl-2xl) var(--space-l-2xl);
+  margin-inline: auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 `;
 
 export default AboutPage;

@@ -1,12 +1,13 @@
 import { css, html } from "yeti-js";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
+import { BookAppointmentButton } from "../_components/BookAppointmentButton.component.ts";
 
 export const BusinessInfoSection = () => html`
   <section id="business-info">
     <div class="business-info-column">
       <h2 class="section-heading">
         We can't wait<br />
-        <span class="underlined">to meet you.</span>
+        <span class="underlined scroll-reveal-underline">to meet you.</span>
       </h2>
       <address>
         <p
@@ -19,7 +20,7 @@ export const BusinessInfoSection = () => html`
         </p>
         <p itemprop="telephone">(313) 314-3517</p>
         <p itemprop="email">
-          <a href="mailto:hello@newunionsbridal.com" class="underlined-link">
+          <a href="mailto:hello@newunionsbridal.com" class="underlined-link underline-target">
             hello@newunionsbridal.com
           </a>
         </p>
@@ -28,7 +29,7 @@ export const BusinessInfoSection = () => html`
       <p>12-5 Wed-Friday</p>
       <meta itemprop="openingHours" content="Sa-Su 11:00-18:00" />
       <p>11-6 Sat-Sun</p>
-      <a class="action-btn primary">Book an Appointment</a>
+      <${BookAppointmentButton} />
     </div>
     <${ResponsiveImage} src="/img/headshots/jess_1.jpg" alt="" />
   </section>

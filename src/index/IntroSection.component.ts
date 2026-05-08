@@ -1,11 +1,12 @@
 import { css, html } from "yeti-js";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
+import { BookAppointmentButton } from "../_components/BookAppointmentButton.component.ts";
 
 export const IntroSection = () => html`<section id="intro">
   <div class="text-column">
     <h2 class="section-heading">
       We celebrate love <br />
-      <span class="underlined">differently.</span>
+      <span class="underlined scroll-reveal-underline">differently.</span>
     </h2>
     <p>
       A love letter to anyone searching for wedding attire that deviates
@@ -17,7 +18,7 @@ export const IntroSection = () => html`<section id="intro">
       We welcome everyone and anyone to shop with us to find a wedding
       outfit that is as unique as you.
     </p>
-    <a class="action-btn primary" href="https://calendar.proton.me/u/0/bookings#94R1UdAukt3JdhyTwciYyyJRLxn81skWQARs_E2CPb8=">Book an Appointment</a>
+    <${BookAppointmentButton} />
   </div>
   <aside class="image-column">
     <${ResponsiveImage}

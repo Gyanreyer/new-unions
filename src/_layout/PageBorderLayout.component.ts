@@ -11,9 +11,9 @@ export const PageBorderLayout: YetiComponent = ({ children, ...spreadAttrs }) =>
     ${children}
     <footer id="page-footer">
       <nav>
-        <a href="/about" class="underlined-link">About Us</a>
+        <a href="/about" class="underlined-link underline-target">About Us</a>
         <span class="spacer"></span>
-        <a href="/faq" class="underlined-link">FAQ</a>
+        <a href="/faq" class="underlined-link underline-target">FAQ</a>
       </nav>
       <p class="queer-owned">
         Queer woman-owned local business in Southeast Michigan
@@ -35,18 +35,6 @@ export const PageBorderLayout: YetiComponent = ({ children, ...spreadAttrs }) =>
 
 PageBorderLayout.css = css`
 ${css.bundle("critical")}
-:root {
-  background-image: linear-gradient(
-    to bottom,
-    var(--orange),
-    var(--blue) 75vh,
-    var(--blue) 150vh,
-    var(--orange) 225vh
-  );
-  background-repeat: repeat-y;
-  background-size: 100vw 250vh;
-}
-
 #page-wrapper {
   position: relative;
   display: flex;
@@ -61,7 +49,7 @@ ${css.bundle("critical")}
   view-transition-name: page-wrapper;
 }
 
-${css.bundle(css.getDefaultBundleName())}
+${css.bundle("layout")}
 #page-footer {
   display: flex;
   flex-direction: column;
