@@ -4,7 +4,7 @@ import { dirname, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { access, mkdir } from "node:fs/promises";
 
-const srcsetWidths = [240, 480, 720, 1080, 1920];
+const srcsetWidths = [240, 480, 600, 720, 1080, 1920];
 
 interface ResizedImageResultInfo {
   width: number;

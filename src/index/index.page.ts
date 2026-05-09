@@ -20,6 +20,7 @@ const IndexPage: YetiPageComponent = () => html`<${PageBorderLayout} itemscope i
     <${BusinessInfoSection} />
   </main>
   <${BookAppointmentModal} />
+  <style>${css.inline("home")}</style>
 </${PageBorderLayout}>`;
 
 IndexPage.css = css`

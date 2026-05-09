@@ -52,7 +52,6 @@ ${css.bundle("critical")}
   view-transition-name: page-wrapper;
 }
 
-${css.bundle("layout")}
 #page-footer {
   display: flex;
   flex-direction: column;

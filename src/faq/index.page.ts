@@ -93,6 +93,7 @@ const FAQPage: YetiPageComponent = () => html`<${PageBorderLayout}>
       </section>
     </div>
   </main>
+  <style>${css.inline("faq")}</style>
 </${PageBorderLayout}>`;
 
 export default FAQPage;

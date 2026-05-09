@@ -66,7 +66,8 @@ export const BaseLayout: YetiComponent<{
   </head>
   <body>
     ${children}
-    <link rel="stylesheet" href=${css.src("*")} />
+    <link rel="preload" href=${css.src("*")} as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href=${css.src("*")}></noscript>
     <script type="module" src=${js.src("*")}></script>
   </body>
 </html>`;
@@ -75,7 +76,7 @@ export const BaseLayout: YetiComponent<{
 // Basic reset styles shared across all pages
 BaseLayout.css = css`
   ${css.import("/_styles/reset.css", "critical")}
-  ${css.import("/_styles/utils.css", "util")}
+  ${css.import("/_styles/utils.css", "components")}
 `;
 
 BaseLayout.js = js`
