@@ -1,0 +1,65 @@
+@layer reset, util;
+
+/** Import design system variable files */
+@import "./font-size.css" layer(reset);
+@import "./spacing.css" layer(reset);
+@import "./colors.css" layer(reset);
+
+@layer reset {
+  @media (prefers-reduced-motion: no-preference) {
+    @view-transition {
+      navigation: auto;
+    }
+  }
+
+  @font-face {
+    font-family: "DM Sans";
+    src: url("/font/DMSans.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --image-drop-shadow:
+      0px 0.5px 0.6px rgba(0, 0, 0, 0.12),
+      0px 1.6px 1.8px -0.8px rgba(0, 0, 0, 0.12),
+      0px 4px 4.5px -1.7px rgba(0, 0, 0, 0.12),
+      0px 9.8px 11px -2.5px rgba(0, 0, 0, 0.12);
+    background-color: var(--blue);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  body {
+    /*  Baseline default font styles */
+    font-family: "DM Sans", sans-serif;
+    font-weight: 300;
+    letter-spacing: -2%;
+    text-rendering: geometricPrecision;
+    color: var(--white);
+    font-size: var(--font-size-m);
+
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    overflow-x: hidden;
+  }
+}

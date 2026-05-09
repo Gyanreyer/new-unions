@@ -1,0 +1,14 @@
+/* @link https://utopia.fyi/type/calculator?c=360,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+:root {
+  --font-size-2xs: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
+  --font-size-xs: clamp(0.9375rem, 0.9119rem + 0.1136vw, 1rem);
+  --font-size-s: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
+  --font-size-m: clamp(1.35rem, 1.2631rem + 0.3864vw, 1.5625rem);
+  --font-size-l: clamp(1.62rem, 1.4837rem + 0.6057vw, 1.9531rem);
+  --font-size-xl: clamp(1.944rem, 1.7405rem + 0.9044vw, 2.4414rem);
+  --font-size-2xl: clamp(2.3328rem, 2.0387rem + 1.3072vw, 3.0518rem);
+  --font-size-3xl: clamp(2.7994rem, 2.384rem + 1.8461vw, 3.8147rem);
+
+  /** Heading flex size 44px -> 64px (doesn't exactly map to actual 2xl/3xl sizes, but close enough) */
+  --font-size-2xl-3xl: clamp(2.75rem, 2.2386rem + 2.2727vw, 4rem);
+}
