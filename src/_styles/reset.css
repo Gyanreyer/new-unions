@@ -62,4 +62,8 @@
 
     overflow-x: hidden;
   }
+
+  picture {
+    display: contents;
+  }
 }

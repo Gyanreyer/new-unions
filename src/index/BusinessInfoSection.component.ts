@@ -34,7 +34,10 @@ export const BusinessInfoSection = () => html`
       -->
       <${BookAppointmentButton} />
     </div>
-    <${ResponsiveImage} src="/img/headshots/jess_1.jpg" alt="" />
+    <${ResponsiveImage} 
+      src="/img/headshots/jess_1.jpg" 
+      alt="Jess, the owner of New Unions, posing in front of a rack of wedding attire and a mirror." 
+    />
   </section>
 `;
 

@@ -23,13 +23,13 @@ export const IntroSection = () => html`<section id="intro">
   <aside class="image-column">
     <${ResponsiveImage}
       src="/img/headshots/jess_2.jpg"
-      alt=""
-      loading="eager"
+      alt="Jess, the owner of New Unions, smiling in front of a rack of wedding attire."
+      class="img-1"
     />
     <${ResponsiveImage}
       src="/img/offerings/ColorfulBeadedDresses.jpg"
-      alt=""
-      loading="eager"
+      alt="Beaded dresses on a rack."
+      class="img-2"
     />
   </aside>
 </section>`;
@@ -86,13 +86,13 @@ IntroSection.css = css`
         box-shadow: var(--image-drop-shadow);
       }
 
-      img:nth-child(1) {
+      .img-1 {
         width: 85%;
         align-self: flex-start;
         background-color: #c0bebe;
       }
 
-      img:nth-child(2) {
+      .img-2 {
         width: 67%;
         align-self: flex-end;
         /* Shift up to overlap with 1st image */
