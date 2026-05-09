@@ -20,7 +20,7 @@ const FAQPage: YetiPageComponent = () => html`<${PageBorderLayout}>
   </header>
   <main>
     <h1 class="section-heading underlined">What to expect at New Unions.</h1>
-    <div>
+    <div id="faqs">
       <section id="appointment-length">
         <h2>How long are appointments?</h2>
         <p>
@@ -126,6 +126,10 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#faqs {
+  max-width: 1200px;
 }
 
 section {

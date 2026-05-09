@@ -25,10 +25,13 @@ export const BusinessInfoSection = () => html`
           </a>
         </p>
       </address>
+      <p>Hours to be announced</p>
+      <!--
       <meta itemprop="openingHours" content="Mo-We 12:00-17:00" />
       <p>12-5 Wed-Friday</p>
       <meta itemprop="openingHours" content="Sa-Su 11:00-18:00" />
       <p>11-6 Sat-Sun</p>
+      -->
       <${BookAppointmentButton} />
     </div>
     <${ResponsiveImage} src="/img/headshots/jess_1.jpg" alt="" />
