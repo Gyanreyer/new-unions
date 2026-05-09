@@ -20,7 +20,7 @@ const AboutPage: YetiPageComponent = () => html`<${PageBorderLayout}>
     />
   </header>
   <main>
-    <h1 class="section-heading underlined">Here’s a little about us.</h1>
+    <h1 class="section-heading underlined-text">Here’s a little about us.</h1>
     <${EmployeeSection}
       name="Jess"
       pronouns="They/She"

@@ -19,7 +19,7 @@ const FAQPage: YetiPageComponent = () => html`<${PageBorderLayout}>
     />
   </header>
   <main>
-    <h1 class="section-heading underlined">What to expect at New Unions.</h1>
+    <h1 class="section-heading underlined-text">What to expect at New Unions.</h1>
     <div id="faqs">
       <section id="appointment-length">
         <h2>How long are appointments?</h2>

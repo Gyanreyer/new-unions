@@ -6,7 +6,7 @@ export const IntroSection = () => html`<section id="intro">
   <div class="text-column">
     <h2 class="section-heading">
       We celebrate love <br />
-      <span class="underlined scroll-reveal-underline">differently.</span>
+      <span class="scroll-reveal-underline">differently.</span>
     </h2>
     <p>
       A love letter to anyone searching for wedding attire that deviates

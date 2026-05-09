@@ -7,7 +7,7 @@ export const BusinessInfoSection = () => html`
     <div class="business-info-column">
       <h2 class="section-heading">
         We can't wait<br />
-        <span class="underlined scroll-reveal-underline">to meet you.</span>
+        <span class="scroll-reveal-underline">to meet you.</span>
       </h2>
       <address>
         <p

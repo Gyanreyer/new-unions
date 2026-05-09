@@ -75,6 +75,7 @@ export const BaseLayout: YetiComponent<{
 // Basic reset styles shared across all pages
 BaseLayout.css = css`
   ${css.import("/_styles/reset.css", "critical")}
+  ${css.import("/_styles/utils.css", "util")}
 `;
 
 BaseLayout.js = js`

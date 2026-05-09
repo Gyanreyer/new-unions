@@ -26,6 +26,9 @@ export const PageBorderLayout: YetiComponent = ({ children, ...spreadAttrs }) =>
           <a href="https://www.instagram.com/newunionsbridal/" class="insta">
             <${Icon} name="instagram" label="Instagram Page" width="20" height="20" />
           </a>
+          <a href="https://www.tiktok.com/@newunionsbridal" class="tiktok">
+            <${Icon} name="tiktok" label="TikTok Page" width="19" height="22" />
+          </a>
         </div>
       </div>
     </footer>
@@ -102,11 +105,6 @@ ${css.bundle("layout")}
     align-items: center;
     column-gap: var(--space-m);
 
-    a {
-      display: flex;
-      align-items: center;
-    }
-
     .fb svg {
       width: 0.8125rem;
       height: auto;
@@ -116,6 +114,10 @@ ${css.bundle("layout")}
       width: 1.25rem;
       height: auto;
     }
+
+    .tiktok svg {
+      width: 1.1875rem;
+      height: auto;
+    }
   }
-}
 `;
