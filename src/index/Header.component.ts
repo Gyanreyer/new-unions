@@ -7,12 +7,10 @@ export const Header = () => html`<header>
     <${ResponsiveImage}
       src="/img/logo.png"
       alt="New Unions Bridal"
-      width="1510"
-      height="420"
       fetchpriority="high"
       itemprop="logo"
       loading="eager"
-      sizes="(width >= 850px) 640px, 95vw"
+      sizes="(width >= 850px) 640px, 80vw"
     />
   </h1>
 </header>`;

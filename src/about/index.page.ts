@@ -12,11 +12,9 @@ const AboutPage: YetiPageComponent = () => html`<${PageBorderLayout}>
     <${ResponsiveImage}
       src="/img/logo.png"
       alt="New Unions Bridal"
-      width="1510"
-      height="420"
       fetchpriority="high"
       loading="eager"
-      sizes="(width >= 575px) 420px, 95vw"
+      sizes="(width >= 575px) 420px, 80vw"
     />
   </header>
   <main>

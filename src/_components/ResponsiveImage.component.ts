@@ -39,7 +39,8 @@ export const ResponsiveImage: YetiComponent<{
   src: string;
   alt: string;
   loading?: "eager" | "lazy" | "auto";
-}> = async ({ src, alt, loading = "lazy", ...spreadAttrs }) => {
+  sizes?: string;
+}> = async ({ src, alt, loading = "lazy", sizes = "auto", ...spreadAttrs }) => {
   const imageFilePath = fileURLToPath(import.meta.resolve(join('../public', src)));
 
   let imageMetadata: sharp.Metadata;
@@ -128,13 +129,13 @@ export const ResponsiveImage: YetiComponent<{
       <source
         type="image/webp"
         srcset=${resizedWebpImages.map(info => `${info.src} ${info.width}w`).join(', ')}
-        sizes="auto"
+        sizes=${sizes}
       />
       <img
         src=${src}
         alt=${alt}
         srcset=${resizedOriginalFormatImages.map(info => `${info.src} ${info.width}w`).join(', ')}
-        sizes="auto"
+        sizes=${sizes}
         width=${imageMetadata.width}
         height=${imageMetadata.height}
         loading=${loading}
