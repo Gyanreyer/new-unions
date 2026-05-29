@@ -105,6 +105,7 @@ IntroSection.css = css`
         /* Shift up to overlap with 1st image */
         margin-block-start: -30%;
         aspect-ratio: 82 / 100;
+        z-index: 1;
       }
     }
   }
