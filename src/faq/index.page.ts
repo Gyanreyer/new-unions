@@ -1,20 +1,22 @@
-import { css, html, type YetiPageComponent } from 'yeti-js';
-import { PageBorderLayout } from '../_layout/PageBorderLayout.component.ts';
-import { BackLink } from '../_components/BackLink.component.ts';
-import { ResponsiveImage } from '../_components/ResponsiveImage.component.ts';
+import { css, html, type YetiPageComponent } from "yeti-js";
+import { PageBorderLayout } from "../_layout/PageBorderLayout.component.ts";
+import { BackLink } from "../_components/BackLink.component.ts";
+import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 
 const FAQPage: YetiPageComponent = () => html`<${PageBorderLayout}>
   <header>
     <nav>
       <${BackLink} href="/" label="Home" />
     </nav>
-    <${ResponsiveImage}
-      src="/img/logo.png"
-      alt="New Unions Bridal"
-      fetchpriority="high"
-      loading="eager"
-      sizes="(width >= 575px) 420px, 80vw"
-    />
+    <a href="/">
+      <${ResponsiveImage}
+        src="/img/logo.png"
+        alt="New Unions Bridal"
+        fetchpriority="high"
+        loading="eager"
+        sizes="(width >= 575px) 420px, 80vw"
+      />
+    </a>
   </header>
   <main>
     <h1 class="section-heading underlined-text">What to expect at New Unions.</h1>
@@ -99,46 +101,46 @@ const FAQPage: YetiPageComponent = () => html`<${PageBorderLayout}>
 export default FAQPage;
 
 FAQPage.css = css`
-${css.bundle("faq")}
-header {
-  nav {
-    margin-block-start: var(--space-m-l);
+  ${css.bundle("faq")}
+  header {
+    nav {
+      margin-block-start: var(--space-m-l);
+    }
+
+    img {
+      display: block;
+      margin-inline: auto;
+      margin-block-start: var(--space-l-xl);
+      width: min(420px, 100%);
+      height: auto;
+      z-index: 100;
+      view-transition-name: header-logo;
+    }
   }
 
-  img {
-    display: block;
+  h1 {
+    margin-block: var(--space-xl-2xl) var(--space-l-2xl);
     margin-inline: auto;
-    margin-block-start: var(--space-l-xl);
-    width: min(420px, 100%);
-    height: auto;
-    z-index: 100;
-    view-transition-name: header-logo;
-  }
-}
-
-h1 {
-  margin-block: var(--space-xl-2xl) var(--space-l-2xl);
-  margin-inline: auto;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#faqs {
-  max-width: 1200px;
-}
-
-section {
-  h2 {
-    font-size: var(--font-size-2xl);
-    font-weight: 400;
   }
 
-  p {
-    margin-block: var(--space-xs) var(--space-l);
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-}
+
+  #faqs {
+    max-width: 1200px;
+  }
+
+  section {
+    h2 {
+      font-size: var(--font-size-2xl);
+      font-weight: 400;
+    }
+
+    p {
+      margin-block: var(--space-xs) var(--space-l);
+    }
+  }
 `;

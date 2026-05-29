@@ -1,6 +1,5 @@
-import { css, html } from "yeti-js";
-import { bookAppointmentModalID as bookAppointmentModalID } from "./BookAppointmentModal.component.ts";
+import { html } from "yeti-js";
 
 export const BookAppointmentButton = () => html`
-  <button type="button" class="book-appt action-btn primary" commandfor=${bookAppointmentModalID} command="show-modal">Book an Appointment</button>
+  <a href="/book" class="book-appt action-btn primary">Book an Appointment</button>
 `;
