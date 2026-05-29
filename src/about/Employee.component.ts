@@ -8,19 +8,20 @@ export const EmployeeSection: YetiComponent<{
   bio: string;
   imageSrc: string;
   imageAlt: string;
-}> = ({ name, pronouns, title, bio, imageSrc, imageAlt }) => html`<section class="employee-section" itemscope itemtype="http://schema.org/Person">
-  <div class="text-column">
-    <h2>${name}</h2>
-    <h3>${pronouns}, ${title}</h3>
-    <p>${bio}</p>
-  </div>
-  <aside>
-    <${ResponsiveImage} src=${imageSrc} alt=${imageAlt} />
-  </aside>
-</section>`;
+}> = ({ name, pronouns, title, bio, imageSrc, imageAlt }) =>
+  html`<section class="employee-section">
+    <div class="text-column">
+      <h2>${name}</h2>
+      <h3>${pronouns}, ${title}</h3>
+      <p>${bio}</p>
+    </div>
+    <aside>
+      <${ResponsiveImage} src=${imageSrc} alt=${imageAlt} />
+    </aside>
+  </section>`;
 
 EmployeeSection.css = css`
-${css.bundle("about")}
+  ${css.bundle("about")}
   .employee-section {
     display: flex;
     column-gap: var(--space-m-2xl);
@@ -59,5 +60,4 @@ ${css.bundle("about")}
       }
     }
   }
-
 `;
