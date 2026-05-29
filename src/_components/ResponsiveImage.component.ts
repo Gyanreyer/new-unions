@@ -90,7 +90,9 @@ export const ResponsiveImage: YetiComponent<{
           const outputSrc = join('/img', `${srcWithoutExtension}.${srcsetWidth}w.webp`);
           const outputFilePath = fileURLToPath(import.meta.resolve(join('../../_site', outputSrc)));
           await ensureDir(outputFilePath);
-          const outputInfo = await sharpImage.resize(srcsetWidth).webp().toFile(outputFilePath);
+          const outputInfo = await sharpImage.resize(srcsetWidth).webp({
+            quality: 80,
+          }).toFile(outputFilePath);
           return {
             width: outputInfo.width,
             height: outputInfo.height,

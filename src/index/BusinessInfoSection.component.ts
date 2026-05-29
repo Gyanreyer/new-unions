@@ -15,28 +15,67 @@ export const BusinessInfoSection = () => html`
           itemscope
           itemtype="http://schema.org/PostalAddress"
         >
-          <span itemprop="streetAddress">359 Livernois Ave</span> <span itemprop="extendedAddress">Suite 101</span><br />
-          <span itemprop="addressLocality">Ferndale</span>, <span itemprop="addressRegion">MI</span> <span itemprop="postalCode">48220</span>
+          <a
+            href="https://maps.app.goo.gl/H9M8DWVo8fJhf1gF9"
+            class="underlined-link underline-target"
+          >
+            <span itemprop="streetAddress">359 Livernois Ave</span>&#32;
+            <span itemprop="extendedAddress">Suite 101</span><br />
+            <span itemprop="addressLocality">Ferndale</span>,
+            <span itemprop="addressRegion">MI</span>&nbsp;<span
+              itemprop="postalCode"
+              >48220</span
+            >
+          </a>
         </p>
         <p itemprop="telephone">(313) 314-3517</p>
         <p itemprop="email">
-          <a href="mailto:hello@newunionsbridal.com" class="underlined-link underline-target">
+          <a
+            href="mailto:hello@newunionsbridal.com"
+            class="underlined-link underline-target"
+          >
             hello@newunionsbridal.com
           </a>
         </p>
       </address>
-      <p>Hours to be announced</p>
-      <!--
-      <meta itemprop="openingHours" content="Mo-We 12:00-17:00" />
-      <p>12-5 Wed-Friday</p>
-      <meta itemprop="openingHours" content="Sa-Su 11:00-18:00" />
-      <p>11-6 Sat-Sun</p>
-      -->
+      <section
+        itemprop="openingHoursSpecification"
+        itemscope
+        itemtype="http://schema.org/OpeningHoursSpecification"
+        id="hours"
+      >
+        <h3>Hours</h3>
+        <p>
+          <link
+            itemprop="dayOfWeek"
+            href="https://schema.org/Thursday"
+          />Thursday <time itemprop="opens" content="12:00:00">12PM</time> -
+          <time itemprop="closes" content="16:30:00">4:30PM</time>
+        </p>
+        <p>
+          <link itemprop="dayOfWeek" href="https://schema.org/Friday" />Friday
+          <time itemprop="opens" content="11:00:00">11AM</time> -
+          <time itemprop="closes" content="18:00:00">6PM</time>
+        </p>
+        <p>
+          <link
+            itemprop="dayOfWeek"
+            href="https://schema.org/Saturday"
+          />Saturday <time itemprop="opens" content="11:00:00">11AM</time> -
+          <time itemprop="closes" content="18:00:00">6PM</time>
+        </p>
+        <p>
+          <link itemprop="dayOfWeek" href="https://schema.org/Sunday" />Sunday
+          <time itemprop="opens" content="12:00:00">12PM</time> -
+          <time itemprop="closes" content="16:30:00">4:30PM</time>
+        </p>
+        <p>Closed Monday, Tuesday, Wednesday</p>
+      </section>
       <${BookAppointmentButton} />
     </div>
-    <${ResponsiveImage} 
-      src="/img/headshots/jess_1.jpg" 
-      alt="Jess, the owner of New Unions, posing in front of a rack of wedding attire and a mirror." 
+    <${ResponsiveImage}
+      src="/img/store/store-exterior.jpg"
+      alt="An exterior shot of the New Unions Bridal store from the street. The store has a pride flag and mannequins wearing wedding attire displayed in the windows, and a variety of potted plants outside."
     />
   </section>
 `;
@@ -75,12 +114,24 @@ BusinessInfoSection.css = css`
       margin-block-start: var(--space-m);
     }
 
+    #hours {
+      h3 {
+        margin-block-end: var(--space-2xs);
+      }
+
+      p {
+        font-size: var(--font-size-s);
+        margin-block-end: var(--space-xs);
+      }
+    }
+
     img {
       flex: 1;
       width: 100%;
       height: auto;
       min-width: 240px;
       max-width: 520px;
+      margin-block: auto;
       background-color: #e3e3e3;
       border-radius: 24px;
       aspect-ratio: 96 / 100;
