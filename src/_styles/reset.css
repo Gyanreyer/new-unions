@@ -43,6 +43,15 @@
   a {
     color: var(--white);
     text-decoration: none;
+    transition: color 0.1s;
+
+    &:hover {
+      color: color-mix(in srgb, currentColor, transparent 15%);
+    }
+  }
+
+  strong {
+    font-weight: 700;
   }
 
   body {

@@ -8,9 +8,14 @@
 
   .underlined-text {
     text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: var(--space-2xs);
+    line-height: 1.25;
+  }
+
+  h1.underlined-text {
     text-decoration-thickness: 3px;
     text-underline-offset: var(--space-xs);
-    line-height: 1.25;
   }
 
   @keyframes scale-x-grow {

@@ -1,21 +1,23 @@
-import { css, html, type YetiPageComponent } from 'yeti-js';
-import { PageBorderLayout } from '../_layout/PageBorderLayout.component.ts';
-import { EmployeeSection } from './Employee.component.ts';
-import { ResponsiveImage } from '../_components/ResponsiveImage.component.ts';
-import { BackLink } from '../_components/BackLink.component.ts';
+import { css, html, type YetiPageComponent } from "yeti-js";
+import { PageBorderLayout } from "../_layout/PageBorderLayout.component.ts";
+import { EmployeeSection } from "./Employee.component.ts";
+import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
+import { BackLink } from "../_components/BackLink.component.ts";
 
 const AboutPage: YetiPageComponent = () => html`<${PageBorderLayout}>
   <header>
     <nav>
       <${BackLink} href="/" label="Home" />
     </nav>
-    <${ResponsiveImage}
-      src="/img/logo.png"
-      alt="New Unions Bridal"
-      fetchpriority="high"
-      loading="eager"
-      sizes="(width >= 575px) 420px, 80vw"
-    />
+    <a href="/">
+      <${ResponsiveImage}
+        src="/img/logo.png"
+        alt="New Unions Bridal"
+        fetchpriority="high"
+        loading="eager"
+        sizes="(width >= 575px) 420px, 80vw"
+      />
+    </a>
   </header>
   <main>
     <h1 class="section-heading underlined-text">Here’s a little about us.</h1>
@@ -25,9 +27,10 @@ const AboutPage: YetiPageComponent = () => html`<${PageBorderLayout}>
       title="Owner"
       bio=${html`
         Jess wanted to create a space for people like themselves–queer,
-        budget-conscious, and out of the binary of traditional bridal wear.
-        With a love of small businesses, Jess strives to create a space where
-        everyone can find a unique wedding outfit while being able to shop in-store and support local.
+        budget-conscious, and out of the binary of traditional bridal wear. With
+        a love of small businesses, Jess strives to create a space where
+        everyone can find a unique wedding outfit while being able to shop
+        in-store and support local.
       `}
       imageSrc="/img/headshots/jess_3.jpg"
       imageAlt="Jess, posing in front of wedding attire on a rack behind them."
@@ -37,11 +40,10 @@ const AboutPage: YetiPageComponent = () => html`<${PageBorderLayout}>
       pronouns="He/They"
       title="Human Resources"
       bio=${html`
-        Harrison is the leader of our human resources department.
-        Between walks and naps, Harrison stands for social justice
-        and human rights for all. He believes community is powerful,
-        and that shopping local is the best way to ethically consume
-        under late stage capitalism.
+        Harrison is the leader of our human resources department. Between walks
+        and naps, Harrison stands for social justice and human rights for all.
+        He believes community is powerful, and that shopping local is the best
+        way to ethically consume under late stage capitalism.
       `}
       imageSrc="/img/headshots/harrison_1.jpg"
       imageAlt="Harrison the dog, looking handsome in an orange bowtie laying on a fluffy blanket on his favorite chair."
@@ -51,33 +53,33 @@ const AboutPage: YetiPageComponent = () => html`<${PageBorderLayout}>
 </${PageBorderLayout}>`;
 
 AboutPage.css = css`
-${css.bundle("about")}
-header {
-  nav {
-    margin-block-start: var(--space-m-l);
+  ${css.bundle("about")}
+  header {
+    nav {
+      margin-block-start: var(--space-m-l);
+    }
+
+    img {
+      display: block;
+      margin-inline: auto;
+      margin-block-start: var(--space-l-xl);
+      width: min(420px, 100%);
+      height: auto;
+      z-index: 100;
+      view-transition-name: header-logo;
+    }
   }
 
-  img {
-    display: block;
+  h1 {
+    margin-block: var(--space-xl-2xl) var(--space-l-2xl);
     margin-inline: auto;
-    margin-block-start: var(--space-l-xl);
-    width: min(420px, 100%);
-    height: auto;
-    z-index: 100;
-    view-transition-name: header-logo;
   }
-}
 
-h1 {
-  margin-block: var(--space-xl-2xl) var(--space-l-2xl);
-  margin-inline: auto;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export default AboutPage;

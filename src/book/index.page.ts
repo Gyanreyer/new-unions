@@ -2,39 +2,72 @@ import { css, html, type YetiPageComponent } from "yeti-js";
 import { PageBorderLayout } from "../_layout/PageBorderLayout.component.ts";
 import { BackLink } from "../_components/BackLink.component.ts";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
-// Appt scheduling link: https://calendar.proton.me/u/0/bookings#94R1UdAukt3JdhyTwciYyyJRLxn81skWQARs_E2CPb8=
 
-const FAQPage: YetiPageComponent = () => html`<${PageBorderLayout}>
+const BookingPage: YetiPageComponent = () => html`<${PageBorderLayout}>
   <header>
     <nav>
       <${BackLink} href="/" label="Home" />
     </nav>
-    <${ResponsiveImage}
-      src="/img/logo.png"
-      alt="New Unions Bridal"
-      fetchpriority="high"
-      loading="eager"
-      sizes="(width >= 575px) 420px, 80vw"
-    />
+    <a href="/">
+      <${ResponsiveImage}
+        src="/img/logo.png"
+        alt="New Unions Bridal"
+        fetchpriority="high"
+        loading="eager"
+        sizes="(width >= 575px) 420px, 80vw"
+      />
+    </a>
   </header>
   <main>
-    <h1 class="section-heading underlined-text">Book an Appointment</h1>
-    <section>
-        <p>
-            <a class="book-appt action-btn primary"
-                href="https://calendar.proton.me/u/0/bookings#8GyKjMe-61U4jif7tMND9n4jhEokR1oLbbqT2c2REbQ=">
-                Book an Appointment
-            </a>
-        </p>
-    </section>
+    <h1 class="section-heading underlined-text">Book Your Appointment</h1>
+    <ul>
+      <li>
+        <section>
+          <h2>Step 1</h2>
+          <p>
+            <a href="/faq" class="underlined-text">Review the FAQ</a> to make sure you understand the rules and expectations for your appointment.
+          </p>
+        </section>
+      </li>
+      <li>
+        <section>
+          <h2>Step 2</h2>
+          <p>
+            Pay your $50 deposit. This deposit will be credited toward your wedding outfit.
+          </p>
+          <p>
+            <strong>(Any appointments made through <time datetime="2026-05-30">May 30</time> will not require this deposit)</strong>
+          </p>
+        </section>
+      </li>
+      <li>
+        <section>
+          <h2>Step 3</h2>
+          <p>
+            <a href="https://calendar.proton.me/u/0/bookings#8GyKjMe-61U4jif7tMND9n4jhEokR1oLbbqT2c2REbQ=" class="underlined-text">Book a time slot in the calendar.</a>
+          </p>
+          <p>
+            Appointments are 90 minutes.
+          </p>
+        </section>
+      </li>
+      <li>
+        <section>
+          <h2>Step 4</h2>
+          <p>
+            Celebrate your love with us!
+          </p>
+        </section>
+      </li>
+    </ul>
   </main>
   <style>${css.inline("faq")}</style>
 </${PageBorderLayout}>`;
 
-export default FAQPage;
+export default BookingPage;
 
-FAQPage.css = css`
-  ${css.bundle("faq")}
+BookingPage.css = css`
+  ${css.bundle("book")}
   header {
     nav {
       margin-block-start: var(--space-m-l);
@@ -60,18 +93,26 @@ FAQPage.css = css`
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+    max-inline-size: 1200px;
+    margin-inline: auto;
 
-  section {
-    max-width: 1200px;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
 
-    h2 {
-      font-size: var(--font-size-2xl);
-      font-weight: 400;
-    }
+      h2 {
+        font-size: var(--font-size-2xl);
+        font-weight: 400;
+      }
 
-    p {
-      margin-block: var(--space-xs) var(--space-l);
+      p {
+        margin-block: var(--space-xs);
+      }
+
+      li {
+        margin-block-end: var(--space-l);
+      }
     }
   }
 `;
