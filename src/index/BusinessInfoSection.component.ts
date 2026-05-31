@@ -110,8 +110,7 @@ BusinessInfoSection.css = css`
     }
 
     .action-btn {
-      display: block;
-      margin-block-start: var(--space-m);
+      margin-block-start: var(--space-xs);
     }
 
     #hours {
