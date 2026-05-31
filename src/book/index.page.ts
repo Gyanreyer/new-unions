@@ -36,7 +36,7 @@ const BookingPage: YetiPageComponent = () => html`<${PageBorderLayout}>
             Pay your $50 deposit. This deposit will be credited toward your wedding outfit.
           </p>
           <p>
-            <strong>(Any appointments made through <time datetime="2026-05-30">May 30</time> will not require this deposit)</strong>
+            <strong>(Any appointments made through <time datetime="2026-05-31">May 31</time> will not require this deposit)</strong>
           </p>
         </section>
       </li>
