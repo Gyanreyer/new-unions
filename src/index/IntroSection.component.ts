@@ -41,7 +41,6 @@ export const IntroSection = () =>
   </section>`;
 
 IntroSection.css = css`
-  ${css.bundle("home")}
   #intro {
     display: grid;
     grid-template-columns: 1.15fr 1fr;

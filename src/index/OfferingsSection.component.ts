@@ -37,7 +37,6 @@ export const OfferingsSection = () => html`
 `;
 
 OfferingsSection.css = css`
-  ${css.bundle("home")}
   #offerings {
     display: flex;
     flex-direction: column;

@@ -21,7 +21,6 @@ export const EmployeeSection: YetiComponent<{
   </section>`;
 
 EmployeeSection.css = css`
-  ${css.bundle("about")}
   .employee-section {
     display: flex;
     column-gap: var(--space-m-2xl);

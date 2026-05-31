@@ -37,7 +37,6 @@ export const LucySection = () => html`
 `;
 
 LucySection.css = css`
-  ${css.bundle("home")}
   #lucy-cant-dance {
     display: flex;
     flex-direction: column;

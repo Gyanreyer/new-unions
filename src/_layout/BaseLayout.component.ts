@@ -1,4 +1,4 @@
-import { css, html, js, type YetiComponent } from "yeti-js";
+import { css, html, type YetiComponent } from "yeti-js";
 
 export const BaseLayout: YetiComponent<{
   title: string;
@@ -77,6 +77,9 @@ export const BaseLayout: YetiComponent<{
           onload="this.onload=null;this.rel='stylesheet'"
         />
         <noscript><link rel="stylesheet" href=${css.src("*")} /></noscript>
+        <style>
+          ${css.inline("@page")}
+        </style>
       </body>
     </html>`;
 };

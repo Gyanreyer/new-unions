@@ -61,13 +61,11 @@ const BookingPage: YetiPageComponent = () => html`<${PageBorderLayout}>
       </li>
     </ul>
   </main>
-  <style>${css.inline("faq")}</style>
 </${PageBorderLayout}>`;
 
 export default BookingPage;
 
 BookingPage.css = css`
-  ${css.bundle("book")}
   header {
     nav {
       margin-block-start: var(--space-m-l);
