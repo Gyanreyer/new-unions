@@ -67,9 +67,6 @@ export const BaseLayout: YetiComponent<{
         <style>
           ${css.inline("critical")}
         </style>
-        <script type="module">
-          ${js.inline("critical")};
-        </script>
       </head>
       <body>
         ${children}
@@ -80,7 +77,6 @@ export const BaseLayout: YetiComponent<{
           onload="this.onload=null;this.rel='stylesheet'"
         />
         <noscript><link rel="stylesheet" href=${css.src("*")} /></noscript>
-        <script type="module" src=${js.src("*")}></script>
       </body>
     </html>`;
 };
