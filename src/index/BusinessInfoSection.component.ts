@@ -81,7 +81,6 @@ export const BusinessInfoSection = () => html`
 `;
 
 BusinessInfoSection.css = css`
-  ${css.bundle("home")}
   address {
     font-style: normal;
   }

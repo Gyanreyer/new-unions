@@ -95,13 +95,11 @@ const FAQPage: YetiPageComponent = () => html`<${PageBorderLayout}>
       </section>
     </div>
   </main>
-  <style>${css.inline("faq")}</style>
 </${PageBorderLayout}>`;
 
 export default FAQPage;
 
 FAQPage.css = css`
-  ${css.bundle("faq")}
   header {
     nav {
       margin-block-start: var(--space-m-l);

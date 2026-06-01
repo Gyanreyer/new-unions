@@ -1,4 +1,4 @@
-import { css, html, js, type YetiComponent } from "yeti-js";
+import { css, html, type YetiComponent } from "yeti-js";
 
 export const BaseLayout: YetiComponent<{
   title: string;
@@ -67,9 +67,6 @@ export const BaseLayout: YetiComponent<{
         <style>
           ${css.inline("critical")}
         </style>
-        <script type="module">
-          ${js.inline("critical")};
-        </script>
       </head>
       <body>
         ${children}
@@ -80,7 +77,9 @@ export const BaseLayout: YetiComponent<{
           onload="this.onload=null;this.rel='stylesheet'"
         />
         <noscript><link rel="stylesheet" href=${css.src("*")} /></noscript>
-        <script type="module" src=${js.src("*")}></script>
+        <style>
+          ${css.inline("@page")}
+        </style>
       </body>
     </html>`;
 };

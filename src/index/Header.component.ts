@@ -1,22 +1,22 @@
 import { css, html } from "yeti-js";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 
-export const Header = () => html`<header>
-  <h1>
-    <meta itemprop="name" content="New Unions Bridal" />
-    <${ResponsiveImage}
-      src="/img/logo.png"
-      alt="New Unions Bridal"
-      fetchpriority="high"
-      itemprop="logo"
-      loading="eager"
-      sizes="(width >= 850px) 640px, 80vw"
-    />
-  </h1>
-</header>`;
+export const Header = () =>
+  html`<header>
+    <h1>
+      <meta itemprop="name" content="New Unions Bridal" />
+      <${ResponsiveImage}
+        src="/img/logo.png"
+        alt="New Unions Bridal"
+        fetchpriority="high"
+        itemprop="logo"
+        loading="eager"
+        sizes="(width >= 850px) 640px, 80vw"
+      />
+    </h1>
+  </header>`;
 
 Header.css = css`
-  ${css.bundle("home")}
   @keyframes header-shrink {
     from {
       scale: 1;

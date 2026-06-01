@@ -19,11 +19,9 @@ const IndexPage: YetiPageComponent =
     <${LucySection} />
     <${BusinessInfoSection} />
   </main>
-  <style>${css.inline("home")}</style>
 </${PageBorderLayout}>`;
 
 IndexPage.css = css`
-  ${css.bundle("home")}
   :root {
     background-image: linear-gradient(
       to bottom,

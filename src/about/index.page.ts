@@ -49,11 +49,9 @@ const AboutPage: YetiPageComponent = () => html`<${PageBorderLayout}>
       imageAlt="Harrison the dog, looking handsome in an orange bowtie laying on a fluffy blanket on his favorite chair."
     />
   </main>
-  <style>${css.inline("about")}</style>
 </${PageBorderLayout}>`;
 
 AboutPage.css = css`
-  ${css.bundle("about")}
   header {
     nav {
       margin-block-start: var(--space-m-l);

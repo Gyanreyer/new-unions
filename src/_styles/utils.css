@@ -10,7 +10,7 @@
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: var(--space-2xs);
-    line-height: 1.25;
+    line-height: calc(1em + var(--space-2xs) + 1px);
   }
 
   h1.underlined-text {
