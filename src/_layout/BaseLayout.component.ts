@@ -1,4 +1,4 @@
-import { css, html, type YetiComponent } from "yeti-js";
+import { css, html, js, type YetiComponent } from "yeti-js";
 
 export const BaseLayout: YetiComponent<{
   title: string;
@@ -8,7 +8,7 @@ export const BaseLayout: YetiComponent<{
   description = "New Unions is a wedding attire experience dedicated to couples that fit outside of the binary.",
   children,
 }) => {
-  return html`<!DOCTYPE html>
+    return html`<!DOCTYPE html>
     <html lang="en">
       <head>
         <meta charset="UTF-8" />
@@ -80,9 +80,12 @@ export const BaseLayout: YetiComponent<{
         <style>
           ${css.inline("@page")}
         </style>
+        <script>
+          ${js.inline("*")}
+        </script>
       </body>
     </html>`;
-};
+  };
 
 // Basic reset styles shared across all pages
 BaseLayout.css = css`

@@ -1,4 +1,4 @@
-import { css, html } from "yeti-js";
+import { css, html, js } from "yeti-js";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 import { BookAppointmentButton } from "../_components/BookAppointmentButton.component.ts";
 
@@ -39,6 +39,18 @@ export const IntroSection = () =>
       />
     </aside>
   </section>`;
+
+IntroSection.js = js`
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    // If the user prefers reduced motion, disable autoplay on videos and show controls instead
+    const autoplayVideos = document.querySelectorAll("video[autoplay]");
+    for (const video of autoplayVideos) {
+      video.pause();
+      video.removeAttribute("autoplay");
+      video.setAttribute("controls", "true");
+    }
+  }
+`;
 
 IntroSection.css = css`
   #intro {
