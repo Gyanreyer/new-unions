@@ -146,12 +146,33 @@ OfferingsPage.css = css`
     &[data-orientation="portrait"] {
       grid-template-columns: repeat(4, 1fr);
 
+      & > :nth-child(2) img {
+        --i: 1;
+      }
+      & > :nth-child(3) img {
+        --i: 2;
+      }
+      & > :nth-child(4) img {
+        --i: 3;
+      }
+
       @media screen and (width <= 1200px) {
         grid-template-columns: repeat(2, 1fr);
+
+        & > :nth-child(3) img {
+          --i: 0;
+        }
+        & > :nth-child(4) img {
+          --i: 1;
+        }
       }
 
       @media screen and (width <= 750px) {
         grid-template-columns: 1fr;
+
+        & > :nth-child(n) img {
+          --i: 0;
+        }
       }
 
       picture {
@@ -162,8 +183,19 @@ OfferingsPage.css = css`
     &[data-orientation="landscape"] {
       grid-template-columns: repeat(3, 1fr);
 
+      & > :nth-child(2) img {
+        --i: 1;
+      }
+      & > :nth-child(3) img {
+        --i: 2;
+      }
+
       @media screen and (width <= 1200px) {
         grid-template-columns: 1fr;
+
+        & > :nth-child(n) img {
+          --i: 0;
+        }
       }
 
       picture {
@@ -175,7 +207,7 @@ OfferingsPage.css = css`
   @keyframes slideFadeOfferingsImg {
     from {
       opacity: 0;
-      translate: 0 var(--space-m);
+      translate: 0 var(--space-s-l);
     }
 
     to {
@@ -204,12 +236,15 @@ OfferingsPage.css = css`
       object-fit: cover;
       border-radius: 24px;
 
+      --i: 0;
+
       @media (prefers-reduced-motion: no-preference) {
         @supports (animation-timeline: view()) {
           animation-name: slideFadeOfferingsImg;
           animation-duration: 0.5s;
           animation-timeline: view();
-          animation-range: entry;
+          animation-range: entry calc(var(--i) * 20%) entry calc(70% + var(--i) * 20%);
+          animation-fill-mode: both;
         }
       }
     }
@@ -255,10 +290,14 @@ OfferingsPage.css = css`
     z-index: 0;
     overflow: clip;
 
-    animation-name: comingSoonBadgeAppear;
-    animation-timeline: view();
-    animation-range: cover 0% cover 15%;
-    animation-fill-mode: both;
+    @media (prefers-reduced-motion: no-preference) {
+      @supports (animation-timeline: view()) {
+        animation-name: comingSoonBadgeAppear;
+        animation-timeline: view();
+        animation-range: cover 0% cover 15%;
+        animation-fill-mode: both;
+      }
+    }
 
 
     &:before {
