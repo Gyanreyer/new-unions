@@ -54,20 +54,26 @@ ScrollingImageCarousel.css = css`
       /* Center on page by default; this will be enhanced to a fancy scrolling effect if supported */
       transform: translateX(-50%);
       left: 50%;
-      @supports (animation-timeline: view()) {
-        /* Overflow size is the difference between the <main> element container width and the total width of the carousel;
-          if we shift the images by this amount off of -50%, one of the edges will be flush with the container */
-        --overflow-size: calc(((100% - 100cqw) / 2));
-        animation-timeline: view();
-        animation-timing-function: linear;
-        animation-range: cover;
+      @media (prefers-reduced-motion: no-preference) {
+        @supports (animation-timeline: view()) {
+          /* Overflow size is the difference between the <main> element container width and the total width of the carousel;
+            if we shift the images by this amount off of -50%, one of the edges will be flush with the container */
+          --overflow-size: calc(((100% - 100cqw) / 2));
+          animation-timeline: view();
+          animation-timing-function: linear;
+          animation-range: cover;
 
-        animation-name: carousel-scroll-ltr;
+          animation-name: carousel-scroll-ltr;
+        }
       }
     }
 
     &[data-dir="right"] .images {
-      animation-name: carousel-scroll-rtl;
+      @media (prefers-reduced-motion: no-preference) {
+        @supports (animation-timeline: view()) {
+          animation-name: carousel-scroll-rtl;
+        }
+      }
     }
 
     img {

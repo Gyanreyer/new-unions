@@ -34,8 +34,17 @@ Header.css = css`
 
     /* On desktop, shift the header down toward the center of the viewport; we'll do a fancy
        scroll-driven animation where it shrinks and the main page contents fade in */
-    @media screen and (width >= 1200px) {
+    @media screen and (width >= 1200px) and (prefers-reduced-motion: no-preference) {
       margin-block: 30vh 25vh;
+
+      @supports (animation-timeline: view()) {
+        h1 img {
+          animation-name: header-shrink;
+          animation-timeline: view();
+          animation-fill-mode: both;
+          animation-range: contain 55% contain 85%;
+        }
+      }
     }
 
     h1 {
@@ -47,15 +56,6 @@ Header.css = css`
         width: min(640px, 100%);
         height: auto;
         z-index: 100;
-
-        @media screen and (width >= 1200px) {
-          @supports (animation-timeline: view()) {
-            animation-name: header-shrink;
-            animation-timeline: view();
-            animation-fill-mode: both;
-            animation-range: contain 55% contain 85%;
-          }
-        }
       }
     }
   }

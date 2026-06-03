@@ -20,7 +20,7 @@ const BookingPage: YetiPageComponent = () => html`<${PageBorderLayout}>
   </header>
   <main>
     <h1 class="section-heading underlined-text">Book Your Appointment</h1>
-    <ul>
+    <ol>
       <li>
         <section>
           <h2>Step 1</h2>
@@ -59,7 +59,7 @@ const BookingPage: YetiPageComponent = () => html`<${PageBorderLayout}>
           </p>
         </section>
       </li>
-    </ul>
+    </ol>
   </main>
 </${PageBorderLayout}>`;
 
@@ -94,11 +94,7 @@ BookingPage.css = css`
     max-inline-size: 1200px;
     margin-inline: auto;
 
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-
+    ol {
       h2 {
         font-size: var(--font-size-2xl);
         font-weight: 400;
