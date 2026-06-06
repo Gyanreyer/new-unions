@@ -7,9 +7,10 @@ export const BaseLayout: YetiComponent<{
   title = "New Unions Bridal",
   description = "New Unions is a wedding attire experience dedicated to couples that fit outside of the binary.",
   children,
+  ...htmlSpreadAttrs
 }) => {
     return html`<!DOCTYPE html>
-    <html lang="en">
+    <html lang="en" ...${htmlSpreadAttrs}>
       <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

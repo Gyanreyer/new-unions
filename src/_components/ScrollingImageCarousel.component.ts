@@ -3,8 +3,8 @@ import { css, html, type YetiComponent } from "yeti-js";
 export const ScrollingImageCarousel: YetiComponent<{
   direction?: "left" | "right";
 }> = ({ children, direction = "left", ...spreadAttrs }) => html`
-  <div class="carousel-container">
-    <div class="scrolling-image-carousel" data-dir=${direction} ...${spreadAttrs}>
+  <div class="carousel-container" ...${spreadAttrs}>
+    <div class="scrolling-image-carousel" data-dir=${direction} >
       <div class="images">
         ${children}
       </div>

@@ -3,7 +3,7 @@ import { PageBorderLayout } from "../_layout/PageBorderLayout.component.ts";
 import { BackLink } from "../_components/BackLink.component.ts";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 
-const BookingPage: YetiPageComponent = () => html`<${PageBorderLayout}>
+const BookingPage: YetiPageComponent = () => html`<${PageBorderLayout} title="Book an Appointment | New Unions Bridal">
   <header>
     <nav>
       <${BackLink} href="/" label="Home" />
