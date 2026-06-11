@@ -29,22 +29,22 @@ export const OfferingsSection = () => html`
         alt=""
       />
     </${ScrollingImageCarousel}>
-    <div class="offering-list" role="list" aria-label="Offerings">
-      <span role="listitem">Bridal Gowns</span><span role="separator">✦</span>
-      <span role="listitem">Short Wedding Dresses</span><span role="separator">✦</span>
-      <span role="listitem">Colorful Wedding Dresses</span><span role="separator">✦</span>
-      <span role="listitem">Bridal Jumpsuits</span><span role="separator">✦</span>
-      <span role="listitem">Bridal Separates</span><span role="separator">✦</span>
-      <span role="listitem">Vintage Wedding Dresses</span><span role="separator">✦</span>
-      <span role="listitem">Unique Wedding Outfits</span><span role="separator">✦</span>
-      <span role="listitem">Traditional &amp; Colorful Veils</span><span role="separator">✦</span>
-      <span role="listitem">Accessories</span><span role="separator">✦</span>
-      <span role="listitem">Bridal Capes &amp; Jackets</span><span role="separator">✦</span>
-      <span role="listitem">Headpieces</span><span role="separator">✦</span>
-      <span role="listitem">Jewelry</span><span role="separator">✦</span>
-      <span role="listitem">Purses</span><span role="separator">✦</span>
-      <span role="listitem">Wedding Gifts</span>
-    </div>
+    <ul class="offering-list" role="list" aria-label="Offerings">
+      <li>Bridal Gowns</li>
+      <li>Short Wedding Dresses</li>
+      <li>Colorful Wedding Dresses</li>
+      <li>Bridal Jumpsuits</li>
+      <li>Bridal Separates</li>
+      <li>Vintage Wedding Dresses</li>
+      <li>Unique Wedding Outfits</li>
+      <li>Traditional &amp; Colorful Veils</li>
+      <li>Accessories</li>
+      <li>Bridal Capes &amp; Jackets</li>
+      <li>Headpieces</li>
+      <li>Jewelry</li>
+      <li>Purses</li>
+      <li>Wedding Gifts</li>
+    </ul>
     <a href="/offerings" class="action-btn primary">View more product!</a>
   </section>
 `;
@@ -67,19 +67,19 @@ OfferingsSection.css = css`
     .offering-list {
       font-weight: 500;
       font-style: italic;
-      font-size: var(--font-size-2xs)
+      font-size: var(--font-size-xs);
 
-      text-wrap: balance;
+      li {
+        display: inline;
+      }
 
-      span {
-        display: inline-block;
-
-        &:not(:first-child) {
-          margin-inline-start: var(--space-2xs);
-        }
-        &:not(:last-child) {
-          margin-inline-end: var(--space-2xs);
-        }
+      li:not(:last-child)::after {
+        /* Decorative separator between items: star + wbr char (word break opportunity)
+           to ensure we allow a break between the star and the first word of the next list item */
+        content: "✦\\200b" / "";
+        font-weight: bold;
+        font-size: var(--font-size-s);
+        margin-inline: var(--space-2xs);
       }
     }
   
