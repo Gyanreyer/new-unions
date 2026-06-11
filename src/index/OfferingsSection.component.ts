@@ -29,10 +29,23 @@ export const OfferingsSection = () => html`
         alt=""
       />
     </${ScrollingImageCarousel}>
-    <p class="subtext">
-      Long &amp; Short Dresses&nbsp;|&nbsp;Bridal Separates&nbsp;|&nbsp;
-      Unique Wedding Outfits&nbsp;|&nbsp;Veils&nbsp;|&nbsp;Accessories
-    </p>
+    <ul class="offering-list" role="list" aria-label="Offerings">
+      <li>Bridal Gowns</li>
+      <li>Short Wedding Dresses</li>
+      <li>Colorful Wedding Dresses</li>
+      <li>Bridal Jumpsuits</li>
+      <li>Bridal Separates</li>
+      <li>Vintage Wedding Dresses</li>
+      <li>Unique Wedding Outfits</li>
+      <li>Traditional &amp; Colorful Veils</li>
+      <li>Accessories</li>
+      <li>Bridal Capes &amp; Jackets</li>
+      <li>Headpieces</li>
+      <li>Jewelry</li>
+      <li>Purses</li>
+      <li>Wedding Gifts</li>
+    </ul>
+    <a href="/offerings" class="action-btn primary">View more product!</a>
   </section>
 `;
 
@@ -41,12 +54,37 @@ OfferingsSection.css = css`
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: var(--space-m-l);
     text-align: center;
 
-    .subtext {
+    .section-heading {
+      margin-block-end: var(--space-m-l);
+    }
+
+    .carousel-container {
+      margin-block-end: var(--space-l);
+    }
+
+    .offering-list {
       font-weight: 500;
-      max-width: 600px;
+      font-style: italic;
+      font-size: var(--font-size-xs);
+
+      li {
+        display: inline;
+      }
+
+      li:not(:last-child)::after {
+        /* Decorative separator between items: star + wbr char (word break opportunity)
+           to ensure we allow a break between the star and the first word of the next list item */
+        content: "✦\\200b" / "";
+        font-weight: bold;
+        font-size: var(--font-size-s);
+        margin-inline: var(--space-2xs);
+      }
+    }
+  
+    .action-btn {
+      margin-block-start: var(--space-m);
     }
   }
 `;

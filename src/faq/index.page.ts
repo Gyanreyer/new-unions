@@ -3,7 +3,7 @@ import { PageBorderLayout } from "../_layout/PageBorderLayout.component.ts";
 import { BackLink } from "../_components/BackLink.component.ts";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 
-const FAQPage: YetiPageComponent = () => html`<${PageBorderLayout}>
+const FAQPage: YetiPageComponent = () => html`<${PageBorderLayout} title="FAQ | New Unions Bridal">
   <header>
     <nav>
       <${BackLink} href="/" label="Home" />

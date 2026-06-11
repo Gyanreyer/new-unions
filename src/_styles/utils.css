@@ -63,41 +63,48 @@
     border-radius: 24px;
     cursor: pointer;
 
+    --hover-scale-timing: linear(
+      0,
+      1.114 8.5%,
+      1.37 12.9%,
+      1.315 16.2%,
+      0.941 24%,
+      0.869 27.8%,
+      0.882 30.7%,
+      1.012 38.3%,
+      1.046 42.7%,
+      0.984,
+      1.006 72.2%,
+      1
+    );
+    transition-property: background-color, color, scale;
+    transition-duration: 0.2s, 0.2s, 0.75s;
+    transition-timing-function: ease, ease, var(--hover-scale-timing);
+
     &.primary {
       background-color: var(--white);
       color: var(--blue);
 
       &:is(:hover, :focus-visible) {
-        background-color: color-mix(in srgb, var(--white), black 10%);
+        background-color: color-mix(in srgb, var(--white), transparent 5%);
 
         @media (prefers-reduced-motion: no-preference) {
           scale: 1.05;
         }
       }
-
-      transition-property: background-color, scale;
-      transition-duration: 0.2s, 0.75s;
-      transition-timing-function:
-        ease,
-        linear(
-          0,
-          1.114 8.5%,
-          1.37 12.9%,
-          1.315 16.2%,
-          0.941 24%,
-          0.869 27.8%,
-          0.882 30.7%,
-          1.012 38.3%,
-          1.046 42.7%,
-          0.984,
-          1.006 72.2%,
-          1
-        );
     }
     &.secondary {
       background: none;
       color: var(--white);
       border: 1px solid currentColor;
+
+      &:is(:hover, :focus-visible) {
+        color: color-mix(in srgb, var(--white), transparent 5%);
+
+        @media (prefers-reduced-motion: no-preference) {
+          scale: 1.05;
+        }
+      }
     }
   }
 

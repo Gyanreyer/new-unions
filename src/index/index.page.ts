@@ -54,7 +54,7 @@ IndexPage.css = css`
     flex-direction: column;
     row-gap: var(--space-2xl-3xl);
 
-    @media screen and (width >= 1200px) {
+    @media screen and (width >= 1200px) and (prefers-reduced-motion: no-preference) {
       @supports (animation-timeline: view()) {
         opacity: 0;
         animation-name: slide-fade-in;
