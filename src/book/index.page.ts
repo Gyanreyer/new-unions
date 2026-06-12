@@ -33,7 +33,7 @@ const BookingPage: YetiPageComponent = () => html`<${PageBorderLayout} title="Bo
         <section>
           <h2>Step 2</h2>
           <p>
-            <a href="https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=3efa21f5-5d0e-11f1-a8e1-12a0879a85b1" class="underlined-text">Pay your $50 deposit here.</a> This deposit will be credited toward your wedding outfit.
+            <a href="https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=73abbab1-6680-11f1-aa7a-12a0879a85b1" class="underlined-text">Pay your $50 deposit here.</a> This deposit will be credited toward your wedding outfit.
           </p>
           <p>
             <strong>If you do not pay this deposit before your appointment, your booking will not be honored.</strong>
