@@ -45,6 +45,8 @@ export const BusinessInfoSection = () => html`
         id="hours"
       >
         <h3>Hours</h3>
+        <p>Closed Monday</p>
+        <p>Tuesday and Wednesday Appointment Only</p>
         <p>
           <link
             itemprop="dayOfWeek"
@@ -69,7 +71,6 @@ export const BusinessInfoSection = () => html`
           <time itemprop="opens" content="12:00:00">12PM</time> -
           <time itemprop="closes" content="16:30:00">4:30PM</time>
         </p>
-        <p>Closed Monday, Tuesday, Wednesday</p>
       </section>
       <${BookAppointmentButton} />
     </div>
