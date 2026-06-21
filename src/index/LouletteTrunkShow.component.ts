@@ -4,7 +4,7 @@ import { ResponsiveImage } from '../_components/ResponsiveImage.component.ts';
 export const LouletteTrunkShow = () => html`
   <section id="loulette-trunk-show">
     <${ResponsiveImage}
-      src="/img/loulette/loulette-stage-cropped.jpg"
+      src="/img/loulette/loulette-stage-cropped-3.jpg"
       alt="Four people on a stage wearing white wedding outfits from Loulette."
       class="section-bg"
     />
@@ -54,11 +54,7 @@ LouletteTrunkShow.css = css`
         relative to the section's content; this is used to give space for
         the people in the background image to stand underneath the text content above them. */
     display: grid;
-    grid-template-rows: 1fr 1.5fr;
-
-    @media (width <= 1400px) {
-      grid-template-rows: 1fr 1.2fr;
-    }
+    grid-template-rows: 1fr 1.6fr;
   }
 
   .section-heading {
