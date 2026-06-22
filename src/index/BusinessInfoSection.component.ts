@@ -6,7 +6,7 @@ export const BusinessInfoSection = () => html`
   <section id="business-info">
     <div class="business-info-column">
       <h2 class="section-heading">
-        We can't wait<br />
+        We can&rsquo;t wait<br />
         <span class="scroll-reveal-underline">to meet you.</span>
       </h2>
       <address>
@@ -46,7 +46,7 @@ export const BusinessInfoSection = () => html`
       >
         <h3>Hours</h3>
         <p>Closed Monday</p>
-        <p>Tuesday and Wednesday Appointment Only</p>
+        <p>Tuesday &amp; Wednesday<br/>Appointment Only</p>
         <p>
           <link
             itemprop="dayOfWeek"
