@@ -77,7 +77,7 @@ OfferingsSection.css = css`
         /* Decorative separator between items: star + wbr char (word break opportunity)
            to ensure we allow a break between the star and the first word of the next list item */
         content: "✦\\200b" / "";
-        font-weight: bold;
+        font-weight: 700;
         font-size: var(--font-size-s);
         margin-inline: var(--space-2xs);
       }

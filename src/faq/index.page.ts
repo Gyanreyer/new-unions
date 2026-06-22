@@ -76,10 +76,14 @@ const FAQPage: YetiPageComponent = () => html`<${PageBorderLayout} title="FAQ | 
       <section id="order-timeline">
         <h2>How long do dresses/outfits take to come in?</h2>
         <p>
-          We sell styles directly off the rack and order new to fit your needs. Most of our collections take
-          10-12 weeks to come in, with the exception of our Lucy Can’t Dance line which is all made to order.
-          Lucy dresses take a minimum of 8 months to order (please also allow time for alterations after your
-          gown arrives before your event).
+          We sell styles directly off the rack and order new to fit your needs.
+          For most collections, if there is something in store you love
+          and it fits, we would love for you to take it home that day!
+          Please allow for at least 4 to 5 months before your wear date to order any gown.
+          Our Lucy Can&rsquo;t Dance line has the longest lead time of 8 to 10 months.
+          Please allow additional time before your wear date for alterations.
+          When in doubt, ask Jess about ordering any specific outfit in store!
+
         </p>
       </section>
       <section id="payment">

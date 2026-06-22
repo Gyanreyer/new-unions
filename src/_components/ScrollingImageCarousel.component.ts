@@ -50,7 +50,7 @@ ScrollingImageCarousel.css = css`
       position: absolute;
       height: 100%;
       display: flex;
-      column-gap: var(--space-l);
+      column-gap: var(--space-s-m);
       /* Center on page by default; this will be enhanced to a fancy scrolling effect if supported */
       transform: translateX(-50%);
       left: 50%;
