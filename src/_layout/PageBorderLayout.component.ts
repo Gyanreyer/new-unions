@@ -11,14 +11,6 @@ export const PageBorderLayout: YetiComponent = ({ children, ...spreadAttrs }) =>
   <div id="page-wrapper">
     ${children}
     <footer id="page-footer">
-      <nav>
-        <a href="/about" class="underlined-link underline-target">About Us</a>
-        <span class="spacer"></span>
-        <a href="/faq" class="underlined-link underline-target">FAQ</a>
-      </nav>
-      <p class="queer-owned">
-        Queer woman-owned local business in Southeast Michigan
-      </p>
       <div class="badges">
         <a rel='nofollow' target='_blank' href='https://www.theknot.com/marketplace/redirect-2105972?utm_source=vendor_website&utm_medium=banner&utm_term=c676db0a-ae1a-479b-81ef-dac3d37fe82b&utm_campaign=vendor_badge_assets'>
           <${ResponsiveImage} src="/img/badges/the-knot.png" alt="As seen on The Knot" />
@@ -30,6 +22,14 @@ export const PageBorderLayout: YetiComponent = ({ children, ...spreadAttrs }) =>
           <${ResponsiveImage} src="/img/badges/safe-space-alliance.png" alt="Safe Space Alliance" />
         </a>
       </div>
+      <nav>
+        <a href="/about" class="underlined-link underline-target">About Us</a>
+        <span class="spacer"></span>
+        <a href="/faq" class="underlined-link underline-target">FAQ</a>
+      </nav>
+      <p class="queer-owned">
+        Queer woman-owned local business in Southeast Michigan
+      </p>
       <div class="social-links">
         <div class="links-wrapper">
           <a rel='nofollow' target='_blank' href="https://www.facebook.com/profile.php?id=61588584009876" class="fb">
@@ -68,13 +68,13 @@ ${css.bundle("critical")}
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: var(--space-s);
   margin-block-start: var(--space-xl-2xl);
 
   nav {
     display: flex;
     align-items: center;
     column-gap: var(--space-s);
+    margin-block: var(--space-2xs) var(--space-s);
 
     .spacer {
       height: 0.8lh;
@@ -92,7 +92,7 @@ ${css.bundle("critical")}
   .badges {
     display: grid;
     align-items: center;
-    grid-template-columns: repeat(3, minmax(75px, 150px));
+    grid-template-columns: repeat(3, minmax(75px, 120px));
     column-gap: var(--space-m);
 
     img {
