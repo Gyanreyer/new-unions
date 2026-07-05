@@ -1,6 +1,7 @@
 import { css, html, type YetiComponent } from "yeti-js";
 import { BaseLayout } from "./BaseLayout.component.ts";
 import { Icon } from "../_components/Icon.component.ts";
+import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 
 /**
  * Layout to wrap page contents in the standard border layout + footer cutout
@@ -18,15 +19,26 @@ export const PageBorderLayout: YetiComponent = ({ children, ...spreadAttrs }) =>
       <p class="queer-owned">
         Queer woman-owned local business in Southeast Michigan
       </p>
+      <div class="badges">
+        <a rel='nofollow' target='_blank' href='https://www.theknot.com/marketplace/redirect-2105972?utm_source=vendor_website&utm_medium=banner&utm_term=c676db0a-ae1a-479b-81ef-dac3d37fe82b&utm_campaign=vendor_badge_assets'>
+          <${ResponsiveImage} src="/img/badges/the-knot.png" alt="As seen on The Knot" />
+        </a>
+        <a rel='nofollow' target='_blank' href='https://www.weddingwire.com'>
+          <${ResponsiveImage} src="/img/badges/wedding-wire.png" alt="Find me on WeddingWire" />
+        </a>
+        <a rel='nofollow' target='_blank' href='https://safespacealliance.com/'>
+          <${ResponsiveImage} src="/img/badges/safe-space-alliance.png" alt="Safe Space Alliance" />
+        </a>
+      </div>
       <div class="social-links">
         <div class="links-wrapper">
-          <a href="https://www.facebook.com/profile.php?id=61588584009876" class="fb">
+          <a rel='nofollow' target='_blank' href="https://www.facebook.com/profile.php?id=61588584009876" class="fb">
             <${Icon} name="facebook" label="Facebook Page" height="23" width="13" />
           </a>
-          <a href="https://www.instagram.com/newunionsbridal/" class="insta">
+          <a rel='nofollow' target='_blank' href="https://www.instagram.com/newunionsbridal/" class="insta">
             <${Icon} name="instagram" label="Instagram Page" width="20" height="20" />
           </a>
-          <a href="https://www.tiktok.com/@newunionsbridal" class="tiktok">
+          <a rel='nofollow' target='_blank' href="https://www.tiktok.com/@newunionsbridal" class="tiktok">
             <${Icon} name="tiktok" label="TikTok Page" width="19" height="22" />
           </a>
         </div>
@@ -75,6 +87,20 @@ ${css.bundle("critical")}
     font-size: var(--font-size-xs);
     text-align: center;
     text-wrap: balance;
+  }
+
+  .badges {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, minmax(75px, 150px));
+    column-gap: var(--space-m);
+    margin-block-start: var(--space-2xs);
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
   }
 
   /** Footer icons wrapper adds lines to form the bottom of the page border
