@@ -94,7 +94,6 @@ ${css.bundle("critical")}
     align-items: center;
     grid-template-columns: repeat(3, minmax(75px, 150px));
     column-gap: var(--space-m);
-    margin-block-start: var(--space-2xs);
 
     img {
       display: block;
