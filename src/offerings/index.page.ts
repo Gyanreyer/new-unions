@@ -90,6 +90,158 @@ const OfferingsPage: YetiPageComponent = () => html`<${PageBorderLayout} title="
             /></li>
         </ul>
       </li>
+      <li>
+        <ul class="gallery-row" data-orientation="landscape">
+          <li><${ResponsiveImage}
+            src="/img/offerings/Floral_Formal_Hangbags_Purses.jpg"
+            alt="A display of floral formal handbags and purses."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Vintage_WeddingDress_Detail.jpg"
+            alt="A close-up view of a vintage wedding dress showing intricate lace and beading details."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Black_Wedding_Gown_Ballgown.jpg"
+            alt="A close-up view of a black ball-gown style wedding gown."
+          /></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="gallery-row" data-orientation="portrait">
+          <li><${ResponsiveImage}
+            src="/img/offerings/Long_ALine_Sparkle_Champagne_Wedding_Dress_with_Slit.jpg"
+            alt="A long A-line champagne wedding dress with sparkly beaded detail and a slit."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Long_FitandFlare_Beaded_Champagne_WeddingDress.jpg"
+            alt="A long fit-and-flare champagne wedding dress with beaded detail."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Cowboy_Hat_Womens_Blazer_with_bows_Handmade.jpg"
+            alt="A handmade brown cowboy hat with lace detail and a tulle bow, paired with a handmade white women's blazer decorated with bows."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Tea_Length_Dress_Reception_with_Bridal_Hat.jpg"
+            alt="A white tea-length reception dress with a big bow, paired with a bridal hat."
+          /></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="gallery-row" data-orientation="landscape">
+          <li><${ResponsiveImage}
+            src="/img/offerings/BeadedHandbag_Purse.jpg"
+            alt="A display of a beaded handbag and jewelry."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Bee_Handbag.jpg"
+            alt="A black handbag with gold beaded bees on it."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Headpieces.jpg"
+            alt="A tray of wedding headpieces."
+          /></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="gallery-row" data-orientation="portrait">
+          <li><${ResponsiveImage}
+            src="/img/offerings/Long_FitandFlare_Beaded_WeddingDress_2.jpg"
+            alt="A long fit-and-flare wedding dress with intricate beaded details."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Full_Champagne_Colored_Beaded_Ballgown.jpg"
+            alt="A champagne-colored ballgown with colored beading details."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Tea_Length_Lace_Dress_with_Bridal_Cape.jpg"
+            alt="A white tea-length lace dress paired with a bridal cape."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Accessories_Necklaces_Earrings.jpg"
+            alt="A display of wedding accessories including necklaces and earrings."
+          /></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="gallery-row" data-orientation="portrait">
+          <li><${ResponsiveImage}
+            src="/img/offerings/Tea_Length_Satin_Bridal_Dress.jpg"
+            alt="A white tea-length satin bridal dress."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Black_Ballgown_Wedding_Dress.jpg"
+            alt="A black ballgown wedding dress."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Feather_Dress_Reception_Party.jpg"
+            alt="A white wedding reception party dress with feather details."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Black_Dress_With_Ruffle_Robe.jpg"
+            alt="A black dress paired with a black ruffle robe."
+          /></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="gallery-row" data-orientation="portrait">
+          <li><${ResponsiveImage}
+            src="/img/offerings/Short_Party_Reception_Dress.jpg"
+            alt="A short white wedding reception party dress."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Vintage_Beaded_WeddingDress.jpg"
+            alt="A close-up view of beaded details on the back of a vintage wedding dress."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Vintage_Wedding_Dress_Satin.jpg"
+            alt="A vintage satin wedding dress."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Champagne_Full_Beaded_ALine.jpg"
+            alt="A champagne full beaded a-line wedding gown."
+          /></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="gallery-row" data-orientation="portrait">
+          <li><${ResponsiveImage}
+            src="/img/offerings/Vintage_Jessica_Mcclintock.jpg"
+            alt="A vintage Jessica Mcclintock wedding dress."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Tea_Length_Dress_with_Cape.jpg"
+            alt="A white tea-length dress with a cape."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/loulette/Loulette2025_Final_0059.jpeg"
+            alt="A woman sitting on a chair wearing a rainbow beaded Loulette wedding dress."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/loulette/Loulette2025_Final_0059.jpeg"
+            alt="A woman wearing a Loulette wedding dress."
+          /></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="gallery-row" data-orientation="portrait">
+          <li><${ResponsiveImage}
+            src="/img/offerings/Full_Length_LaceDress.jpg"
+            alt="A full-length lace wedding dress."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Short_Dress_Beaded.jpg"
+            alt="A short beaded wedding dress."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/store/store-exterior-close.jpg"
+            alt="A close-up view of the storefront, including the 'New Unions Bridal' sign, a planter box full of flowers, and some ties and dresses displayed in the window."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/store/store-interior-hi-gay.jpg"
+            alt="A display visible by the entrance of the store, including a rack of ties, hats, bandanas, pride tote bags, and a pendant that says 'Hi gay!'"
+          /></li>
+        </ul>
+      </li>
     </ul>
   </main>
 </${PageBorderLayout}>`;
