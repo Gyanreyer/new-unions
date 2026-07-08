@@ -96,6 +96,9 @@ const FAQPage: YetiPageComponent = () => html`<${PageBorderLayout} title="FAQ | 
           meet with them in person, all before we bring them in store to you! This helps us know
           we have the best vendors who will treat you like we would want to be treated!
         </p>
+        <p>
+          <strong><a href="/new-unions-contract.pdf" class="underlined-text">See our purchase agreement here</a></strong>
+        </p>
       </section>
     </div>
   </main>
@@ -142,7 +145,9 @@ FAQPage.css = css`
     }
 
     p {
-      margin-block: var(--space-xs) var(--space-l);
+      margin-block: var(--space-xs);
     }
+
+    margin-block-end: var(--space-l);
   }
 `;
