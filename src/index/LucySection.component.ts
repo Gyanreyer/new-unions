@@ -31,7 +31,12 @@ export const LucySection = () => html`
       />
     </${ScrollingImageCarousel}>
     <p>
-      Lucy Can&apos;t Dance is a UK based, woman-owned small brand. Every dress is handmade with beautiful and intricate craftsmanship. New Unions Bridal is the first and only store in the US to carry this brand! Lucy Can’t Dance specializes in custom dip-dyed dresses, coming in any color combination you can imagine. Come fall in love with them with us!
+      Lucy Can&apos;t Dance is a UK based, woman-owned small brand.
+      Every dress is handmade with beautiful and intricate craftsmanship.
+      New Unions Bridal is the first and only store in the US to carry this brand!
+      Lucy Can’t Dance specializes in custom dip-dyed dresses, coming in any color combination you can imagine.
+      <br/>
+      <strong><em>Arriving soon!</em></strong>
     </p>
   </section>
 `;

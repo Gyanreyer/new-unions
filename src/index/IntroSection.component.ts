@@ -19,7 +19,10 @@ export const IntroSection = () =>
         We welcome everyone and anyone to shop with us to find a wedding outfit
         that is as unique as you.
       </p>
-      <${BookAppointmentButton} />
+      <div class="action-buttons">
+        <${BookAppointmentButton} />
+        <a href="/faq" class="action-btn secondary" id="what-to-expect">What to Expect at an Appointment</a>
+      </div>
     </div>
     <aside class="image-column">
       <video
@@ -75,9 +78,27 @@ IntroSection.css = css`
         text-wrap: pretty;
       }
 
-      @media screen and (width <= 800px) {
+      .action-buttons {
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--space-s);
+
         .action-btn {
-          /** Change order so action button comes before paragraphs */
+          text-align: center;
+        }
+
+        #what-to-expect {
+          font-size: var(--font-size-s);
+          padding-inline: var(--space-s);
+        }
+        @media screen and (width <= 480px) {
+          width: 100%;
+        }
+      }
+
+      @media screen and (width <= 800px) {
+        .action-buttons {
+          /** Change order so action buttons come before paragraphs */
           order: 10;
         }
 

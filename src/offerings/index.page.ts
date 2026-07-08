@@ -20,8 +20,31 @@ const OfferingsPage: YetiPageComponent = () => html`<${PageBorderLayout} title="
   </header>
   <main>
     <h1 class="section-heading underlined-text">A look at our selection</h1>
-    <p class="section-subheading">We are always receiving new products. Please check our social pages and visit us in store to see everything we have to offer!</p>
+    <p class="section-subheading">
+      We are always receiving new products.
+      Please check our social pages and visit us in store to see everything we have to offer!
+    </p>
     <ul class="gallery">
+      <li>
+        <ul class="gallery-row" data-orientation="portrait">
+          <li><${ResponsiveImage}
+            src="/img/offerings/Full_Length_LaceDress.jpg"
+            alt="A full-length lace wedding dress."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/loulette/Loulette2025_Final_0059.jpeg"
+            alt="A person wearing a Loulette wedding dress."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Short_Dress_Beaded.jpg"
+            alt="A short beaded wedding dress."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/loulette/Loulette2025_Final_0159.jpeg"
+            alt="A person sitting on a chair wearing a rainbow beaded Loulette wedding dress."
+          /></li>
+        </ul>
+      </li>
       <li>
         <ul class="gallery-row" data-orientation="portrait">
           <li><${ResponsiveImage}
@@ -33,7 +56,7 @@ const OfferingsPage: YetiPageComponent = () => html`<${PageBorderLayout} title="
               alt="A person wearing a dip-dyed wedding gown with a white top and a gradient from white to pink to purple on the bottom. They are wearing a celestial wedding cape decorated with stars."
               aria-labelledby="coming-soon-1"
             />
-            <span class="coming-soon-badge" id="coming-soon-1">Coming Summer '26</span>
+            <span class="coming-soon-badge" id="coming-soon-1">Arriving soon!</span>
           </li>
           <li><${ResponsiveImage}
               src="/img/store/store-interior-mirror.jpg"
@@ -44,24 +67,25 @@ const OfferingsPage: YetiPageComponent = () => html`<${PageBorderLayout} title="
               alt="A person wearing a dip-dyed wedding gown with a white top and a gradient from white to pink on the bottom."
               aria-labelledby="coming-soon-2"
             />
-            <span class="coming-soon-badge" id="coming-soon-2">Coming Summer '26</span>
+            <span class="coming-soon-badge" id="coming-soon-2">Arriving soon!</span>
           </li>
-        </ul>
+          </ul>
       </li>
       <li>
         <ul class="gallery-row" data-orientation="landscape">
           <li><${ResponsiveImage}
-            src="/img/store/store-interior-mocktail-bar.jpg"
-            alt="A bar cart with a set of glasses and a variety of colorful bottles of mocktail mixes."
+            src="/img/offerings/Floral_Formal_Hangbags_Purses.jpg"
+            alt="A display of floral formal handbags and purses."
           /></li>
           <li><${ResponsiveImage}
             src="/img/store/store-interior-from-couch.jpg"
             alt="A view of the store interior, showing a white dress and red suit jacket on mannequins, a rack of wedding attire, and some shelves with accessories on them."
             /></li>
           <li><${ResponsiveImage}
-            src="/img/store/store-interior-book.jpg"
-            alt="The Book of Nearlyweds, a photo book filled with polaroids of our customers rocking the wedding outfit they picked."
-            /></li>
+            src="/img/offerings/Tea_Length_Dress_with_Cape.jpg"
+            alt="A white tea-length dress with a cape."
+            style="object-position: top"
+          /></li>
         </ul>
       </li>
       <li>
@@ -71,7 +95,7 @@ const OfferingsPage: YetiPageComponent = () => html`<${PageBorderLayout} title="
               alt="A person wearing an elaborate white lacey wedding gown."
               aria-labelledby="coming-soon-3"
             />
-            <span class="coming-soon-badge" id="coming-soon-3">Coming Summer '26</span>
+            <span class="coming-soon-badge" id="coming-soon-3">Arriving soon!</span>
           </li>
           <li><${ResponsiveImage}
               src="/img/offerings/jumpsuit-and-short-dress-rack.jpg"
@@ -82,11 +106,103 @@ const OfferingsPage: YetiPageComponent = () => html`<${PageBorderLayout} title="
               alt="A person wearing a black wedding gown with lacy detail."
               aria-labelledby="coming-soon-4"
             />
-            <span class="coming-soon-badge" id="coming-soon-4">Coming Summer '26</span>
+            <span class="coming-soon-badge" id="coming-soon-4">Arriving soon!</span>
           </li>
           <li><${ResponsiveImage}
               src="/img/offerings/circular-display-shelf.jpg"
               alt="A display shelf with accessories including handbags, rainbow dried flower arrangements, and bracelets."
+            /></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="gallery-row" data-orientation="portrait">
+          <li><${ResponsiveImage}
+            src="/img/offerings/Black_Ballgown_Wedding_Dress.jpg"
+            alt="A black ballgown wedding dress."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Tea_Length_Dress_Reception_with_Bridal_Hat.jpg"
+            alt="A white tea-length reception dress with a big bow, paired with a bridal hat."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Long_FitandFlare_Beaded_WeddingDress_2.jpg"
+            alt="A long fit-and-flare wedding dress with intricate beaded details."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Black_Dress_With_Ruffle_Robe.jpg"
+            alt="A black dress paired with a black ruffle robe."
+          /></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="gallery-row" data-orientation="landscape">
+          <li><${ResponsiveImage}
+            src="/img/offerings/Headpieces.jpg"
+            alt="A tray of wedding headpieces."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Bee_Handbag.jpg"
+            alt="A black handbag with gold beaded bees on it."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Accessories_Necklaces_Earrings.jpg"
+            alt="A display of wedding accessories including necklaces and earrings."
+          /></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="gallery-row" data-orientation="portrait">
+          <li><${ResponsiveImage}
+            src="/img/store/store-entrance-with-broached-ties.jpg"
+            alt="The entrance of the store, showing broached ties on display as well as pride tote bags, bandanas, and hats."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Champagne_Full_Beaded_ALine.jpg"
+            alt="A champagne full beaded a-line wedding gown."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Long_ALine_Sparkle_Champagne_Wedding_Dress_with_Slit.jpg"
+            alt="A long A-line champagne wedding dress with sparkly beaded detail and a slit."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Vintage_Jessica_Mcclintock.jpg"
+            alt="A vintage Jessica Mcclintock wedding dress."
+          /></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="gallery-row" data-orientation="portrait">
+          <li><${ResponsiveImage}
+            src="/img/offerings/Cowboy_Hat_Womens_Blazer_with_bows_Handmade.jpg"
+            alt="A handmade brown cowboy hat with lace detail and a tulle bow, paired with a handmade white women's blazer decorated with bows."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Full_Champagne_Colored_Beaded_Ballgown.jpg"
+            alt="A champagne-colored ballgown with colored beading details."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Tea_Length_Lace_Dress_with_Bridal_Cape.jpg"
+            alt="A white tea-length lace dress paired with a bridal cape."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/offerings/Vintage_Beaded_WeddingDress.jpg"
+            alt="A close-up view of beaded details on the back of a vintage wedding dress."
+          /></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="gallery-row" data-orientation="landscape">
+          <li><${ResponsiveImage}
+            src="/img/offerings/BeadedHandbag_Purse.jpg"
+            alt="A display of a beaded handbag and jewelry."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/store/store-interior-mocktail-bar.jpg"
+            alt="A bar cart with a set of glasses and a variety of colorful bottles of mocktail mixes."
+          /></li>
+          <li><${ResponsiveImage}
+            src="/img/store/store-interior-book.jpg"
+            alt="The Book of Nearlyweds, a photo book filled with polaroids of our customers rocking the wedding outfit they picked."
             /></li>
         </ul>
       </li>

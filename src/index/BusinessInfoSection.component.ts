@@ -28,7 +28,14 @@ export const BusinessInfoSection = () => html`
             >
           </a>
         </p>
-        <p itemprop="telephone">(313) 314-3517</p>
+        <p itemprop="telephone">
+          <a
+            href="tel:+13133143517"
+            class="underlined-link underline-target"
+          >
+            (313) 314-3517
+          </a>
+        </p>
         <p itemprop="email">
           <a
             href="mailto:hello@newunionsbridal.com"
