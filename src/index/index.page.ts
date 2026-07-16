@@ -16,8 +16,8 @@ const IndexPage: YetiPageComponent =
   <${Header} />
   <main>
     <${IntroSection} />
-    <${OfferingsSection} />
     <${LouletteTrunkShow} />
+    <${OfferingsSection} />
     <${LucySection} />
     <${BusinessInfoSection} />
   </main>

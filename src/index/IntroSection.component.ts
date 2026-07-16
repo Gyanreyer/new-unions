@@ -1,4 +1,4 @@
-import { css, html, js } from "yeti-js";
+import { css, html } from "yeti-js";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 import { BookAppointmentButton } from "../_components/BookAppointmentButton.component.ts";
 
@@ -25,35 +25,19 @@ export const IntroSection = () =>
       </div>
     </div>
     <aside class="image-column">
-      <video
-        src="/video/store/store-interior.mp4"
-        muted
-        autoplay
-        loop
-        playsinline
-        loading="lazy"
-        aria-label="A looping video of the store's interior, showcasing the space and some of the offerings."
+      <${ResponsiveImage}
+        src="/img/offerings/Feather_Dress_Reception_Party.jpg"
+        alt="A white reception party dress with feather details on a mannequin."
         class="img-1"
       />
       <${ResponsiveImage}
-        src="/img/offerings/ColorfulBeadedDresses.jpg"
-        alt="Beaded dresses on a rack."
+        src="/img/offerings/Sequins_Together_2.jpg"
+        alt="Two brides modeling together wearing sequined bridal jumpsuits in white and champagne."
         class="img-2"
       />
     </aside>
   </section>`;
 
-IntroSection.js = js`
-  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    // If the user prefers reduced motion, disable autoplay on videos and show controls instead
-    const autoplayVideos = document.querySelectorAll("video[autoplay]");
-    for (const video of autoplayVideos) {
-      video.pause();
-      video.removeAttribute("autoplay");
-      video.setAttribute("controls", "true");
-    }
-  }
-`;
 
 IntroSection.css = css`
   #intro {
@@ -113,8 +97,7 @@ IntroSection.css = css`
       justify-content: center;
       flex-direction: column;
 
-      img,
-      video {
+      img {
         width: 100%;
         max-width: 400px;
         height: auto;
@@ -128,14 +111,15 @@ IntroSection.css = css`
         width: 85%;
         align-self: flex-start;
         background-color: #c0bebe;
-        aspect-ratio: 72 / 100;
+        aspect-ratio: 82 / 100;
+        object-position: top;
       }
 
       .img-2 {
         width: 67%;
         align-self: flex-end;
         /* Shift up to overlap with 1st image */
-        margin-block-start: -30%;
+        margin-block-start: -35%;
         aspect-ratio: 82 / 100;
         z-index: 1;
       }

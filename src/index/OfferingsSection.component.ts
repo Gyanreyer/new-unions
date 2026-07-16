@@ -1,6 +1,7 @@
 import { css, html } from "yeti-js";
 import { ScrollingImageCarousel } from "../_components/ScrollingImageCarousel.component.ts";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
+import { JumpsuitSpotlightSection } from "./JumpsuitSpotlightSection.component.ts";
 
 export const OfferingsSection = () => html`
   <section id="offerings">
@@ -29,6 +30,7 @@ export const OfferingsSection = () => html`
         alt=""
       />
     </${ScrollingImageCarousel}>
+    <${JumpsuitSpotlightSection} />
     <ul class="offering-list" role="list" aria-label="Offerings">
       <li>Bridal Gowns</li>
       <li>Short Wedding Dresses</li>
@@ -45,7 +47,6 @@ export const OfferingsSection = () => html`
       <li>Purses</li>
       <li>Wedding Gifts</li>
     </ul>
-    <a href="/offerings" class="action-btn primary">View more product!</a>
   </section>
 `;
 
@@ -56,18 +57,19 @@ OfferingsSection.css = css`
     align-items: center;
     text-align: center;
 
-    .section-heading {
+    h2.section-heading {
       margin-block-end: var(--space-m-l);
     }
 
     .carousel-container {
-      margin-block-end: var(--space-l);
+      margin-block-end: var(--space-xl);
     }
 
     .offering-list {
       font-weight: 500;
       font-style: italic;
       font-size: var(--font-size-xs);
+      margin-block-start: var(--space-l);
 
       li {
         display: inline;
@@ -81,10 +83,6 @@ OfferingsSection.css = css`
         font-size: var(--font-size-s);
         margin-inline: var(--space-2xs);
       }
-    }
-  
-    .action-btn {
-      margin-block-start: var(--space-m);
     }
   }
 `;

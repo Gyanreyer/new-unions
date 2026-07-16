@@ -1,6 +1,7 @@
 import { css, html } from "yeti-js";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 import { BookAppointmentButton } from "../_components/BookAppointmentButton.component.ts";
+import { AutoplayVideo } from "../_components/AutoplayVideo.component.ts";
 
 export const BusinessInfoSection = () => html`
   <section id="business-info">
@@ -81,9 +82,10 @@ export const BusinessInfoSection = () => html`
       </section>
       <${BookAppointmentButton} />
     </div>
-    <${ResponsiveImage}
-      src="/img/store/store-exterior.jpg"
-      alt="An exterior shot of the New Unions Bridal store from the street. The store has a pride flag and mannequins wearing wedding attire displayed in the windows, and a variety of potted plants outside."
+    <${AutoplayVideo}
+      src="/video/store/store-interior.mp4"
+      aria-label="A looping video of the store's interior, showcasing the space and some of the offerings."
+      class="store-img"
     />
   </section>
 `;
@@ -131,7 +133,7 @@ BusinessInfoSection.css = css`
       }
     }
 
-    img {
+    .store-img {
       flex: 1;
       width: 100%;
       height: auto;
@@ -140,7 +142,7 @@ BusinessInfoSection.css = css`
       margin-block: auto;
       background-color: #e3e3e3;
       border-radius: 24px;
-      aspect-ratio: 96 / 100;
+      aspect-ratio: 72 / 100;
       object-fit: cover;
       box-shadow: var(--image-drop-shadow);
 
