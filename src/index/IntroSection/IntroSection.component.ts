@@ -19,7 +19,7 @@ export const IntroSection = () =>
       </p>
       <p>
         We welcome everyone and anyone to shop with us to find a wedding outfit
-        that is as unique as you.
+        that is as unique as you. Sizes 0-30 celebrated here!
       </p>
       <div class="action-buttons">
         <${BookAppointmentButton} />

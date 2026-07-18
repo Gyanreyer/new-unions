@@ -132,7 +132,17 @@ JumpsuitSpotlightSection.css = css`
     }
 
     .sparkle-group[data-idx="1"] {
-      margin-block-start: -64px;
+      margin-block-start: -110px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .sparkle-group[data-idx="1"] {
+      margin-block-start: -12px;
+    }
+
+    .action-btn {
+      inline-size: 100%;
     }
   }
 }
