@@ -1,7 +1,7 @@
 import { html, css, type YetiPageComponent } from "yeti-js";
 import { PageBorderLayout } from "../_layout/PageBorderLayout.component.ts";
 import { Header } from "./Header.component.ts";
-import { IntroSection } from "./IntroSection.component.ts";
+import { IntroSection } from "./IntroSection/IntroSection.component.ts";
 import { OfferingsSection } from "./OfferingsSection.component.ts";
 import { BusinessInfoSection } from "./BusinessInfoSection.component.ts";
 import { LucySection } from "./LucySection.component.ts";
@@ -16,8 +16,8 @@ const IndexPage: YetiPageComponent =
   <${Header} />
   <main>
     <${IntroSection} />
-    <${OfferingsSection} />
     <${LouletteTrunkShow} />
+    <${OfferingsSection} />
     <${LucySection} />
     <${BusinessInfoSection} />
   </main>
