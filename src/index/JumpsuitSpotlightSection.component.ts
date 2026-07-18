@@ -40,8 +40,6 @@ JumpsuitSpotlightSection.css = css`
 
   h3.section-heading {
     position: relative;
-    grid-column: 2 / -1;
-    grid-row: 2 / 3;
 
     .product-spotlight {
       font-weight: 200;
@@ -49,8 +47,6 @@ JumpsuitSpotlightSection.css = css`
   }
 
   .copy {
-    grid-column: 2 / -1;
-    grid-row: 3 / 4;
     position: relative;
 
     .action-btn {
@@ -62,8 +58,9 @@ JumpsuitSpotlightSection.css = css`
     inline-size: 100%;
     block-size: auto;
     border-radius: 24px;
+    /** The video spans all rows in the first column */
+    grid-row: 1 / -1;
     grid-column: 1 / 2;
-    grid-row: 1 / 5;
     aspect-ratio: 7 / 10;
     object-fit: cover;
     object-position: top;
@@ -74,9 +71,6 @@ JumpsuitSpotlightSection.css = css`
   .sparkle-group[data-idx="0"] {
     margin-inline-start: auto;
     margin-block-start: auto;
-
-    grid-column: 2 / -1;
-    grid-row: 1 / 2;
 
     .sparkle[data-idx="0"] {
       inline-size: 52px;
@@ -119,12 +113,17 @@ JumpsuitSpotlightSection.css = css`
     grid-template-columns: 1fr;
     grid-template-rows: auto;
 
-    .sparkle-group[data-idx], h3.section-heading, .copy, video {
-      grid-column: 1 / -1;
+    video {
       grid-row: auto;
     }
 
+    .sparkle-group[data-idx], h3.section-heading, .copy {
+      grid-column: auto;
+    }
+
     .sparkle-group[data-idx="0"] {
+      /* Move the sparkles into the same row as the video so we can
+         position relative to the video's top right corner */
       grid-row: 2 / 3;
       /** Flip the sparkles on x axis */
       margin-block-end: -84px;
