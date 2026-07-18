@@ -113,5 +113,27 @@ JumpsuitSpotlightSection.css = css`
       animation-duration: 3s;
     }
   }
+
+  /** Mobile styling; everything flows into a single column */
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    .sparkle-group[data-idx], h3.section-heading, .copy, video {
+      grid-column: 1 / -1;
+      grid-row: auto;
+    }
+
+    .sparkle-group[data-idx="0"] {
+      grid-row: 2 / 3;
+      /** Flip the sparkles on x axis */
+      margin-block-end: -84px;
+      transform: translate(45%, -25%) scaleX(-1);
+    }
+
+    .sparkle-group[data-idx="1"] {
+      margin-block-start: -64px;
+    }
+  }
 }
 `;
