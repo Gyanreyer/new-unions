@@ -1,13 +1,12 @@
 import { css, html, type YetiComponent } from "yeti-js";
 import { AutoplayVideo } from "../_components/AutoplayVideo.component.ts";
-import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
-import { Icon } from "../_components/Icon.component.ts";
+import { Sparkle } from "../_components/Sparkle.component.ts";
 
 export const JumpsuitSpotlightSection: YetiComponent = () => html`
   <section id="jumpsuit-spotlight">
-    <div class="sparkle-group one">
-      <${Icon} name="sparkle" width="24" height="24" class="sparkle one" />
-      <${Icon} name="sparkle" width="24" height="24" class="sparkle two" />
+    <div class="sparkle-group" data-idx="0">
+      <${Sparkle} data-idx="0" />
+      <${Sparkle} data-idx="1" />
     </div>
     <h3 class="section-heading">
       <span class="product-spotlight">Product Spotlight:</span><br/>Jumpsuits
@@ -22,38 +21,15 @@ export const JumpsuitSpotlightSection: YetiComponent = () => html`
       </p>
       <a href="/offerings" class="action-btn primary">View more product!</a>
     </div>
-    <div class="sparkle-group two">
-      <${Icon} name="sparkle" width="24" height="24" class="sparkle one" />
-      <${Icon} name="sparkle" width="24" height="24" class="sparkle two" />
-      <${Icon} name="sparkle" width="24" height="24" class="sparkle three" />
+    <div class="sparkle-group two" data-idx="1">
+      <${Sparkle} data-idx="0" />
+      <${Sparkle} data-idx="1" />
+      <${Sparkle} data-idx="2" />
     </div>
   </section>
 `;
 
 JumpsuitSpotlightSection.css = css`
-  @keyframes twinkle {
-    0% {
-      opacity: 0.5;
-      transform: scale(0.82);
-      filter: drop-shadow(0 0 0 rgb(255 255 255 / 0));
-      animation-timing-function: cubic-bezier(0.3, 0, 0.15, 1);
-    }
-    14% {
-      opacity: 1;
-      filter: drop-shadow(0 0 7px rgb(255 255 255 / 0.55));
-      animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    22% {
-      transform: scale(1.07);
-      animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    62%, 100% {
-      opacity: 0.5;
-      transform: scale(0.82);
-      filter: drop-shadow(0 0 0 rgb(255 255 255 / 0));
-    }
-  }
-
 #jumpsuit-spotlight {
   display: grid;
 
@@ -93,29 +69,22 @@ JumpsuitSpotlightSection.css = css`
     object-position: top;
   }
 
-  .sparkle-group .sparkle {
-    display: block;
-    position: relative;
-    block-size: auto;
-    animation: twinkle 3s infinite;
-    transform-origin: center;
-    will-change: opacity, transform, filter;
-  }
-
-  .sparkle-group.one {
+  /* Base sparkle styles + twinkle keyframes live in the shared Sparkle
+     component; here we only size and offset each one. */
+  .sparkle-group[data-idx="0"] {
     margin-inline-start: auto;
     margin-block-start: auto;
 
     grid-column: 2 / -1;
     grid-row: 1 / 2;
 
-    .sparkle.one {
+    .sparkle[data-idx="0"] {
       inline-size: 52px;
       margin-inline-start: 14px;
       animation-duration: 3.2s;
     }
 
-    .sparkle.two {
+    .sparkle[data-idx="1"] {
       inline-size: 32px;
       margin-block-start: -4px;
       animation-delay: -1.1s;
@@ -123,32 +92,25 @@ JumpsuitSpotlightSection.css = css`
     }
   }
 
-  .sparkle-group.two {
-
-    .sparkle.one {
+  .sparkle-group[data-idx="1"] {
+    .sparkle[data-idx="0"] {
       inline-size: 26px;
       margin-inline-start: 48px;
       animation-delay: -1.9s;
       animation-duration: 2.8s;
     }
-    .sparkle.two {
+    .sparkle[data-idx="1"] {
       inline-size: 20px;
       margin-block-start: -12px;
       animation-delay: -0.6s;
       animation-duration: 3.6s;
     }
-    .sparkle.three {
+    .sparkle[data-idx="2"] {
       inline-size: 48px;
       margin-block-start: -4px;
       margin-inline-start: 12px;
       animation-delay: -2.5s;
       animation-duration: 3s;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .sparkle-group .sparkle {
-      animation: none;
     }
   }
 }
