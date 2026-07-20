@@ -5,7 +5,6 @@ import { IntroSection } from "./IntroSection/IntroSection.component.ts";
 import { OfferingsSection } from "./OfferingsSection.component.ts";
 import { BusinessInfoSection } from "./BusinessInfoSection.component.ts";
 import { LucySection } from "./LucySection.component.ts";
-import { LouletteTrunkShow } from "./LouletteTrunkShow.component.ts";
 
 export const config = {
   permalink: "/",
@@ -16,7 +15,6 @@ const IndexPage: YetiPageComponent =
   <${Header} />
   <main>
     <${IntroSection} />
-    <${LouletteTrunkShow} />
     <${OfferingsSection} />
     <${LucySection} />
     <${BusinessInfoSection} />
