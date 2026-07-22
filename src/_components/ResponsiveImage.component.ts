@@ -58,11 +58,12 @@ export const ResponsiveImage: YetiComponent<{
       <img
         src=${src}
         alt=${alt}
-        srcset=${`${srcset}, ${src} 1x`}
+        srcset=${srcset}
         sizes=${sizes}
         width=${width}
         height=${height}
         loading=${loading}
+        onerror="this.onerror=null;this.removeAttribute('srcset');this.src=this.src;"
         ...${spreadAttrs}
       />`;
   } catch (err) {
