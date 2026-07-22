@@ -88,7 +88,7 @@ export default function (eleventyConfig: EleventyConfig) {
       const locs = results
         // Only include HTML pages
         .filter((result) => result.outputPath.endsWith(".html"))
-        .map((result) => join(SITE_ORIGIN, result.url))
+        .map((result) => new URL(result.url, SITE_ORIGIN).toString())
         // Sort alphabetically
         .sort((a, b) => a.localeCompare(b));
 
