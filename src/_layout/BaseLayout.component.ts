@@ -58,11 +58,11 @@ export const BaseLayout: YetiComponent<{
         <meta name="og:country-name" content="United States" />
 
         <!-- Favicon -->
-        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="icon" type="image/png" href="/img/favicon.png" />
         <link
           rel="icon"
           type="image/png"
-          href="https://newunionsbridal.com/favicon.png"
+          href="https://newunionsbridal.com/img/favicon.png"
         />
 
         <style>
