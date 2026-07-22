@@ -1,5 +1,9 @@
 import { YETI_NODE_TYPE, yetiPlugin, type YetiRootNode, type YetiElementNode, type PartialYetiConfig, } from 'yeti-js';
 import type EleventyConfig from '@11ty/eleventy/UserConfig';
+import { writeFile } from "node:fs/promises";
+import { join } from "node:path";
+
+const SITE_ORIGIN = "https://newunionsbridal.com";
 
 export default function (eleventyConfig: EleventyConfig) {
   eleventyConfig.ignores.add("**/*.html");
@@ -66,4 +70,37 @@ export default function (eleventyConfig: EleventyConfig) {
     },
   } satisfies PartialYetiConfig)
 
+  // Generate sitemap.xml from the pages 11ty built
+  eleventyConfig.on(
+    "eleventy.after",
+    async ({
+      directories,
+      results,
+    }: {
+      directories: { output: string };
+      results: {
+        inputPath: string;
+        outputPath: string;
+        url: string;
+        content: string;
+      }[];
+    }) => {
+      const locs = results
+        // Only include HTML pages
+        .filter((result) => result.outputPath.endsWith(".html"))
+        .map((result) => join(SITE_ORIGIN, result.url))
+        // Sort alphabetically
+        .sort((a, b) => a.localeCompare(b));
+
+      const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${locs.map((loc) => `  <url>
+    <loc>${loc}</loc>
+  </url>`).join("\n")}
+</urlset>
+`;
+
+      await writeFile(join(directories.output, "sitemap.xml"), sitemap);
+    },
+  );
 }
