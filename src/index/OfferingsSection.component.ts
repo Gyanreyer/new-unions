@@ -11,24 +11,28 @@ export const OfferingsSection = () => html`
     <${ScrollingImageCarousel}>
       <${ResponsiveImage}
         src="/img/offerings/ColorfulAccessories.jpg"
-        alt=""
+        alt="A predominantly green, black, and gold display of accessories including a necktie, jewelry, and a lipstick case."
       />
       <${ResponsiveImage}
         src="/img/offerings/Floralshoulderdetaildress.jpg"
-        alt=""
+        alt="A close-up shot of the floral shoulder detailing on a white wedding dress on a rack."
       />
       <${ResponsiveImage}
         src="/img/offerings/Accessories2.jpg"
-        alt=""
+        alt="A predominantly white and gold display of various accessories including jewelry, a handbag, and a lipstick case."
       />
       <${ResponsiveImage}
         src="/img/offerings/SparkleDressandBag.jpg"
-        alt=""
+        alt="A close-up shot of the shoulder of a sparkly sequined wedding gown and a beaded white handbag with a red heart and gold detailing."
       />
       <${ResponsiveImage}
         src="/img/offerings/DavidJefferyBag2.jpg"
-        alt=""
+        alt="An elaborately beaded flower handbag with red, white, blue, and green beads forming petals radiating out from the center."
       />
+      <li><${ResponsiveImage}
+          src="/img/store/store-interior-mannequin-dress.jpg"
+          alt="A mannequin wearing a short white wedding dress with a pearl necklace and a floral headpiece."
+        /></li>
     </${ScrollingImageCarousel}>
     <${JumpsuitSpotlightSection} />
     <ul class="offering-list" role="list" aria-label="Offerings">

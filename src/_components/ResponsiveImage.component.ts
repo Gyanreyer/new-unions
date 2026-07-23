@@ -50,8 +50,8 @@ export const ResponsiveImage: YetiComponent<{
     const srcset = candidateWidths
       // Using Cloudflare image transform params: https://developers.cloudflare.com/images/transform-images/transform-via-url/
       // Targets the given width, not scaling up past the source dimensions,
-      // and automatically negotiate the best format to serve
-      .map((w) => `/cdn-cgi/image/fit=scale-down,width=${w},format=auto${src} ${w}w`)
+      // and automatically negotiate the best format to serve at 80/100 quality
+      .map((w) => `/cdn-cgi/image/fit=scale-down,width=${w},q=80,format=auto${src} ${w}w`)
       .join(", ");
 
     return html`

@@ -33,7 +33,7 @@ const OfferingsPage: YetiPageComponent = () => html`<${PageBorderLayout} title="
           /></li>
           <li><${ResponsiveImage}
             src="/img/loulette/Loulette2025_Final_0059.jpeg"
-            alt="A person wearing a Loulette wedding dress."
+            alt="A model wearing a Loulette wedding dress."
           /></li>
           <li><${ResponsiveImage}
             src="/img/offerings/Short_Dress_Beaded.jpg"
@@ -41,7 +41,7 @@ const OfferingsPage: YetiPageComponent = () => html`<${PageBorderLayout} title="
           /></li>
           <li><${ResponsiveImage}
             src="/img/loulette/Loulette2025_Final_0159.jpeg"
-            alt="A person sitting on a chair wearing a rainbow beaded Loulette wedding dress."
+            alt="A model sitting on a chair wearing a rainbow beaded Loulette wedding dress."
           /></li>
         </ul>
       </li>
@@ -49,11 +49,11 @@ const OfferingsPage: YetiPageComponent = () => html`<${PageBorderLayout} title="
         <ul class="gallery-row" data-orientation="portrait">
           <li><${ResponsiveImage}
               src="/img/store/store-interior-mannequin-dress.jpg"
-              alt="A white wedding dress on a mannequin in the store"
+              alt="A mannequin wearing a short white wedding dress with a pearl necklace and a floral headpiece."
             /></li>
           <li><${ResponsiveImage}
               src="/img/lucy/LCD-ATOMIC_BLOOM-324.jpg"
-              alt="A person wearing a dip-dyed wedding gown with a white top and a gradient from white to pink to purple on the bottom. They are wearing a celestial wedding cape decorated with stars."
+              alt="A model wearing a dip-dyed wedding gown with a white top and a gradient from white to pink to purple on the bottom. They are wearing a celestial wedding cape decorated with stars."
               aria-labelledby="coming-soon-1"
             />
             <span class="coming-soon-badge" id="coming-soon-1">Arriving soon!</span>
@@ -64,7 +64,7 @@ const OfferingsPage: YetiPageComponent = () => html`<${PageBorderLayout} title="
             /></li>
           <li><${ResponsiveImage}
               src="/img/lucy/LCDGC-89.jpg"
-              alt="A person wearing a dip-dyed wedding gown with a white top and a gradient from white to pink on the bottom."
+              alt="A model wearing a dip-dyed wedding gown with a white top and a gradient from white to pink on the bottom."
               aria-labelledby="coming-soon-2"
             />
             <span class="coming-soon-badge" id="coming-soon-2">Arriving soon!</span>
@@ -92,7 +92,7 @@ const OfferingsPage: YetiPageComponent = () => html`<${PageBorderLayout} title="
         <ul class="gallery-row" data-orientation="portrait">
           <li><${ResponsiveImage}
               src="/img/lucy/Lucy_Cant_dance104.JPG"
-              alt="A person wearing an elaborate white lacey wedding gown."
+              alt="A model wearing an elaborate white lacey wedding gown."
               aria-labelledby="coming-soon-3"
             />
             <span class="coming-soon-badge" id="coming-soon-3">Arriving soon!</span>
@@ -103,7 +103,7 @@ const OfferingsPage: YetiPageComponent = () => html`<${PageBorderLayout} title="
             /></li>
           <li><${ResponsiveImage}
               src="/img/lucy/LUCYCANTDANCE-390.jpg"
-              alt="A person wearing a black wedding gown with lacy detail."
+              alt="A model wearing a black wedding gown with lacy detail."
               aria-labelledby="coming-soon-4"
             />
             <span class="coming-soon-badge" id="coming-soon-4">Arriving soon!</span>
