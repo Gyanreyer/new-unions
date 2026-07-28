@@ -75,6 +75,9 @@ export const BaseLayout: YetiComponent<{
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
 
+        <!-- DNS prefetch for Cloudflare Web Analytics -->
+        <link rel="dns-prefetch" href="https://static.cloudflareinsights.com" crossorigin="anonymous" />
+
         <style>
           ${css.inline("critical")}
         </style>
@@ -94,6 +97,8 @@ export const BaseLayout: YetiComponent<{
         <script>
           ${js.inline("*")}
         </script>
+        <!-- Cloudflare Web Analytics -->
+        <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7afe9a1f12984bdf8f4888f38a642ccb"}'></script>
       </body>
     </html>`;
   };
