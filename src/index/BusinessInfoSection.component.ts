@@ -141,7 +141,6 @@ BusinessInfoSection.css = css`
       min-width: 240px;
       max-width: 520px;
       margin-block: auto;
-      background-color: #e3e3e3;
       border-radius: 24px;
       aspect-ratio: 72 / 100;
       object-fit: cover;
