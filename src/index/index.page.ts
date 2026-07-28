@@ -11,7 +11,7 @@ export const config = {
 };
 
 const IndexPage: YetiPageComponent =
-  () => html`<${PageBorderLayout} itemscope itemtype="http://schema.org/Store">
+  ({ page }) => html`<${PageBorderLayout} itemscope itemtype="http://schema.org/Store" url=${page.url}>
   <${Header} />
   <main>
     <${IntroSection} />

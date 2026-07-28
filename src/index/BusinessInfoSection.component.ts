@@ -1,7 +1,8 @@
 import { css, html } from "yeti-js";
-import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 import { BookAppointmentButton } from "../_components/BookAppointmentButton.component.ts";
 import { AutoplayVideo } from "../_components/AutoplayVideo.component.ts";
+
+import { CONTACT_EMAIL } from "../constants.ts";
 
 export const BusinessInfoSection = () => html`
   <section id="business-info">
@@ -39,10 +40,10 @@ export const BusinessInfoSection = () => html`
         </p>
         <p itemprop="email">
           <a
-            href="mailto:hello@newunionsbridal.com"
+            href="mailto:${CONTACT_EMAIL}"
             class="underlined-link underline-target"
           >
-            hello@newunionsbridal.com
+            ${CONTACT_EMAIL}
           </a>
         </p>
       </address>

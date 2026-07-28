@@ -1,14 +1,25 @@
 import { css, html, js, type YetiComponent } from "yeti-js";
+import { ORIGIN } from "../constants.ts";
+
+const OG_IMAGE_URL = new URL("/img/newunions_og.png", ORIGIN).toString();
 
 export const BaseLayout: YetiComponent<{
   title: string;
   description: string;
+  url: string;
 }> = ({
   title = "New Unions Bridal",
   description = "New Unions is a wedding attire experience dedicated to couples that fit outside of the binary.",
+  url,
   children,
   ...htmlSpreadAttrs
 }) => {
+    if (!url) {
+      throw new Error("The 'url' prop is required for BaseLayout.");
+    }
+
+    const canonicalPageURL = new URL(url, ORIGIN).toString();
+
     return html`<!DOCTYPE html>
     <html lang="en" ...${htmlSpreadAttrs}>
       <head>
@@ -29,6 +40,7 @@ export const BaseLayout: YetiComponent<{
         <meta name="description" content="${description}" />
         <meta name="theme-color" content="#454372" />
         <meta name="subject" content="Wedding Attire" />
+        <meta name="canonical" content=${canonicalPageURL} />
         <meta
           name="keywords"
           content="wedding, bridal, attire, LGBTQ+, queer"
@@ -38,12 +50,12 @@ export const BaseLayout: YetiComponent<{
 
         <!-- OG Metadata -->
         <meta name="og:type" content="website" />
-        <meta name="og:url" content="https://newunionsbridal.com/" />
+        <meta name="og:url" content=${canonicalPageURL} />
         <meta name="og:title" content="${title}" />
         <meta name="og:description" content="${description}" />
         <meta
           name="og:image"
-          content="https://newunionsbridal.com/img/newunions_og.png"
+          content=${OG_IMAGE_URL}
         />
         <meta name="og:image:alt" content="New Unions Bridal Logo" />
         <meta name="og:image:type" content="image/png" />

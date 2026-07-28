@@ -2,8 +2,7 @@ import { YETI_NODE_TYPE, yetiPlugin, type YetiRootNode, type YetiElementNode, ty
 import type EleventyConfig from '@11ty/eleventy/UserConfig';
 import { writeFile } from "node:fs/promises";
 import { join } from "node:path";
-
-const SITE_ORIGIN = "https://newunionsbridal.com";
+import { ORIGIN } from './src/constants.ts';
 
 export default function (eleventyConfig: EleventyConfig) {
   eleventyConfig.ignores.add("**/*.html");
@@ -88,7 +87,7 @@ export default function (eleventyConfig: EleventyConfig) {
       const locs = results
         // Only include HTML pages
         .filter((result) => result.outputPath.endsWith(".html"))
-        .map((result) => new URL(result.url, SITE_ORIGIN).toString())
+        .map((result) => new URL(result.url, ORIGIN).toString())
         // Sort alphabetically
         .sort((a, b) => a.localeCompare(b));
 

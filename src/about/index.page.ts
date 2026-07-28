@@ -4,7 +4,9 @@ import { EmployeeSection } from "./Employee.component.ts";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 import { BackLink } from "../_components/BackLink.component.ts";
 
-const AboutPage: YetiPageComponent = () => html`<${PageBorderLayout}>
+const AboutPage: YetiPageComponent = ({
+  page,
+}) => html`<${PageBorderLayout} url=${page.url}>
   <header>
     <nav>
       <${BackLink} href="/" label="Home" />
