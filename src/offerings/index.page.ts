@@ -63,7 +63,7 @@ const OfferingsPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout}
               alt="A large mirror in front of a couch, surrounded by disco balls on the floor and strings of flowers hung on the wall around it."
             /></li>
           <li><${ResponsiveImage}
-              src="/img/lucy/LCDGC-89.jpg"
+              src="/img/lucy/LCDGC-89--vertical-crop.jpg"
               alt="A model wearing a dip-dyed wedding gown with a white top and a gradient from white to pink on the bottom."
               aria-labelledby="coming-soon-2"
             />
@@ -291,7 +291,7 @@ OfferingsPage.css = css`
         }
       }
 
-      picture {
+      img {
         aspect-ratio: 7 / 10;
       }
     }
@@ -314,7 +314,7 @@ OfferingsPage.css = css`
         }
       }
 
-      picture {
+      img {
         aspect-ratio: 12 / 10;
       }
     }
@@ -339,11 +339,6 @@ OfferingsPage.css = css`
     display: flex;
     flex-direction: column;
     gap: var(--space-m);
-
-    picture {
-      display: block;
-      width: 100%;
-    }
 
     img {
       display: block;

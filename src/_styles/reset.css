@@ -72,10 +72,6 @@
     overflow-x: hidden;
   }
 
-  picture {
-    display: contents;
-  }
-
   ul,
   ol {
     list-style: none;
