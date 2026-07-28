@@ -75,8 +75,9 @@ export const BaseLayout: YetiComponent<{
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
 
-        <!-- DNS prefetch for Cloudflare Web Analytics -->
-        <link rel="dns-prefetch" href="https://static.cloudflareinsights.com" crossorigin="anonymous" />
+        <!-- Preconnect for Cloudflare Web Analytics domains -->
+        <link rel="preconnect" href="https://static.cloudflareinsights.com" crossorigin />
+        <link rel="preconnect" href="https://cloudflareinsights.com" crossorigin />
 
         <style>
           ${css.inline("critical")}
