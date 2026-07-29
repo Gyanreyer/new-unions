@@ -29,10 +29,10 @@ export const OfferingsSection = () => html`
         src="/img/offerings/DavidJefferyBag2.jpg"
         alt="An elaborately beaded flower handbag with red, white, blue, and green beads forming petals radiating out from the center."
       />
-      <li><${ResponsiveImage}
+      <${ResponsiveImage}
           src="/img/store/store-interior-mannequin-dress.jpg"
           alt="A mannequin wearing a short white wedding dress with a pearl necklace and a floral headpiece."
-        /></li>
+      />
     </${ScrollingImageCarousel}>
     <${JumpsuitSpotlightSection} />
     <ul class="offering-list" role="list" aria-label="Offerings">

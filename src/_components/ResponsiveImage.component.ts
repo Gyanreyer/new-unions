@@ -4,7 +4,7 @@ import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readFile } from "node:fs/promises";
 
-const srcsetWidths = [240, 480, 600, 720, 1080, 1920];
+const srcsetWidths = [240, 360, 420, 480, 600, 720, 1080, 1920];
 
 interface ImageMetadata {
   width: number;
