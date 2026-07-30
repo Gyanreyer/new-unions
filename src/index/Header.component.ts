@@ -9,8 +9,8 @@ export const Header = () =>
         src="/img/logo.png"
         alt="New Unions Bridal"
         fetchpriority="high"
-        itemprop="logo"
         loading="eager"
+        itemprop="logo"
         sizes="(width >= 850px) 640px, 80vw"
       />
     </h1>

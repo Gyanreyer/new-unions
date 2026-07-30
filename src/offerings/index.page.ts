@@ -27,21 +27,30 @@ const OfferingsPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout}
     <ul class="gallery">
       <li>
         <ul class="gallery-row" data-orientation="portrait">
+          <!-- Eagerly load first row of images -->
           <li><${ResponsiveImage}
             src="/img/offerings/Full_Length_LaceDress.jpg"
             alt="A full-length lace wedding dress."
+            fetchpriority="high"
+            loading="eager"
           /></li>
           <li><${ResponsiveImage}
             src="/img/loulette/Loulette2025_Final_0059.jpeg"
             alt="A model wearing a Loulette wedding dress."
+            fetchpriority="high"
+            loading="eager"
           /></li>
           <li><${ResponsiveImage}
             src="/img/offerings/Short_Dress_Beaded.jpg"
             alt="A short beaded wedding dress."
+            fetchpriority="high"
+            loading="eager"
           /></li>
           <li><${ResponsiveImage}
             src="/img/loulette/Loulette2025_Final_0159.jpeg"
             alt="A model sitting on a chair wearing a rainbow beaded Loulette wedding dress."
+            fetchpriority="high"
+            loading="eager"
           /></li>
         </ul>
       </li>
