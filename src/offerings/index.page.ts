@@ -3,6 +3,14 @@ import { PageBorderLayout } from "../_layout/PageBorderLayout.component.ts";
 import { BackLink } from "../_components/BackLink.component.ts";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 
+// Props to apply to eagerly loaded images from the first row
+const eagerImageProps = {
+  fetchpriority: "high",
+  loading: "eager",
+  // Sizes tuned for portrait-oriented images in the first row
+  sizes: "(width >= 1600px) 278px, (width >= 1200px) 200px, (width >= 750px) 35vw, 75vw"
+};
+
 const OfferingsPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title="Offerings | New Unions Bridal" url=${page.url}>
   <header>
     <nav>
@@ -31,26 +39,22 @@ const OfferingsPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout}
           <li><${ResponsiveImage}
             src="/img/offerings/Full_Length_LaceDress.jpg"
             alt="A full-length lace wedding dress."
-            fetchpriority="high"
-            loading="eager"
+            ...${eagerImageProps}
           /></li>
           <li><${ResponsiveImage}
             src="/img/loulette/Loulette2025_Final_0059.jpeg"
             alt="A model wearing a Loulette wedding dress."
-            fetchpriority="high"
-            loading="eager"
+            ...${eagerImageProps}
           /></li>
           <li><${ResponsiveImage}
             src="/img/offerings/Short_Dress_Beaded.jpg"
             alt="A short beaded wedding dress."
-            fetchpriority="high"
-            loading="eager"
+            ...${eagerImageProps}
           /></li>
           <li><${ResponsiveImage}
             src="/img/loulette/Loulette2025_Final_0159.jpeg"
             alt="A model sitting on a chair wearing a rainbow beaded Loulette wedding dress."
-            fetchpriority="high"
-            loading="eager"
+            ...${eagerImageProps}
           /></li>
         </ul>
       </li>
