@@ -27,6 +27,11 @@ export const BaseLayout: YetiComponent<{
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>${title}</title>
 
+        <!-- Inlined critical CSS -->
+        <style>
+          ${css.inline("critical")}
+        </style>
+
         <!-- Preload font -->
         <link
           rel="preload"
@@ -43,7 +48,7 @@ export const BaseLayout: YetiComponent<{
         <meta name="canonical" content=${canonicalPageURL} />
         <meta
           name="keywords"
-          content="wedding, bridal, attire, LGBTQ+, queer"
+          content="wedding, bridal, attire, LGBTQ+, queer, Metro Detroit, Ferndale, Michigan"
         />
         <meta name="web_author" content="Ryan Geyer, https://geyer.dev" />
         <meta property="fb:page_id" content="61588584009876" />
@@ -74,10 +79,6 @@ export const BaseLayout: YetiComponent<{
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
-
-        <style>
-          ${css.inline("critical")}
-        </style>
       </head>
       <body>
         ${children}
