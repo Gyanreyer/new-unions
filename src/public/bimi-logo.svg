@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny-ps" viewBox="0 0 704 704">
+  <title>New Unions Bridal</title>
+  <rect width="704" height="704" fill="#454372"/>
+  <circle cx="352" cy="378" r="245" fill="none" stroke="#fff" stroke-width="19"/>
+  <g fill="#fff">
+    <rect x="345" y="51" width="14" height="164" rx="2.5"/>
+    <rect x="345" y="68" width="14" height="130" rx="2.5" transform="rotate(45 352 133)"/>
+    <rect x="345" y="68" width="14" height="130" rx="2.5" transform="rotate(-45 352 133)"/>
+    <path d="M198.5 288H201L337.5 449.5V290.5A2.5 2.5 0 0 1 340 288H349A2.5 2.5 0 0 1 351.5 290.5V485H349L212.5 323.3V482.5A2.5 2.5 0 0 1 210 485H201A2.5 2.5 0 0 1 198.5 482.5Z"/>
+    <path d="M389 288A2.5 2.5 0 0 0 386.5 290.5V432.5A59.5 59.5 0 0 0 505.5 432.5V290.5A2.5 2.5 0 0 0 503 288H494A2.5 2.5 0 0 0 491.5 290.5V432.5A45.5 45.5 0 0 1 400.5 432.5V290.5A2.5 2.5 0 0 0 398 288Z"/>
+  </g>
+</svg>
