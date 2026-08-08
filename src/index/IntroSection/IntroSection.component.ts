@@ -88,7 +88,7 @@ IntroSection.css = css`
     display: grid;
     grid-template-columns: 1.15fr 1fr;
     column-gap: var(--space-2xl);
-    row-gap: var(--space-m-l);
+    row-gap: var(--space-xl);
 
     @media screen and (width <= 1200px) {
       grid-template-columns: 1fr;
@@ -142,6 +142,7 @@ IntroSection.css = css`
       justify-content: center;
       flex-direction: column;
       container-type: inline-size;
+      margin-block: auto;
 
       img {
         width: 100%;
