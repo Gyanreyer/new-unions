@@ -3,6 +3,11 @@ import { PageBorderLayout } from "../_layout/PageBorderLayout.component.ts";
 import { BackLink } from "../_components/BackLink.component.ts";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 
+export const config = {
+  // UPDATEME: make sure to bump this date when this page's content meaningfully changes
+  lastmod: "2026-07-23",
+};
+
 // Props to apply to eagerly loaded images from the first row
 const eagerImageProps = {
   fetchpriority: "high",

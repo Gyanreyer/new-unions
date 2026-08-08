@@ -8,6 +8,8 @@ import { LucySection } from "./LucySection.component.ts";
 
 export const config = {
   permalink: "/",
+  // UPDATEME: make sure to bump this date when this page's content meaningfully changes
+  lastmod: "2026-08-08",
 };
 
 const IndexPage: YetiPageComponent =

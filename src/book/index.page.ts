@@ -3,6 +3,11 @@ import { PageBorderLayout } from "../_layout/PageBorderLayout.component.ts";
 import { BackLink } from "../_components/BackLink.component.ts";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 
+export const config = {
+  // UPDATEME: make sure to bump this date when this page's content meaningfully changes
+  lastmod: "2026-06-12",
+};
+
 const BookingPage: YetiPageComponent = ({
   page,
 }) => html`<${PageBorderLayout} title="Book an Appointment | New Unions Bridal" url=${page.url}>
