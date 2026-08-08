@@ -4,6 +4,11 @@ import { EmployeeSection } from "./Employee.component.ts";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 import { BackLink } from "../_components/BackLink.component.ts";
 
+export const config = {
+  // UPDATEME: make sure to bump this date when this page's content meaningfully changes
+  lastmod: "2026-05-29",
+};
+
 const AboutPage: YetiPageComponent = ({
   page,
 }) => html`<${PageBorderLayout} url=${page.url}>

@@ -1,7 +1,8 @@
 import { YETI_NODE_TYPE, yetiPlugin, type YetiRootNode, type YetiElementNode, type PartialYetiConfig, } from 'yeti-js';
 import type EleventyConfig from '@11ty/eleventy/UserConfig';
 import { writeFile } from "node:fs/promises";
-import { join } from "node:path";
+import { join, resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 import { ORIGIN } from './src/constants.ts';
 
 export default function (eleventyConfig: EleventyConfig) {
@@ -84,17 +85,32 @@ export default function (eleventyConfig: EleventyConfig) {
         content: string;
       }[];
     }) => {
-      const locs = results
-        // Only include HTML pages
-        .filter((result) => result.outputPath.endsWith(".html"))
-        .map((result) => new URL(result.url, ORIGIN).toString())
-        // Sort alphabetically
-        .sort((a, b) => a.localeCompare(b));
+      const pages = await Promise.all(
+        results
+          // Only include HTML pages
+          .filter((result) => result.outputPath.endsWith(".html"))
+          .map(async (result) => {
+            // The results 11ty hands us don't include the page's data, so pull the
+            // optional lastmod from the page module's own config export
+            const { config } = (await import(
+              pathToFileURL(resolve(result.inputPath)).href
+            )) as { config?: { lastmod?: string } };
+
+            return {
+              loc: new URL(result.url, ORIGIN).toString(),
+              lastmod: config?.lastmod,
+            };
+          }),
+      );
+
+      // Sort alphabetically
+      pages.sort((a, b) => a.loc.localeCompare(b.loc));
 
       const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${locs.map((loc) => `  <url>
-    <loc>${loc}</loc>
+${pages.map(({ loc, lastmod }) => `  <url>
+    <loc>${loc}</loc>${lastmod ? `
+    <lastmod>${lastmod}</lastmod>` : ""}
   </url>`).join("\n")}
 </urlset>
 `;
