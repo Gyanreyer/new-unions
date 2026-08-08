@@ -12,14 +12,16 @@ export const IntroSection = () =>
         <span class="scroll-reveal-underline">differently.</span>
       </h2>
       <p>
-        A love letter to anyone searching for wedding attire that deviates from
-        the traditional, rooted in a safe space that celebrates everyone. New
-        Unions is a wedding attire experience dedicated to couples that fit
-        outside of the binary.
+        A love letter to anyone searching for wedding attire that deviates
+        from the traditional, rooted in a safe space that celebrates everyone.
+        Located in Metro Detroit, New Unions is a wedding attire experience
+        dedicated to couples that fit outside of the binary.
       </p>
       <p>
-        We welcome everyone and anyone to shop with us to find a wedding outfit
-        that is as unique as you. Sizes 0-30 celebrated here!
+        With sizes 0 to 30 and some custom designs, we welcome all
+        to shop with us to find a wedding outfit that is as unique as you.
+        Most of our gowns range from $500 to $1,500, keeping your outfit
+        accessible and affordable!
       </p>
       <div class="action-buttons">
         <${BookAppointmentButton} />
