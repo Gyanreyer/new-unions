@@ -14,7 +14,7 @@ export const JumpsuitSpotlightSection: YetiComponent = () => html`
     <${AutoplayVideo} src="/video/offerings/JumpsuitsVideo.mp4" label="A looping video of models wearing a variety of different styles of bridal jumpsuits." />
     <div class="copy">
       <p>
-        Want something different?
+        Looking for a queer and inclusive bridal look?
         Our jumpsuit selection is the largest in our area!
         All of our jumpsuits can be ordered in sizes 0-30,
         and our custom lines can also be created into jumpsuits or separates.
