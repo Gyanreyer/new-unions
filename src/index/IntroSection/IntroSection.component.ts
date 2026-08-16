@@ -25,7 +25,7 @@ export const IntroSection = () =>
       </p>
       <div class="action-buttons">
         <${BookAppointmentButton} />
-        <a href="/faq" class="action-btn secondary" id="what-to-expect">What to Expect at an Appointment</a>
+        <a href="/additional-services" class="action-btn secondary">Additional Services</a>
       </div>
     </div>
     <aside class="image-column">
@@ -115,10 +115,6 @@ IntroSection.css = css`
           text-align: center;
         }
 
-        #what-to-expect {
-          font-size: var(--font-size-s);
-          padding-inline: var(--space-s);
-        }
         @media screen and (width <= 480px) {
           width: 100%;
         }

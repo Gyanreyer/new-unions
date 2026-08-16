@@ -1,7 +1,8 @@
 import { css, html, type YetiPageComponent } from "yeti-js";
 import { PageBorderLayout } from "../_layout/PageBorderLayout.component.ts";
-import { BackLink } from "../_components/BackLink.component.ts";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
+import { SecondaryPageNavHeader } from "../_components/SecondaryPageNavHeader.component.ts";
+import { SecondaryPageMainSectionHeading } from "../_components/SecondaryPageMainSectionHeading.component.ts";
 
 export const config = {
   // UPDATEME: make sure to bump this date when this page's content meaningfully changes
@@ -17,22 +18,11 @@ const eagerImageProps = {
 };
 
 const OfferingsPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title="Offerings | New Unions Bridal" url=${page.url}>
-  <header>
-    <nav>
-      <${BackLink} href="/" label="Home" />
-    </nav>
-    <a href="/">
-      <${ResponsiveImage}
-        src="/img/logo.png"
-        alt="New Unions Bridal"
-        fetchpriority="high"
-        loading="eager"
-        sizes="(width >= 575px) 420px, 80vw"
-      />
-    </a>
-  </header>
+  <${SecondaryPageNavHeader} />
   <main>
-    <h1 class="section-heading underlined-text">A look at our selection</h1>
+    <${SecondaryPageMainSectionHeading}>
+      A look at our selection
+    </${SecondaryPageMainSectionHeading}>
     <p class="section-subheading">
       We are always receiving new products.
       Please check our social pages and visit us in store to see everything we have to offer!
@@ -231,22 +221,6 @@ const OfferingsPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout}
 export default OfferingsPage;
 
 OfferingsPage.css = css`
-  header {
-    nav {
-      margin-block-start: var(--space-m-l);
-    }
-
-    img {
-      display: block;
-      margin-inline: auto;
-      margin-block-start: var(--space-l-xl);
-      width: min(420px, 100%);
-      height: auto;
-      z-index: 100;
-      view-transition-name: header-logo;
-    }
-  }
-
   main {
     text-align: center;
     display: flex;
@@ -255,12 +229,6 @@ OfferingsPage.css = css`
     max-inline-size: 1200px;
     margin-inline: auto;
     width: 100%;
-
-    h1 {
-      margin-block: var(--space-xl-2xl) var(--space-m);
-      margin-inline: auto;
-      text-wrap: balance;
-    }
 
     .section-subheading {
       max-width: 720px;

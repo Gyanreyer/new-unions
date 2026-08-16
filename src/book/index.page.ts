@@ -1,7 +1,7 @@
 import { css, html, type YetiPageComponent } from "yeti-js";
 import { PageBorderLayout } from "../_layout/PageBorderLayout.component.ts";
-import { BackLink } from "../_components/BackLink.component.ts";
-import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
+import { SecondaryPageNavHeader } from "../_components/SecondaryPageNavHeader.component.ts";
+import { SecondaryPageMainSectionHeading } from "../_components/SecondaryPageMainSectionHeading.component.ts";
 
 export const config = {
   // UPDATEME: make sure to bump this date when this page's content meaningfully changes
@@ -11,22 +11,11 @@ export const config = {
 const BookingPage: YetiPageComponent = ({
   page,
 }) => html`<${PageBorderLayout} title="Book an Appointment | New Unions Bridal" url=${page.url}>
-  <header>
-    <nav>
-      <${BackLink} href="/" label="Home" />
-    </nav>
-    <a href="/">
-      <${ResponsiveImage}
-        src="/img/logo.png"
-        alt="New Unions Bridal"
-        fetchpriority="high"
-        loading="eager"
-        sizes="(width >= 575px) 420px, 80vw"
-      />
-    </a>
-  </header>
+  <${SecondaryPageNavHeader} />
   <main>
-    <h1 class="section-heading underlined-text">Book Your Appointment</h1>
+    <${SecondaryPageMainSectionHeading}>
+      Book Your Appointment
+    </${SecondaryPageMainSectionHeading}>
     <ol>
       <li>
         <section>
@@ -73,27 +62,6 @@ const BookingPage: YetiPageComponent = ({
 export default BookingPage;
 
 BookingPage.css = css`
-  header {
-    nav {
-      margin-block-start: var(--space-m-l);
-    }
-
-    img {
-      display: block;
-      margin-inline: auto;
-      margin-block-start: var(--space-l-xl);
-      width: min(420px, 100%);
-      height: auto;
-      z-index: 100;
-      view-transition-name: header-logo;
-    }
-  }
-
-  h1 {
-    margin-block: var(--space-xl-2xl) var(--space-l-2xl);
-    margin-inline: auto;
-  }
-
   main {
     display: flex;
     flex-direction: column;
