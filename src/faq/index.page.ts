@@ -5,7 +5,7 @@ import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 
 export const config = {
   // UPDATEME: make sure to bump this date when this page's content meaningfully changes
-  lastmod: "2026-07-07",
+  lastmod: "2026-08-20",
 };
 
 const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title="FAQ | New Unions Bridal" url=${page.url}>
@@ -68,6 +68,9 @@ const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title
         <p>
           We currently do not offer alterations. Our team has a preferred set of LGBTQ+ friendly seamstresses
           that we can refer you to for your outfits.
+        </p>
+        <p>
+          <strong><a href="/new-unions-alterations-referral-list.pdf" class="underlined-text">See our alterations referral list here</a></strong>
         </p>
       </section>
       <section id="return-policy">
