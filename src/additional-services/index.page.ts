@@ -20,7 +20,7 @@ const AdditionalServicesPage: YetiPageComponent = ({
     </${SecondaryPageMainSectionHeading}>
     <div class="services-grid-row styling">
       <div class="image-column">
-        <${ResponsiveImage} src="/img/offerings/ColorfulBeadedDresses.jpg" alt="" />
+        <${ResponsiveImage} src="/img/store/veil_close_up.webp" alt="" />
       </div>
       <div class="text-column">
         <h2>Looking for styling help?</h2>
@@ -35,7 +35,7 @@ const AdditionalServicesPage: YetiPageComponent = ({
     </div>
     <div class="services-grid-row steaming">
       <div class="image-column">
-        <${ResponsiveImage} src="/img/offerings/ColorfulBeadedDresses.jpg" alt="" />
+        <${ResponsiveImage} src="/img/store/dresses_on_rack.jpg" alt="" />
         <div class="text-overlay" id="steaming-service-pricing">
           <div>
             <h3>Basic Steam $59</h3>
@@ -74,7 +74,9 @@ const AdditionalServicesPage: YetiPageComponent = ({
           (Drop off minimum 2 weeks before event)
         </p>
         <p class="dropoff">
-          Drop your garment off during our retail hours
+          <a href="/#hours">
+            Drop your garment off during our retail hours
+          </a>
         </p>
       </div>
     </div>
@@ -82,10 +84,16 @@ const AdditionalServicesPage: YetiPageComponent = ({
 </${PageBorderLayout}>`;
 
 AdditionalServicesPage.css = css`
+  main {
+    max-inline-size: 1200px;
+    margin-inline: auto;
+  }
+
   .services-grid-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: var(--space-l-xl);
+    row-gap: var(--space-m);
     margin-block-end: var(--space-l);
 
     .text-column {
@@ -106,27 +114,46 @@ AdditionalServicesPage.css = css`
     }
 
     .image-column {
-      position: relative;
+      display: grid;
       overflow: hidden;
       border-radius: 24px;
+
+      /* Stack the image and any overlay in the same cell, so the column's
+         height is whichever is taller: the square image or the overlay text */
+      > * {
+        grid-area: 1 / 1;
+      }
 
       img {
         display: block;
         aspect-ratio: 1 / 1;
         object-fit: cover;
         width: 100%;
-        height: auto;
+        height: 100%;
       }
+    }
+
+    &:not(:last-of-type) {
+      margin-block-end: var(--space-l);
+
+      @media (max-width: 1500px) {
+        margin-block-end: var(--space-2xl);
+      }
+    }
+  }
+
+  .services-grid-row.styling {
+    img {
+      object-position: top;
     }
   }
 
   .services-grid-row.steaming {
     .text-overlay {
-      position: absolute;
-      inset: 0;
-      padding-block: var(--space-m);
+      padding-block: var(--space-l);
       padding-inline: var(--space-l);
-      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(2px);
+      background-color: rgb(0 0 0 / 0.4);
 
       display: flex;
       flex-direction: column;
@@ -137,7 +164,7 @@ AdditionalServicesPage.css = css`
       row-gap: var(--space-s);
 
       h3 {
-        font-size: var(--font-size-m);
+        font-size: var(--font-size-l);
       }
 
       p {
@@ -145,7 +172,7 @@ AdditionalServicesPage.css = css`
       }
 
       .disclaimer {
-        font-size: var(--font-size-xs);
+        font-size: var(--font-size-2xs);
         margin-block-start: var(--space-2xs);
       }
     }
@@ -154,8 +181,37 @@ AdditionalServicesPage.css = css`
       font-weight: bold;
       font-style: italic;
       text-decoration: underline;
-      font-size: var(--font-size-xl);
+      font-size: var(--font-size-l);
       margin-block-start: var(--space-m);
+    }
+  }
+
+  @media (max-width: 1500px) {
+    .services-grid-row {
+      grid-template-columns: 1fr;
+
+      .text-column {
+        order: -1;
+      }
+
+      .image-column {
+        img {
+          aspect-ratio: 10 / 5;
+        }
+      }
+
+      &.steaming .image-column {
+        /* Un-stack the text overlay so it displays as a card with the image at the top and text at the bottom */
+        > * {
+          grid-area: auto;
+        }
+
+        .text-overlay {
+          /** Remove backdrop blur and lighten the background color for the card */
+          backdrop-filter: none;
+          background-color: rgb(0 0 0 / 0.25);
+        }
+      }
     }
   }
 `;
