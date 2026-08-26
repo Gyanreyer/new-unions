@@ -76,9 +76,10 @@ const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title
       <section id="return-policy">
         <h2>What is your return policy?</h2>
         <p>
-          We currently do not accept returns. New pieces with tags, in unworn condition will be awarded store credit.
-          Vintage, pre loved pieces, and accessories are final sale. In the event of a wedding cancellation,
-          please give us a call and we are willing to work with you!
+          We currently do not accept returns of ordered gowns.
+          New off the rack items, in unworn condition with tags will be awarded store credit.
+          Vintage, pre-loved pieces, and accessories are final sale.
+          In the event of a wedding cancellation, please give us a call and we will work with you!
         </p>
       </section>
       <section id="order-timeline">
