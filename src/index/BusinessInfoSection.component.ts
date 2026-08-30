@@ -53,7 +53,7 @@ export const BusinessInfoSection = () => html`
         itemtype="http://schema.org/OpeningHoursSpecification"
         id="hours"
       >
-        <h3>Hours</h3>
+        <h3>Retail Hours</h3>
         <p>Closed Monday</p>
         <p>Tuesday &amp; Wednesday<br/>Appointment Only</p>
         <p>
