@@ -5,7 +5,7 @@ import { SecondaryPageMainSectionHeading } from "../_components/SecondaryPageMai
 
 export const config = {
   // UPDATEME: make sure to bump this date when this page's content meaningfully changes
-  lastmod: "2026-08-20",
+  lastmod: "2026-08-30",
 };
 
 const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title="FAQ | New Unions Bridal" url=${page.url}>
@@ -15,6 +15,15 @@ const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title
       What to expect at New Unions.
     </${SecondaryPageMainSectionHeading}>
     <div id="faqs">
+      <section id="do-i-need-an-appointment">
+        <h2>Do I need an appointment?</h2>
+        <p>
+          During our <a href="/#hours" class="underlined-text underline-target">retail hours</a> (Thursday through Sunday)
+          you can come visit our store front where you can browse our selection!
+          We can take walk-in bridal appointments if we are not booked.
+          If you would like a full bridal try-on experience, please book an appointment with us.
+        </p>
+      </section>
       <section id="appointment-length">
         <h2>How long are appointments?</h2>
         <p>
@@ -33,8 +42,10 @@ const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title
       <section id="appointment-fee">
         <h2>Is there an appointment fee?</h2>
         <p>
-          There is a $50 fee for appointments. That $50 will be used as a credit toward your wedding outfit.
-          If you don’t find what you are looking for, you will be credited in the future.
+          At New Unions, we are an intimate space with only one fitting room.
+          To ensure availability, there is a $50 fitting room reservation fee for bridal try-on appointments.
+          That $50 will be used as a credit toward your wedding outfit.
+          If you don’t find what you are looking for, you will be credited in a comeback appointment (limit 1).
         </p>
       </section>
       <section id="alcohol-policy">
