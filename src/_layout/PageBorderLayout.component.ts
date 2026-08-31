@@ -32,13 +32,13 @@ export const PageBorderLayout: YetiComponent = ({ children, ...spreadAttrs }) =>
       </p>
       <div class="social-links">
         <div class="links-wrapper">
-          <a rel='nofollow' target='_blank' href="https://www.facebook.com/profile.php?id=61588584009876" class="fb">
+          <a rel='nofollow' target='_blank' href="https://www.facebook.com/profile.php?id=61588584009876" class="fb" itemprop="sameAs">
             <${Icon} name="facebook" label="Facebook Page" height="23" width="13" />
           </a>
-          <a rel='nofollow' target='_blank' href="https://www.instagram.com/newunionsbridal/" class="insta">
+          <a rel='nofollow' target='_blank' href="https://www.instagram.com/newunionsbridal/" class="insta" itemprop="sameAs">
             <${Icon} name="instagram" label="Instagram Page" width="20" height="20" />
           </a>
-          <a rel='nofollow' target='_blank' href="https://www.tiktok.com/@newunionsbridal" class="tiktok">
+          <a rel='nofollow' target='_blank' href="https://www.tiktok.com/@newunionsbridal" class="tiktok" itemprop="sameAs">
             <${Icon} name="tiktok" label="TikTok Page" width="19" height="22" />
           </a>
         </div>

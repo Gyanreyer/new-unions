@@ -4,13 +4,11 @@ import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 export const Header = () =>
   html`<header>
     <h1>
-      <meta itemprop="name" content="New Unions Bridal" />
       <${ResponsiveImage}
         src="/img/logo.png"
         alt="New Unions Bridal"
         fetchpriority="high"
         loading="eager"
-        itemprop="logo"
         sizes="(width >= 850px) 640px, 80vw"
       />
     </h1>

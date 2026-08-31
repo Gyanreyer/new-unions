@@ -20,7 +20,7 @@ export const IntroSection = () =>
       <p>
         With sizes 0 to 30 and some custom designs, we welcome all
         to shop with us to find a wedding outfit that is as unique as you.
-        Most of our gowns range from $500 to $1,500, keeping your outfit
+        Most of our gowns range from <span itemprop="priceRange">$500 to $1,500</span>, keeping your outfit
         accessible and affordable!
       </p>
       <div class="action-buttons">
