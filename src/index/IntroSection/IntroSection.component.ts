@@ -35,8 +35,8 @@ export const IntroSection = () =>
         <${Sparkle} data-idx="2"/>
       </div>
       <${ResponsiveImage}
-        src="/img/offerings/Feather_Dress_Reception_Party.jpg"
-        alt="A white reception party dress with feather details on a mannequin."
+        src="/img/store/store-exterior-close.jpg"
+        alt="Exterior of the New Unions Bridal storefront. Some wedding dresses and colorful rhinestone neckties can be seen on display in the window."
         class="img-1"
       />
       <${ResponsiveImage}
