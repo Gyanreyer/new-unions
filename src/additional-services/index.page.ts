@@ -3,7 +3,7 @@ import { css, html, type YetiPageComponent } from "yeti-js";
 import { PageBorderLayout } from "../_layout/PageBorderLayout.component.ts";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 import { SecondaryPageNavHeader } from "../_components/SecondaryPageNavHeader.component.ts";
-import { SecondaryPageMainSectionHeading } from "../_components/SecondaryPageMainSectionHeading.component.ts";
+import { SecondaryPageMainSectionHeader } from "../_components/SecondaryPageMainSectionHeader.component.ts";
 
 export const config = {
   // UPDATEME: make sure to bump this date when this page's content meaningfully changes
@@ -15,9 +15,9 @@ const AdditionalServicesPage: YetiPageComponent = ({
 }) => html`<${PageBorderLayout} url=${page.url}>
   <${SecondaryPageNavHeader} />
   <main>
-    <${SecondaryPageMainSectionHeading}>
-      Looking for the final touches?
-    </${SecondaryPageMainSectionHeading}>
+    <${SecondaryPageMainSectionHeader}>
+      <h1>Looking for the final touches?</h1>
+    </${SecondaryPageMainSectionHeader}>
     <div class="services-grid-row styling">
       <div class="image-column">
         <${ResponsiveImage} src="/img/store/veil_close_up.webp" alt="" />

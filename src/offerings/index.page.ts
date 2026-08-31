@@ -2,7 +2,7 @@ import { css, html, type YetiPageComponent } from "yeti-js";
 import { PageBorderLayout } from "../_layout/PageBorderLayout.component.ts";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 import { SecondaryPageNavHeader } from "../_components/SecondaryPageNavHeader.component.ts";
-import { SecondaryPageMainSectionHeading } from "../_components/SecondaryPageMainSectionHeading.component.ts";
+import { SecondaryPageMainSectionHeader } from "../_components/SecondaryPageMainSectionHeader.component.ts";
 
 export const config = {
   // UPDATEME: make sure to bump this date when this page's content meaningfully changes
@@ -20,13 +20,13 @@ const eagerImageProps = {
 const OfferingsPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title="Offerings | New Unions Bridal" url=${page.url}>
   <${SecondaryPageNavHeader} />
   <main>
-    <${SecondaryPageMainSectionHeading}>
-      A look at our selection
-    </${SecondaryPageMainSectionHeading}>
-    <p class="section-subheading">
-      We are always receiving new products.
-      Please check our social pages and visit us in store to see everything we have to offer!
-    </p>
+    <${SecondaryPageMainSectionHeader}>
+      <h1>A look at our selection</h1>
+      <p>
+        We are always receiving new products.
+        Please check our social pages and visit us in store to see everything we have to offer!
+      </p>
+    </${SecondaryPageMainSectionHeader}>
     <ul class="gallery">
       <li>
         <ul class="gallery-row" data-orientation="portrait">
@@ -229,12 +229,6 @@ OfferingsPage.css = css`
     max-inline-size: 1200px;
     margin-inline: auto;
     width: 100%;
-
-    .section-subheading {
-      max-width: 720px;
-      margin-block-end: var(--space-l-2xl);
-      text-wrap: pretty;
-    }
   }
 
   .gallery-row {

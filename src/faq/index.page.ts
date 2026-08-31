@@ -1,7 +1,7 @@
 import { css, html, type YetiPageComponent } from "yeti-js";
 import { PageBorderLayout } from "../_layout/PageBorderLayout.component.ts";
 import { SecondaryPageNavHeader } from "../_components/SecondaryPageNavHeader.component.ts";
-import { SecondaryPageMainSectionHeading } from "../_components/SecondaryPageMainSectionHeading.component.ts";
+import { SecondaryPageMainSectionHeader } from "../_components/SecondaryPageMainSectionHeader.component.ts";
 
 export const config = {
   // UPDATEME: make sure to bump this date when this page's content meaningfully changes
@@ -11,9 +11,9 @@ export const config = {
 const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title="FAQ | New Unions Bridal" url=${page.url}>
   <${SecondaryPageNavHeader} />
   <main>
-    <${SecondaryPageMainSectionHeading}>
-      What to expect at New Unions.
-    </${SecondaryPageMainSectionHeading}>
+    <${SecondaryPageMainSectionHeader}>
+      <h1>What to expect at New Unions</h1>
+    </${SecondaryPageMainSectionHeader}>
     <div id="faqs">
       <section id="do-i-need-an-appointment">
         <h2>Do I need an appointment?</h2>

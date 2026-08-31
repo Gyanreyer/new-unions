@@ -3,7 +3,7 @@ import { css, html, type YetiPageComponent } from "yeti-js";
 import { PageBorderLayout } from "../_layout/PageBorderLayout.component.ts";
 import { EmployeeSection } from "./Employee.component.ts";
 import { SecondaryPageNavHeader } from "../_components/SecondaryPageNavHeader.component.ts";
-import { SecondaryPageMainSectionHeading } from "../_components/SecondaryPageMainSectionHeading.component.ts";
+import { SecondaryPageMainSectionHeader } from "../_components/SecondaryPageMainSectionHeader.component.ts";
 
 export const config = {
   // UPDATEME: make sure to bump this date when this page's content meaningfully changes
@@ -15,9 +15,9 @@ const AboutPage: YetiPageComponent = ({
 }) => html`<${PageBorderLayout} url=${page.url}>
   <${SecondaryPageNavHeader} />
   <main>
-    <${SecondaryPageMainSectionHeading}>
-      Here’s a little about us.
-    </${SecondaryPageMainSectionHeading}>
+    <${SecondaryPageMainSectionHeader}>
+      <h1>Here’s a little about us.</h1>
+    </${SecondaryPageMainSectionHeader}>
     <${EmployeeSection}
       name="Jess"
       pronouns="They/She"

@@ -1,7 +1,7 @@
 import { css, html, type YetiPageComponent } from "yeti-js";
 import { PageBorderLayout } from "../_layout/PageBorderLayout.component.ts";
 import { SecondaryPageNavHeader } from "../_components/SecondaryPageNavHeader.component.ts";
-import { SecondaryPageMainSectionHeading } from "../_components/SecondaryPageMainSectionHeading.component.ts";
+import { SecondaryPageMainSectionHeader } from "../_components/SecondaryPageMainSectionHeader.component.ts";
 
 export const config = {
   // UPDATEME: make sure to bump this date when this page's content meaningfully changes
@@ -13,9 +13,14 @@ const BookingPage: YetiPageComponent = ({
 }) => html`<${PageBorderLayout} title="Book an Appointment | New Unions Bridal" url=${page.url}>
   <${SecondaryPageNavHeader} />
   <main>
-    <${SecondaryPageMainSectionHeading}>
-      Book Your Appointment
-    </${SecondaryPageMainSectionHeading}>
+    <${SecondaryPageMainSectionHeader}>
+      <h1>Book Your Appointment</h1>
+      <p>
+        Walk-in appointments during retail hours have no fitting room reservation fee,
+        but we cannot guarantee availability because our space is an intimate experience
+        limited to one room.
+      </p>
+    </${SecondaryPageMainSectionHeader}>
     <ol>
       <li>
         <section>
@@ -40,7 +45,7 @@ const BookingPage: YetiPageComponent = ({
         <section>
           <h2>Step 3</h2>
           <p>
-            <a href="https://calendar.proton.me/u/0/bookings#8GyKjMe-61U4jif7tMND9n4jhEokR1oLbbqT2c2REbQ=" class="underlined-text">Book a time slot in the calendar.</a>
+            <a href="https://calendar.proton.me/u/0/bookings#8GyKjMe-61U4jif7tMND9n4jhEokR1oLbbqT2c2REbQ=" class="underlined-text">Reserve your fitting room here.</a>
           </p>
           <p>
             Appointments are 90 minutes.
