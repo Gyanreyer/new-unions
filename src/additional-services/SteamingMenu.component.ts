@@ -141,6 +141,7 @@ SteamingMenu.css = css`
 
         p {
           font-size: var(--font-size-s);
+          text-wrap: balance;
         }
       }
     }

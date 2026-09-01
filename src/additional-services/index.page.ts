@@ -66,13 +66,17 @@ AdditionalServicesPage.css = css`
   main {
     max-inline-size: 1200px;
     margin-inline: auto;
+
+    .secondary-page-main-section-header {
+      margin-block-end: var(--space-xl);
+    }
   }
 
   .service-section {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    column-gap: var(--space-2xl);
+    column-gap: var(--space-3xl);
     row-gap: var(--space-m);
 
     &:not(:last-of-type) {
@@ -89,7 +93,7 @@ AdditionalServicesPage.css = css`
     }
 
     aside {
-      flex: 0.6 1 300px;
+      flex: 0.5 1 250px;
 
       img {
         display: block;
@@ -98,6 +102,10 @@ AdditionalServicesPage.css = css`
         aspect-ratio: 1;
         object-fit: cover;
         border-radius: 24px;
+      }
+
+      @media screen and (width <= 1000px) {
+        flex-basis: 100%;
       }
     }
 

@@ -7,7 +7,8 @@ export const SecondaryPageMainSectionHeader: YetiComponent = ({
 SecondaryPageMainSectionHeader.css = css`
 @layer util {
   header.secondary-page-main-section-header {
-    margin-block: var(--space-xl-2xl) var(--space-l-2xl);
+    margin-block-start: var(--space-xl-2xl);
+    margin-block-end: var(--space-l);
     margin-inline: auto;
 
     h1 {

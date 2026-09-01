@@ -34,10 +34,12 @@ const BookingPage: YetiPageComponent = ({
         <section>
           <h2>Step 2</h2>
           <p>
-            <a href="https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=73abbab1-6680-11f1-aa7a-12a0879a85b1" class="underlined-text">Pay your $50 deposit here.</a> This deposit will be credited toward your wedding outfit.
+            <a href="https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=73abbab1-6680-11f1-aa7a-12a0879a85b1" class="underlined-text">
+              Pay your $50 reservation fee.
+            </a> This reservation fee will be credited toward your wedding outfit.
           </p>
           <p>
-            <strong>If you do not pay this deposit before your appointment, your booking will not be honored.</strong>
+            <strong>If you do not pay this fee before your appointment, your booking will not be honored.</strong>
           </p>
         </section>
       </li>
@@ -45,7 +47,9 @@ const BookingPage: YetiPageComponent = ({
         <section>
           <h2>Step 3</h2>
           <p>
-            <a href="https://calendar.proton.me/u/0/bookings#8GyKjMe-61U4jif7tMND9n4jhEokR1oLbbqT2c2REbQ=" class="underlined-text">Reserve your fitting room here.</a>
+            <a href="https://calendar.proton.me/u/0/bookings#8GyKjMe-61U4jif7tMND9n4jhEokR1oLbbqT2c2REbQ=" class="underlined-text">
+              Book a time slot in the calendar.
+            </a>
           </p>
           <p>
             Appointments are 90 minutes.

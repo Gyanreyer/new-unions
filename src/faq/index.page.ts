@@ -18,10 +18,9 @@ const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title
       <section id="do-i-need-an-appointment">
         <h2>Do I need an appointment?</h2>
         <p>
-          During our <a href="/#hours" class="underlined-text underline-target">retail hours</a> (Thursday through Sunday)
-          you can come visit our store front where you can browse our selection!
-          We can take walk-in bridal appointments if we are not booked.
-          If you would like a full bridal try-on experience, please book an appointment with us.
+          You can come visit our store front during our <a href="/#hours" class="underlined-text underline-target">retail hours</a> (Thursday through Sunday)
+          to browse our selection!
+          Appointments are recommended for bridal try-ons, but walk-ins are welcome if we have availability.
         </p>
       </section>
       <section id="appointment-length">
