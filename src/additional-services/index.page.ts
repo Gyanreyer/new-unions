@@ -93,7 +93,7 @@ AdditionalServicesPage.css = css`
     }
 
     aside {
-      flex: 0.5 1 250px;
+      flex: 0.5 1 150px;
 
       img {
         display: block;
