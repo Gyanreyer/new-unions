@@ -60,6 +60,8 @@
     font-size: var(--font-size-l);
     font-weight: 500;
     line-height: 1;
+    text-align: center;
+    text-wrap: balance;
     border-radius: 24px;
     cursor: pointer;
 

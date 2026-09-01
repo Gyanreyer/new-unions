@@ -2,7 +2,7 @@ import { css, html } from "yeti-js";
 import { BookAppointmentButton } from "../_components/BookAppointmentButton.component.ts";
 import { AutoplayVideo } from "../_components/AutoplayVideo.component.ts";
 
-import { CONTACT_EMAIL } from "../constants.ts";
+import { CONTACT_EMAIL, GOOGLE_MAPS_URL } from "../constants.ts";
 
 export const BusinessInfoSection = () => html`
   <section id="business-info">
@@ -15,10 +15,10 @@ export const BusinessInfoSection = () => html`
         <p
           itemprop="address"
           itemscope
-          itemtype="http://schema.org/PostalAddress"
+          itemtype="https://schema.org/PostalAddress"
         >
           <a
-            href="https://maps.app.goo.gl/H9M8DWVo8fJhf1gF9"
+            href=${GOOGLE_MAPS_URL}
             class="underlined-link underline-target"
           >
             <span itemprop="streetAddress">359 Livernois Ave</span>&#32;
@@ -47,38 +47,49 @@ export const BusinessInfoSection = () => html`
           </a>
         </p>
       </address>
-      <section
-        itemprop="openingHoursSpecification"
-        itemscope
-        itemtype="http://schema.org/OpeningHoursSpecification"
-        id="hours"
-      >
-        <h3>Hours</h3>
+      <section id="hours">
+        <h3>Retail Hours</h3>
         <p>Closed Monday</p>
         <p>Tuesday &amp; Wednesday<br/>Appointment Only</p>
-        <p>
+        <p
+          itemprop="openingHoursSpecification"
+          itemscope
+          itemtype="https://schema.org/OpeningHoursSpecification"
+        >
           <link
             itemprop="dayOfWeek"
             href="https://schema.org/Thursday"
-          />Thursday <time itemprop="opens" content="12:00:00">12PM</time> -
-          <time itemprop="closes" content="16:30:00">4:30PM</time>
+          />Thursday <time itemprop="opens" datetime="12:00">12PM</time> -
+          <time itemprop="closes" datetime="16:30">4:30PM</time>
         </p>
-        <p>
+        <p
+          itemprop="openingHoursSpecification"
+          itemscope
+          itemtype="https://schema.org/OpeningHoursSpecification"
+        >
           <link itemprop="dayOfWeek" href="https://schema.org/Friday" />Friday
-          <time itemprop="opens" content="11:00:00">11AM</time> -
-          <time itemprop="closes" content="18:00:00">6PM</time>
+          <time itemprop="opens" datetime="11:00">11AM</time> -
+          <time itemprop="closes" datetime="18:00">6PM</time>
         </p>
-        <p>
+        <p
+          itemprop="openingHoursSpecification"
+          itemscope
+          itemtype="https://schema.org/OpeningHoursSpecification"
+        >
           <link
             itemprop="dayOfWeek"
             href="https://schema.org/Saturday"
-          />Saturday <time itemprop="opens" content="11:00:00">11AM</time> -
-          <time itemprop="closes" content="18:00:00">6PM</time>
+          />Saturday <time itemprop="opens" datetime="11:00">11AM</time> -
+          <time itemprop="closes" datetime="18:00">6PM</time>
         </p>
-        <p>
+        <p
+          itemprop="openingHoursSpecification"
+          itemscope
+          itemtype="https://schema.org/OpeningHoursSpecification"
+        >
           <link itemprop="dayOfWeek" href="https://schema.org/Sunday" />Sunday
-          <time itemprop="opens" content="12:00:00">12PM</time> -
-          <time itemprop="closes" content="16:30:00">4:30PM</time>
+          <time itemprop="opens" datetime="12:00">12PM</time> -
+          <time itemprop="closes" datetime="16:30">4:30PM</time>
         </p>
       </section>
       <${BookAppointmentButton} />

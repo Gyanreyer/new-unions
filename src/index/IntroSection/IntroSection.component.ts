@@ -20,12 +20,12 @@ export const IntroSection = () =>
       <p>
         With sizes 0 to 30 and some custom designs, we welcome all
         to shop with us to find a wedding outfit that is as unique as you.
-        Most of our gowns range from $500 to $1,500, keeping your outfit
+        Most of our gowns range from <span itemprop="priceRange">$500 to $1,500</span>, keeping your outfit
         accessible and affordable!
       </p>
       <div class="action-buttons">
         <${BookAppointmentButton} />
-        <a href="/faq" class="action-btn secondary" id="what-to-expect">What to Expect at an Appointment</a>
+        <a href="/additional-services" class="action-btn secondary">Additional Services</a>
       </div>
     </div>
     <aside class="image-column">
@@ -35,8 +35,8 @@ export const IntroSection = () =>
         <${Sparkle} data-idx="2"/>
       </div>
       <${ResponsiveImage}
-        src="/img/offerings/Feather_Dress_Reception_Party.jpg"
-        alt="A white reception party dress with feather details on a mannequin."
+        src="/img/store/store-exterior-close.jpg"
+        alt="Exterior of the New Unions Bridal storefront. Some wedding dresses and colorful rhinestone neckties can be seen on display in the window."
         class="img-1"
       />
       <${ResponsiveImage}
@@ -115,10 +115,6 @@ IntroSection.css = css`
           text-align: center;
         }
 
-        #what-to-expect {
-          font-size: var(--font-size-s);
-          padding-inline: var(--space-s);
-        }
         @media screen and (width <= 480px) {
           width: 100%;
         }
@@ -166,7 +162,7 @@ IntroSection.css = css`
         width: 67%;
         align-self: flex-end;
         /* Shift up to overlap with 1st image */
-        margin-block-start: -25%;
+        margin-block-start: -15%;
         aspect-ratio: 86 / 100;
         z-index: 1;
       }

@@ -1,31 +1,28 @@
 import { css, html, type YetiPageComponent } from "yeti-js";
 import { PageBorderLayout } from "../_layout/PageBorderLayout.component.ts";
-import { BackLink } from "../_components/BackLink.component.ts";
-import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
+import { SecondaryPageNavHeader } from "../_components/SecondaryPageNavHeader.component.ts";
+import { SecondaryPageMainSectionHeader } from "../_components/SecondaryPageMainSectionHeader.component.ts";
 
 export const config = {
   // UPDATEME: make sure to bump this date when this page's content meaningfully changes
-  lastmod: "2026-08-20",
+  lastmod: "2026-08-31",
 };
 
 const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title="FAQ | New Unions Bridal" url=${page.url}>
-  <header>
-    <nav>
-      <${BackLink} href="/" label="Home" />
-    </nav>
-    <a href="/">
-      <${ResponsiveImage}
-        src="/img/logo.png"
-        alt="New Unions Bridal"
-        fetchpriority="high"
-        loading="eager"
-        sizes="(width >= 575px) 420px, 80vw"
-      />
-    </a>
-  </header>
+  <${SecondaryPageNavHeader} />
   <main>
-    <h1 class="section-heading underlined-text">What to expect at New Unions.</h1>
+    <${SecondaryPageMainSectionHeader}>
+      <h1>What to expect at New Unions</h1>
+    </${SecondaryPageMainSectionHeader}>
     <div id="faqs">
+      <section id="do-i-need-an-appointment">
+        <h2>Do I need an appointment?</h2>
+        <p>
+          You can come visit our store front during our <a href="/#hours" class="underlined-text underline-target">retail hours</a> (Thursday through Sunday)
+          to browse our selection!
+          Appointments are recommended for bridal try-ons, but walk-ins are welcome if we have availability.
+        </p>
+      </section>
       <section id="appointment-length">
         <h2>How long are appointments?</h2>
         <p>
@@ -44,8 +41,10 @@ const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title
       <section id="appointment-fee">
         <h2>Is there an appointment fee?</h2>
         <p>
-          There is a $50 fee for appointments. That $50 will be used as a credit toward your wedding outfit.
-          If you don’t find what you are looking for, you will be credited in the future.
+          At New Unions, we are an intimate space with only one fitting room.
+          To ensure availability, there is a $50 fitting room reservation fee for bridal try-on appointments.
+          That $50 will be used as a credit toward your wedding outfit.
+          If you don’t find what you are looking for, you will be credited in a comeback appointment (limit 1).
         </p>
       </section>
       <section id="alcohol-policy">
@@ -116,27 +115,6 @@ const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title
 export default FAQPage;
 
 FAQPage.css = css`
-  header {
-    nav {
-      margin-block-start: var(--space-m-l);
-    }
-
-    img {
-      display: block;
-      margin-inline: auto;
-      margin-block-start: var(--space-l-xl);
-      width: min(420px, 100%);
-      height: auto;
-      z-index: 100;
-      view-transition-name: header-logo;
-    }
-  }
-
-  h1 {
-    margin-block: var(--space-xl-2xl) var(--space-l-2xl);
-    margin-inline: auto;
-  }
-
   main {
     display: flex;
     flex-direction: column;
