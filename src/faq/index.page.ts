@@ -5,7 +5,7 @@ import { SecondaryPageMainSectionHeader } from "../_components/SecondaryPageMain
 
 export const config = {
   // UPDATEME: make sure to bump this date when this page's content meaningfully changes
-  lastmod: "2026-08-30",
+  lastmod: "2026-08-31",
 };
 
 const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title="FAQ | New Unions Bridal" url=${page.url}>
