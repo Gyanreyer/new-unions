@@ -34,7 +34,7 @@ const AdditionalServicesPage: YetiPageComponent = ({
         <a href="mailto:hello@newunionsbridal.com" class="action-btn primary">Send us an email to book</a>
       </div>
       <aside>
-        <${ResponsiveImage} src="/img/store/veil_close_up.webp" alt="" />
+        <${ResponsiveImage} src="/img/offerings/Wildflower_Veil.jpg" alt="" />
       </aside>
     </section>
     <section class="service-section steaming" itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
@@ -75,11 +75,15 @@ AdditionalServicesPage.css = css`
     column-gap: var(--space-2xl);
     row-gap: var(--space-m);
 
+    &:not(:last-of-type) {
+      margin-block-end: var(--space-xl);
+    }
+
     h2 {
       margin-block-end: var(--space-s);
       font-size: var(--font-size-2xl);
     }
-    
+
     .text-column {
       flex: 1 1 300px;
     }
@@ -97,10 +101,8 @@ AdditionalServicesPage.css = css`
       }
     }
 
-    &.styling {
-      .action-btn {
-        margin-block-start: var(--space-s);
-      }
+    .action-btn {
+      margin-block-start: var(--space-s);
     }
   }
 `;

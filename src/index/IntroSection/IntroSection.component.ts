@@ -162,7 +162,7 @@ IntroSection.css = css`
         width: 67%;
         align-self: flex-end;
         /* Shift up to overlap with 1st image */
-        margin-block-start: -25%;
+        margin-block-start: -15%;
         aspect-ratio: 86 / 100;
         z-index: 1;
       }
