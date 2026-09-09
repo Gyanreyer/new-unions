@@ -5,7 +5,7 @@ import { SecondaryPageMainSectionHeader } from "../_components/SecondaryPageMain
 
 export const config = {
   // UPDATEME: make sure to bump this date when this page's content meaningfully changes
-  lastmod: "2026-08-31",
+  lastmod: "2026-09-09",
 };
 
 const BookingPage: YetiPageComponent = ({
@@ -29,7 +29,7 @@ const BookingPage: YetiPageComponent = ({
             Review the FAQ to make sure you understand the rules and expectations for your appointment.
           </p>
           <p>
-            <a href="/faq" class="action-btn primary">Read the FAQ</a>
+            <a href="/faq" class="action-btn primary">Read our FAQs</a>
           </p>
         </section>
       </li>
@@ -44,7 +44,7 @@ const BookingPage: YetiPageComponent = ({
           </p>
           <p>
             <a href="https://calendar.proton.me/u/0/bookings#8GyKjMe-61U4jif7tMND9n4jhEokR1oLbbqT2c2REbQ=" class="action-btn primary">
-              Book your appointment
+              View our calendar
             </a>
           </p>
         </section>
@@ -100,6 +100,12 @@ BookingPage.css = css`
 
       li {
         margin-block-end: var(--space-l);
+      }
+    }
+
+    @media screen and (width <= 550px) {
+      .action-btn {
+        width: 100%;
       }
     }
   }
