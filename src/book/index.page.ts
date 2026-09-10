@@ -5,7 +5,7 @@ import { SecondaryPageMainSectionHeader } from "../_components/SecondaryPageMain
 
 export const config = {
   // UPDATEME: make sure to bump this date when this page's content meaningfully changes
-  lastmod: "2026-08-31",
+  lastmod: "2026-09-09",
 };
 
 const BookingPage: YetiPageComponent = ({
@@ -26,7 +26,10 @@ const BookingPage: YetiPageComponent = ({
         <section>
           <h2>Step 1</h2>
           <p>
-            <a href="/faq" class="underlined-text">Review the FAQ</a> to make sure you understand the rules and expectations for your appointment.
+            Review the FAQ to make sure you understand the rules and expectations for your appointment.
+          </p>
+          <p>
+            <a href="/faq" class="action-btn primary">Read our FAQs</a>
           </p>
         </section>
       </li>
@@ -34,12 +37,15 @@ const BookingPage: YetiPageComponent = ({
         <section>
           <h2>Step 2</h2>
           <p>
-            <a href="https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=73abbab1-6680-11f1-aa7a-12a0879a85b1" class="underlined-text">
-              Pay your $50 reservation fee.
-            </a> This reservation fee will be credited toward your wedding outfit.
+            Book a time slot in the calendar.
           </p>
           <p>
-            <strong>If you do not pay this fee before your appointment, your booking will not be honored.</strong>
+            Appointments are 90 minutes.
+          </p>
+          <p>
+            <a href="https://calendar.proton.me/u/0/bookings#8GyKjMe-61U4jif7tMND9n4jhEokR1oLbbqT2c2REbQ=" class="action-btn primary">
+              View our calendar
+            </a>
           </p>
         </section>
       </li>
@@ -47,12 +53,16 @@ const BookingPage: YetiPageComponent = ({
         <section>
           <h2>Step 3</h2>
           <p>
-            <a href="https://calendar.proton.me/u/0/bookings#8GyKjMe-61U4jif7tMND9n4jhEokR1oLbbqT2c2REbQ=" class="underlined-text">
-              Book a time slot in the calendar.
-            </a>
+            Pay your $50 reservation fee.
+            This reservation fee will be credited toward your wedding outfit.
           </p>
           <p>
-            Appointments are 90 minutes.
+            <strong>If you do not pay this fee before your appointment, your booking will not be honored.</strong>
+          </p>
+          <p>
+            <a href="https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=73abbab1-6680-11f1-aa7a-12a0879a85b1" class="action-btn primary">
+              Pay the reservation fee
+            </a>
           </p>
         </section>
       </li>
@@ -90,6 +100,12 @@ BookingPage.css = css`
 
       li {
         margin-block-end: var(--space-l);
+      }
+    }
+
+    @media screen and (width <= 550px) {
+      .action-btn {
+        width: 100%;
       }
     }
   }
