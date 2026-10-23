@@ -1,0 +1,3 @@
+# Redirect /book to Proton Calendar booking page
+/book  https://calendar.proton.me/u/0/bookings#8GyKjMe-61U4jif7tMND9n4jhEokR1oLbbqT2c2REbQ= 302
+/book/ https://calendar.proton.me/u/0/bookings#8GyKjMe-61U4jif7tMND9n4jhEokR1oLbbqT2c2REbQ= 302
