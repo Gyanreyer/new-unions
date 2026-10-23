@@ -23,9 +23,9 @@ export const PageBorderLayout: YetiComponent = ({ children, ...spreadAttrs }) =>
         </a>
       </div>
       <nav>
-        <a href="/about" class="underlined-link underline-target">About Us</a>
+        <a href="/about/" class="underlined-link underline-target">About Us</a>
         <span class="spacer"></span>
-        <a href="/faq" class="underlined-link underline-target">FAQ</a>
+        <a href="/faq/" class="underlined-link underline-target">FAQ</a>
       </nav>
       <p class="queer-owned">
         Queer woman-owned local business in Southeast Michigan
