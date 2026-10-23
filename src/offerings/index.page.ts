@@ -17,7 +17,7 @@ const eagerImageProps = {
   sizes: "(width >= 1600px) 278px, (width >= 1200px) 200px, (width >= 750px) 35vw, 75vw"
 };
 
-const OfferingsPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title="Offerings | New Unions Bridal" url=${page.url}>
+const OfferingsPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title="Offerings | New Unions Bridal" page=${page}>
   <${SecondaryPageNavHeader} />
   <main>
     <${SecondaryPageMainSectionHeader}>

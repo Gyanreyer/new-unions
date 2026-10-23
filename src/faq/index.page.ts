@@ -8,7 +8,7 @@ export const config = {
   lastmod: "2026-08-31",
 };
 
-const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title="FAQ | New Unions Bridal" url=${page.url}>
+const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title="FAQ | New Unions Bridal" page=${page}>
   <${SecondaryPageNavHeader} />
   <main>
     <${SecondaryPageMainSectionHeader}>

@@ -9,11 +9,11 @@ import { LucySection } from "./LucySection.component.ts";
 export const config = {
   permalink: "/",
   // UPDATEME: make sure to bump this date when this page's content meaningfully changes
-  lastmod: "2026-08-31",
+  lastmod: "2026-10-31",
 };
 
 const IndexPage: YetiPageComponent =
-  ({ page }) => html`<${PageBorderLayout} url=${page.url}>
+  ({ page }) => html`<${PageBorderLayout} page=${page}>
   <${Header} />
   <main>
     <${IntroSection} />
