@@ -5,7 +5,7 @@ import { SecondaryPageMainSectionHeader } from "../_components/SecondaryPageMain
 
 export const config = {
   // UPDATEME: make sure to bump this date when this page's content meaningfully changes
-  lastmod: "2026-08-31",
+  lastmod: "2026-10-25",
 };
 
 const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title="FAQ | New Unions Bridal" page=${page}>
@@ -36,15 +36,6 @@ const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title
           Our store is an intimate setting, where we only work with one customer (or couple!) at a time.
           Please limit your guests to 5 or fewer. The ideal about is around 3 to 4.
           We have our own parking lot and are wheelchair accessible.
-        </p>
-      </section>
-      <section id="appointment-fee">
-        <h2>Is there an appointment fee?</h2>
-        <p>
-          At New Unions, we are an intimate space with only one fitting room.
-          To ensure availability, there is a $50 fitting room reservation fee for bridal try-on appointments.
-          That $50 will be used as a credit toward your wedding outfit.
-          If you don’t find what you are looking for, you will be credited in a comeback appointment (limit 1).
         </p>
       </section>
       <section id="alcohol-policy">
