@@ -25,7 +25,7 @@ export const IntroSection = () =>
       </p>
       <div class="action-buttons">
         <${BookAppointmentButton} />
-        <a href="/additional-services" class="action-btn secondary">Additional Services</a>
+        <a href="/additional-services/" class="action-btn secondary">Additional Services</a>
       </div>
     </div>
     <aside class="image-column">

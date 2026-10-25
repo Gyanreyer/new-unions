@@ -19,7 +19,7 @@ export const JumpsuitSpotlightSection: YetiComponent = () => html`
         All of our jumpsuits can be ordered in sizes 0-30,
         and our custom lines can also be created into jumpsuits or separates.
       </p>
-      <a href="/offerings" class="action-btn primary">View more product!</a>
+      <a href="/offerings/" class="action-btn primary">View more product!</a>
     </div>
     <div class="sparkle-group two" data-idx="1">
       <${Sparkle} data-idx="0" />

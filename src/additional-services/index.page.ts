@@ -13,7 +13,7 @@ export const config = {
 
 const AdditionalServicesPage: YetiPageComponent = ({
   page
-}) => html`<${PageBorderLayout} url=${page.url}>
+}) => html`<${PageBorderLayout} page=${page}>
   <${SecondaryPageNavHeader} />
   <main>
     <${SecondaryPageMainSectionHeader}>

@@ -1,4 +1,4 @@
-import { css, html, js, type YetiComponent } from "yeti-js";
+import { css, html, js, type YetiComponent, type PageContext } from "yeti-js";
 import { GOOGLE_MAPS_URL, ORIGIN } from "../constants.ts";
 
 const OG_IMAGE_URL = new URL("/img/newunions_og.png", ORIGIN).toString();
@@ -6,19 +6,19 @@ const OG_IMAGE_URL = new URL("/img/newunions_og.png", ORIGIN).toString();
 export const BaseLayout: YetiComponent<{
   title: string;
   description: string;
-  url: string;
+  page: PageContext;
 }> = ({
   title = "New Unions Bridal",
   description = "New Unions is a wedding attire experience dedicated to couples that fit outside of the binary.",
-  url,
+  page,
   children,
   ...htmlSpreadAttrs
 }) => {
-    if (!url) {
-      throw new Error("The 'url' prop is required for BaseLayout.");
+    if (!page) {
+      throw new Error("The `page` prop is required for BaseLayout.");
     }
 
-    const canonicalPageURL = new URL(url, ORIGIN).toString();
+    const canonicalPageURL = new URL(page.url, ORIGIN).toString();
 
     return html`<!DOCTYPE html>
     <html
