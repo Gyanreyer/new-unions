@@ -40,6 +40,8 @@ HomeBanner.css = css`
       ul li::after {
         content: "✦" / "";
         margin-inline-start: var(--marquee-gap);
+        font-size: var(--font-size-s);
+        vertical-align: center;
       }
     }
   }
