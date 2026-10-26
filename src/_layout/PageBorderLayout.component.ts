@@ -4,7 +4,11 @@ import { Icon } from "../_components/Icon.component.ts";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 
 /**
- * Layout to wrap page contents in the standard border layout + footer cutout
+ * Layout to wrap page contents in the standard border layout + footer cutout.
+ *
+ * The page wrapper is a grid with a gutter on each side. Every direct child is
+ * placed in the padded `content` column by default; a child can run
+ * border-to-border by setting `grid-column: full`.
  */
 export const PageBorderLayout: YetiComponent = ({ children, ...spreadAttrs }) => {
   return html`<${BaseLayout} ...${spreadAttrs}>
@@ -51,17 +55,28 @@ export const PageBorderLayout: YetiComponent = ({ children, ...spreadAttrs }) =>
 PageBorderLayout.css = css`
 ${css.bundle("critical")}
 #page-wrapper {
+  --page-gutter: var(--space-s-2xl);
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns:
+    [full-start] var(--page-gutter)
+    [content-start] minmax(0, 1fr)
+    [content-end] var(--page-gutter)
+    [full-end];
+  /* Keep rows packed at the top instead of stretching to fill the page height */
+  align-content: start;
   margin: var(--space-s-2xl);
-  padding-inline: var(--space-s-2xl);
   flex: 1;
   --page-border-width: 3px;
   border: var(--page-border-width) solid var(--white);
   border-bottom: none;
   padding-block-end: var(--space-l);
   view-transition-name: page-wrapper;
+}
+
+/* Zero specificity so any child can override its placement, e.g. \`grid-column: full\` */
+:where(#page-wrapper > *) {
+  grid-column: content;
 }
 
 #page-footer {
