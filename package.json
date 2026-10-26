@@ -8,7 +8,9 @@
     "node": ">=24.0.0"
   },
   "scripts": {
-    "serve": "npx @11ty/eleventy --config=eleventy.config.ts --serve",
+    "serve": "wrangler pages dev _site --port 8080",
+    "watch": "npx @11ty/eleventy --config=eleventy.config.ts --watch",
+    "dev": "concurrently \"npm run watch\" \"npm run serve\"",
     "build": "npx @11ty/eleventy --config=eleventy.config.ts"
   },
   "dependencies": {
@@ -17,6 +19,7 @@
     "yeti-js": "^0.0.7-alpha.3"
   },
   "devDependencies": {
+    "concurrently": "^10.0.6",
     "esbuild": "^0.28.0",
     "lightningcss": "^1.32.0",
     "marked": "^18.0.0",
