@@ -5,7 +5,7 @@ import { SecondaryPageMainSectionHeader } from "../_components/SecondaryPageMain
 
 export const config = {
   // UPDATEME: make sure to bump this date when this page's content meaningfully changes
-  lastmod: "2026-10-25",
+  lastmod: "2026-10-27",
 };
 
 const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title="FAQ | New Unions Bridal" page=${page}>
@@ -66,10 +66,10 @@ const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title
       <section id="return-policy">
         <h2>What is your return policy?</h2>
         <p>
-          We currently do not accept returns of ordered gowns.
-          New off the rack items, in unworn condition with tags will be awarded store credit.
+          We currently do not accept returns of ordered gowns or bridal samples.
+          New off the rack items, in unworn condition with tags will be awarded store credit within 14 days of purchase.
           Vintage, pre-loved pieces, and accessories are final sale.
-          In the event of a wedding cancellation, please give us a call and we will work with you!
+          In the event of a wedding cancellation, order deposits will be forfeited, but you will not be required to pay any remaining balance.
         </p>
       </section>
       <section id="order-timeline">
