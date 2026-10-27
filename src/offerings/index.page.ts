@@ -223,12 +223,7 @@ export default OfferingsPage;
 OfferingsPage.css = css`
   main {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-inline-size: 1200px;
-    margin-inline: auto;
-    width: 100%;
+    justify-items: center;
   }
 
   .gallery-row {

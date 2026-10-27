@@ -50,9 +50,7 @@ const AboutPage: YetiPageComponent = ({
 
 AboutPage.css = css`
   main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-items: center;
   }
 `;
 

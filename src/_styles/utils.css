@@ -1,4 +1,15 @@
 @layer util {
+  .visually-hidden {
+    border: 0;
+    clip-path: inset(50%);
+    height: 1px;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
   .section-heading {
     font-size: var(--font-size-2xl-3xl);
     font-weight: 500;

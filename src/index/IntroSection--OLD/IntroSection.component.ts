@@ -2,7 +2,7 @@ import { css, html } from "yeti-js";
 import { ResponsiveImage } from "../../_components/ResponsiveImage.component.ts";
 import { BookAppointmentButton } from "../../_components/BookAppointmentButton.component.ts";
 import { Sparkle } from "../../_components/Sparkle.component.ts";
-import { DiscoBall } from "./DiscoBall.component.ts";
+import { DiscoBall } from "../IntroSection/DiscoBall.component.ts";
 
 export const IntroSection = () =>
   html`<section id="intro">

@@ -1,5 +1,4 @@
 import { css, html } from "yeti-js";
-import { BookAppointmentButton } from "../_components/BookAppointmentButton.component.ts";
 import { AutoplayVideo } from "../_components/AutoplayVideo.component.ts";
 
 import { CONTACT_EMAIL, GOOGLE_MAPS_URL } from "../constants.ts";
@@ -92,7 +91,7 @@ export const BusinessInfoSection = () => html`
           <time itemprop="closes" datetime="16:30">4:30PM</time>
         </p>
       </section>
-      <${BookAppointmentButton} />
+      <a href="/book/" class="book-appt action-btn primary">Book an Appointment</a>
     </div>
     <${AutoplayVideo}
       src="/video/store/store-interior.mp4"

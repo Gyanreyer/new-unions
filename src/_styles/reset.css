@@ -62,6 +62,7 @@
     text-rendering: geometricPrecision;
     color: var(--white);
     font-size: var(--font-size-m);
+    -webkit-font-smoothing: antialiased;
 
     min-height: 100vh;
     margin: 0;

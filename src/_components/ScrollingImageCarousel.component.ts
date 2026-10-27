@@ -61,8 +61,9 @@ ScrollingImageCarousel.css = css`
          * @link https://utopia.fyi/clamp/calculator?a=360,1240,320—420
          */
         height: clamp(20rem, 17.4432rem + 11.3636vw, 26.25rem);
-        width: 100vw;
-        margin-inline: calc(50% - 50vw);
+        /* Break out to the window edges (see PageBorderLayout) */
+        width: var(--window-inline-size, 100vw);
+        margin-inline: calc(50% - var(--window-inline-size, 100vw) / 2);
         position: relative;
         overflow-x: clip;
 

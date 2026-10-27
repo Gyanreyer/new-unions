@@ -28,7 +28,6 @@ EmployeeSection.css = css`
     flex-wrap: wrap;
 
     margin-block-end: var(--space-2xl);
-    max-width: 1200px;
 
     .text-column {
       flex: 1 1 300px;
@@ -49,7 +48,8 @@ EmployeeSection.css = css`
     }
 
     aside {
-      min-width: 300px;
+      /* Keep the photo from getting too small next to the text, without forcing it wider than the screen */
+      min-width: min(300px, 100%);
       img {
         width: 100%;
         height: auto;

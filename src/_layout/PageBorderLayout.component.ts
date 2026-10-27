@@ -6,9 +6,20 @@ import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 /**
  * Layout to wrap page contents in the standard border layout + footer cutout.
  *
- * The page wrapper is a grid with a gutter on each side. Every direct child is
- * placed in the padded `content` column by default; a child can run
- * border-to-border by setting `grid-column: full`.
+ * The page wrapper is a grid with three nested column ranges:
+ * - `full`: border to border
+ * - `wide`: inside the page gutters (default for the header and footer)
+ * - `content`: `wide`, capped at a max width and centered (default for everything in `<main>`)
+ *
+ * `<main>` is a subgrid spanning `full`, so its children can use the same names,
+ * e.g. `grid-column: full` for a full-bleed banner.
+ *
+ * Deeper descendants can't reach the grid lines, so they can break out with a
+ * width variable instead:
+ * - `--page-inline-size`: the page's width inside the border
+ * - `--window-inline-size`: the window's width (excluding any scrollbar)
+ *
+ * `width: var(--page-inline-size); margin-inline: calc(50% - var(--page-inline-size) / 2);`
  */
 export const PageBorderLayout: YetiComponent = ({ children, ...spreadAttrs }) => {
   return html`<${BaseLayout} ...${spreadAttrs}>
@@ -28,8 +39,14 @@ export const PageBorderLayout: YetiComponent = ({ children, ...spreadAttrs }) =>
       </div>
       <nav>
         <a href="/about/" class="underlined-link underline-target">About Us</a>
-        <span class="spacer"></span>
+        <span class="spacer"/>
         <a href="/faq/" class="underlined-link underline-target">FAQ</a>
+        <span class="spacer"/>
+        <a href="/#additional-services" class="underlined-link underline-target">Additional Services</a>
+        <span class="spacer"/>
+        <a href="/products/" class="underlined-link underline-target">Our Products</a>
+        <span class="spacer"/>
+        <a href="/#business-info" class="underlined-link underline-target">Visit Us</a>
       </nav>
       <p class="queer-owned">
         Queer woman-owned local business in Southeast Michigan
@@ -56,16 +73,22 @@ PageBorderLayout.css = css`
 ${css.bundle("critical")}
 #page-wrapper {
   --page-gutter: var(--space-s-2xl);
+  --page-content-max-width: 1200px;
+  --page-margin: var(--space-s-2xl);
   position: relative;
+  /* Lets descendants measure the page's width with container units (see --page-inline-size) */
+  container-type: inline-size;
   display: grid;
   grid-template-columns:
     [full-start] var(--page-gutter)
-    [content-start] minmax(0, 1fr)
-    [content-end] var(--page-gutter)
+    [wide-start] minmax(0, 1fr)
+    [content-start] min(100% - 2 * var(--page-gutter), var(--page-content-max-width))
+    [content-end] minmax(0, 1fr)
+    [wide-end] var(--page-gutter)
     [full-end];
   /* Keep rows packed at the top instead of stretching to fill the page height */
   align-content: start;
-  margin: var(--space-s-2xl);
+  margin: var(--page-margin);
   flex: 1;
   --page-border-width: 3px;
   border: var(--page-border-width) solid var(--white);
@@ -74,8 +97,37 @@ ${css.bundle("critical")}
   view-transition-name: page-wrapper;
 }
 
-/* Zero specificity so any child can override its placement, e.g. \`grid-column: full\` */
+/* Page and window widths, as fixed lengths so they mean the same thing at any
+  depth (a bare \`100cqi\` would measure the nearest container instead).
+  Unlike \`100vw\`, the window width doesn't include the scrollbar. */
+@property --page-inline-size {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 100vw;
+}
+
+@property --window-inline-size {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 100vw;
+}
+
+/* The rules below have zero specificity so any element can override its placement */
 :where(#page-wrapper > *) {
+  grid-column: wide;
+  --page-inline-size: 100cqi;
+  /* The page is centered in the window, so add back its margin and border on both sides */
+  --window-inline-size: calc(100cqi + 2 * (var(--page-margin) + var(--page-border-width)));
+}
+
+:where(#page-wrapper > main) {
+  grid-column: full;
+  display: grid;
+  grid-template-columns: subgrid;
+  align-content: start;
+}
+
+:where(#page-wrapper > main > *) {
   grid-column: content;
 }
 
@@ -87,9 +139,12 @@ ${css.bundle("critical")}
 
   nav {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     column-gap: var(--space-s);
     margin-block: var(--space-2xs) var(--space-s);
+    text-align: center;
 
     .spacer {
       height: 0.8lh;

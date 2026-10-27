@@ -1,11 +1,13 @@
 import { html, css, type YetiPageComponent } from "yeti-js";
+
 import { PageBorderLayout } from "../_layout/PageBorderLayout.component.ts";
-import { Header } from "./Header.component.ts";
-import { IntroSection } from "./IntroSection/IntroSection.component.ts";
-import { OfferingsSection } from "./OfferingsSection.component.ts";
-import { BusinessInfoSection } from "./BusinessInfoSection.component.ts";
-import { LucySection } from "./LucySection.component.ts";
+import { BusinessInfoSection } from "./BusinessInfoSection.ts";
 import { HomeBanner } from "./HomeBanner.ts";
+import { HomePageHeader } from "./HomePageHeader.ts";
+import { IntroSection } from "./IntroSection/IntroSection.ts";
+import { ProductsBanner } from "./ProductsBanner.ts";
+import { ProductHighlightsSection } from "./ProductHighlightsSection.ts";
+import { AdditionalServicesSections } from "./AdditionalServicesSections/AdditionalServicesSections.ts";
 
 export const config = {
   permalink: "/",
@@ -16,11 +18,12 @@ export const config = {
 const IndexPage: YetiPageComponent =
   ({ page }) => html`<${PageBorderLayout} page=${page}>
   <${HomeBanner} />
-  <${Header} />
   <main>
+    <${HomePageHeader} />
     <${IntroSection} />
-    <${OfferingsSection} />
-    <${LucySection} />
+    <${ProductsBanner} />
+    <${ProductHighlightsSection} />
+    <${AdditionalServicesSections} />
     <${BusinessInfoSection} />
   </main>
 </${PageBorderLayout}>`;
@@ -38,35 +41,8 @@ IndexPage.css = css`
     background-size: 100vw 250vh;
   }
 
-  @keyframes slide-fade-in {
-    0% {
-      opacity: 0;
-      transform: translateY(100px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
   main {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-
-    display: flex;
-    flex-direction: column;
-    row-gap: var(--space-2xl-3xl);
-
-    @media screen and (width >= 1200px) and (prefers-reduced-motion: no-preference) {
-      @supports (animation-timeline: view()) {
-        opacity: 0;
-        animation-name: slide-fade-in;
-        animation-timeline: scroll(block);
-        animation-fill-mode: both;
-        animation-range: entry 0% entry 10%;
-      }
-    }
+    row-gap: var(--space-l-xl);
   }
 `;
 
