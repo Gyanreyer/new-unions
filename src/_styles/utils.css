@@ -29,38 +29,31 @@
     text-underline-offset: var(--space-xs);
   }
 
-  @keyframes scale-x-grow {
+  @keyframes underline-grow {
     from {
-      transform: scaleX(0);
+      background-size: 0% var(--underline-width);
     }
     to {
-      transform: scaleX(1);
+      background-size: 100% var(--underline-width);
     }
   }
 
+  /* Drawn as a background rather than a positioned ::after, so the element
+     stays unpositioned and can host anchor-positioned decorations. */
   .scroll-reveal-underline {
-    position: relative;
     display: inline-block;
     --underline-width: 3px;
-    margin-block-end: var(--underline-width);
-
-    &::after {
-      content: "";
-      border-block-end: var(--underline-width) solid currentColor;
-      position: absolute;
-      inline-size: 100%;
-      inset-block-start: 100%;
-      inset-inline-start: 0;
-      transform-origin: left;
-    }
+    padding-block-end: var(--underline-width);
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 100% var(--underline-width);
 
     @supports (animation-timeline: view()) {
-      &::after {
-        animation-name: scale-x-grow;
-        animation-timeline: view();
-        animation-fill-mode: both;
-        animation-range: contain 30% contain 60%;
-      }
+      animation-name: underline-grow;
+      animation-timeline: view();
+      animation-fill-mode: both;
+      animation-range: contain 30% contain 60%;
     }
   }
 
