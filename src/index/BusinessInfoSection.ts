@@ -91,7 +91,7 @@ export const BusinessInfoSection = () => html`
           <time itemprop="closes" datetime="16:30">4:30PM</time>
         </p>
       </section>
-      <a href="/book/" class="book-appt action-btn primary">Book an Appointment</a>
+      <a href="/book/" class="action-btn primary">Book an Appointment</a>
     </div>
     <${AutoplayVideo}
       src="/video/store/store-interior.mp4"

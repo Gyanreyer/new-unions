@@ -4,3 +4,6 @@
 # Redirect old /additional-services page to homepage section
 /additional-services  /#additional-services 302
 /additional-services/ /#additional-services 302
+# Redirect old /offerings page to /products/
+/offerings  /products/ 302
+/offerings/  /products/ 302
