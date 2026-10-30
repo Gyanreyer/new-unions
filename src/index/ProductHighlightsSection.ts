@@ -5,8 +5,12 @@ import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
 export const ProductHighlightsSection = () => html`
 <section id="product-highlights">
   <h2 class="section-heading">
-    We carry a variety of new, pre&#8209;loved, and vintage pieces.
+    We carry a variety of new, vintage, & handmade pieces.
   </h2>
+  <p class="section-subheading">
+    Our size range is 0 to 30, with samples of many sizes to try on in store.
+    Our store is a <strong><em>queer friendly and size inclusive space</em></strong>. Bridal made to order, made to measure, and off the rack styles are all included in our range!
+  </p>
   <${ScrollingImageCarousel}>
     <${ResponsiveImage}
       src="/img/offerings/ColorfulAccessories.jpg"
@@ -43,8 +47,14 @@ ProductHighlightsSection.css = css`
 
     .section-heading {
       font-size: var(--font-size-xl);
-      text-align: center;
+      margin-block-end: var(--space-s);
+    }
+
+    .section-subheading {
+      margin-inline: auto;
       margin-block-end: var(--space-m-l);
+      text-wrap: balance;
+      max-width: 48ch;
     }
 
     .action-btn {
