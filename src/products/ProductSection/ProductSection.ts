@@ -50,32 +50,26 @@ ProductSection.css = css`
     h2 {
       font-size: var(--font-size-2xl);
       text-decoration: 2px underline;
-      text-underline-offset: var(--space-2xs);
-      margin-block-end: var(--space-2xs);
+      text-underline-offset: var(--space-xs);
+      margin-block-end: var(--space-xs);
     }
 
     .additional-info {
       margin-block: var(--space-3xs) var(--space-xs);
       display: flex;
       align-items: center;
+      gap: var(--space-s);
     }
 
     .price-range {
       font-weight: bold;
     }
 
-    .separator {
-      display: inline-block;
-      height: 1.2em;
-      border-inline-start: 1px solid currentColor;
-      margin-inline: var(--space-s);
-    }
-
     .product-link {
       text-decoration: underline;
       text-underline-offset: 0.25em;
       font-style: italic;
-      margin-inline-start: var(--space-s);
+      font-size: var(--font-size-s);
     }
   }
 

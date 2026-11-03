@@ -36,22 +36,67 @@ const ProductsPage: YetiPageComponent = ({ page }) => html`
   }}
       images=${[
     {
-      src: "/img/lucy/lcd-52.jpg",
-      alt: "Lucy Can't Dance gown",
-      caption: "A beautiful Lucy Can’t Dance gown"
-    },
-    {
-      src: "/img/lucy/LCD-ATOMIC_BLOOM-324.jpg",
-      alt: "Lucy Can't Dance gown",
-      caption: "Another beautiful Lucy Can’t Dance gown"
-    },
-    {
-      src: "/img/lucy/LCDGC-89--vertical-crop.jpg",
+      src: "/img/lucy/LCD-ATOMIC_BLOOM-326.jpg",
       alt: "Lucy Can't Dance gown",
       caption: "Yet another beautiful Lucy Can’t Dance gown"
     },
     {
-      src: "/img/lucy/lcd-atomic_bloom-184.jpg",
+      src: "/img/lucy/LCD-ATOMIC_BLOOM-327.jpg",
+      alt: "Lucy Can't Dance gown",
+      caption: "Another beautiful Lucy Can’t Dance gown"
+    },
+    {
+      src: "/img/lucy/LCDGC-89.jpg",
+      alt: "Lucy Can't Dance gown",
+      caption: "Another beautiful Lucy Can’t Dance gown"
+    },
+    {
+      src: "/img/lucy/LCDGC-95.jpg",
+      alt: "Lucy Can't Dance gown",
+      caption: "Another beautiful Lucy Can’t Dance gown"
+    },
+    {
+      src: "/img/lucy/Lucy_cant_dance_2018_collection199.jpg",
+      alt: "Lucy Can't Dance gown",
+      caption: "Another beautiful Lucy Can’t Dance gown"
+    },
+    {
+      src: "/img/lucy/Lucy_cant_dance_2018_collection200.jpg",
+      alt: "Lucy Can't Dance gown",
+      caption: "Another beautiful Lucy Can’t Dance gown"
+    },
+    {
+      src: "/img/lucy/Lucy_Cant_dance098.jpg",
+      alt: "Lucy Can't Dance gown",
+      caption: "Another beautiful Lucy Can’t Dance gown"
+    },
+    {
+      src: "/img/lucy/Lucy_Cant_dance112.jpg",
+      alt: "Lucy Can't Dance gown",
+      caption: "Another beautiful Lucy Can’t Dance gown"
+    },
+    {
+      src: "/img/lucy/Lucy_Cant_dance120.jpg",
+      alt: "Lucy Can't Dance gown",
+      caption: "Another beautiful Lucy Can’t Dance gown"
+    },
+    {
+      src: "/img/lucy/Lucy_Cant_DanceMegan_Elle_Photography0296.jpg",
+      alt: "Lucy Can't Dance gown",
+      caption: "Another beautiful Lucy Can’t Dance gown"
+    },
+    {
+      src: "/img/lucy/Lucy_Cant_DanceMegan_Elle_Photography0301.jpg",
+      alt: "Lucy Can't Dance gown",
+      caption: "Another beautiful Lucy Can’t Dance gown"
+    },
+    {
+      src: "/img/lucy/Lucy_Cant_DanceMegan_Elle_Photography0402.jpg",
+      alt: "Lucy Can't Dance gown",
+      caption: "Another beautiful Lucy Can’t Dance gown"
+    },
+    {
+      src: "/img/lucy/Lucy_Cant_DanceMegan_Elle_Photography0407.jpg",
       alt: "Lucy Can't Dance gown",
       caption: "Another beautiful Lucy Can’t Dance gown"
     },
@@ -61,7 +106,7 @@ const ProductsPage: YetiPageComponent = ({ page }) => html`
       caption: "Another beautiful Lucy Can’t Dance gown"
     },
     {
-      src: "/img/lucy/Lucy_Cant_dance104.jpg",
+      src: "/img/lucy/LUCYCANTDANCE-401.jpg",
       alt: "Lucy Can't Dance gown",
       caption: "Another beautiful Lucy Can’t Dance gown"
     }
