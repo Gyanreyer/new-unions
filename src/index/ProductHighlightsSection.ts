@@ -7,6 +7,22 @@ const productHighlightImages: {
   alt: string;
 }[] = [
     {
+      src: "/img/circus/duo.jpg",
+      alt: "Two people on an aerial circus apparatus dressed in wedding attire"
+    },
+    {
+      src: "/img/circus/lyra.jpg",
+      alt: "A person on an aerial circus lyra wearing a white wedding dress"
+    },
+    {
+      src: "/img/lucy/Lucy_Cant_Dance188.jpg",
+      alt: "A person wearing a Lucy Can't Dance gown facing away from the camera to show the back of the dress"
+    },
+    {
+      src: "/img/circus/popcorn.jpg",
+      alt: "A person in a red wedding dress feeding popcorn to a person in a white wedding dress"
+    },
+    {
       src: "/img/lucy/LCD-ATOMIC_BLOOM-334.jpg",
       alt: "Two people wearing Lucy Can't Dance dresses"
     },
