@@ -199,7 +199,7 @@ export class ScrollableListElement extends HTMLElement {
 
     list.addEventListener("scroll", this.#onScroll, { passive: true });
     this.#resizeObserver.observe(list);
-    this.#internals.states.add("connected");
+    this.#internals.states.add("enhanced");
     this.#updateEnds();
   }
 

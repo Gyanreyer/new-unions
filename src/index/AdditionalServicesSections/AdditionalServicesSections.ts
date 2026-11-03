@@ -8,17 +8,11 @@ export const AdditionalServicesSections = () => html`
 <div id="additional-services" class="sparkle-anchor">
   <${SparkleGroup}
     seed="services-topleft-4"
+    class="services-sparkles-top"
     size="var(--services-sparkle-size)"
     count="3"
     spread="2 1.6"
-    placement=${[
-    // Up and to the left of the heading.
-    { anchor: "top-start", offsetX: -0.86, offsetY: -0.46 },
-    // Tighter to the corner when the gutter is narrower.
-    { anchor: "top-start", offsetX: -0.5, offsetY: -0.8 },
-    // Tucked into the top padding when there's no room in the gutter.
-    { anchor: "top-start", offsetX: 1, offsetY: 0.9 },
-  ]}
+    placement=${{ anchor: "top-start", offsetX: -0.86, offsetY: -0.46 }}
   />
   <section id="bridal-styling-services" class="service-section styling" itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
     <div class="text-column" itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
@@ -62,17 +56,11 @@ export const AdditionalServicesSections = () => html`
   </section>
   <${SparkleGroup}
     seed="services-bottomright-3"
+    class="services-sparkles-bottom"
     size="var(--services-sparkle-size)"
     count="3"
     spread="2 1.6"
-    placement=${[
-    // Off to the right of the photo's bottom corner.
-    { anchor: "bottom-end", offsetX: 1.46, offsetY: 0.26 },
-    // Hanging diagonally off the corner when the gutter is narrower.
-    { anchor: "bottom-end", offsetX: 0.6, offsetY: 0.7 },
-    // Tucked into the bottom padding when there's no room in the gutter.
-    { anchor: "bottom-end", offsetX: -1, offsetY: -0.9 },
-  ]}
+    placement=${{ anchor: "bottom-end", offsetX: 1.46, offsetY: 0.26 }}
   />
 </div>
 `;
@@ -86,10 +74,35 @@ AdditionalServicesSections.css = css`
   flex-direction: column;
   row-gap: var(--space-l-xl);
 
-  /* Room above and below the content for the sparkle groups' tucked
-     fallbacks. Kept a bit wider than where those fallbacks kick in (~720px). */
-  @media (width < 48rem) {
+  /* Sparkle placement steps down as the page gutter shrinks. The breakpoints
+     leave a few px of room: a group whose placement doesn't fit is hidden.
+     Wide gutter (the placement props): up-left of the heading, and off to
+     the right of the photo's bottom corner. */
+
+  /* Narrower gutter: tighter to the corners. */
+  @media (width < 104rem) {
+    .services-sparkles-top {
+      --sparkle-group-offset-x: -0.5;
+      --sparkle-group-offset-y: -0.8;
+    }
+    .services-sparkles-bottom {
+      --sparkle-group-offset-x: 0.6;
+      --sparkle-group-offset-y: 0.7;
+    }
+  }
+
+  /* No room in the gutter: tucked into padding above and below the content. */
+  @media (width < 50rem) {
     padding-block: calc(1.8 * var(--services-sparkle-size));
+
+    .services-sparkles-top {
+      --sparkle-group-offset-x: 1;
+      --sparkle-group-offset-y: 0.9;
+    }
+    .services-sparkles-bottom {
+      --sparkle-group-offset-x: -1;
+      --sparkle-group-offset-y: -0.9;
+    }
   }
 
   .service-section {

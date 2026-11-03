@@ -101,7 +101,7 @@ scrollable-list > :is(ul, ol) {
 }
 
 /* With the buttons available, the scrollbar is redundant. */
-scrollable-list:state(connected) > :is(ul, ol) {
+scrollable-list:state(enhanced) > :is(ul, ol) {
   scrollbar-width: none;
 }
 

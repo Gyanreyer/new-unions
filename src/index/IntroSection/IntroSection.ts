@@ -22,11 +22,7 @@ export const IntroSection = () => html`
       count="3"
       size="clamp(22px, 3.5cqi, 36px)"
       spread="2 1.6"
-      placement=${[
-    { anchor: "bottom-start", offsetX: -0.6, offsetY: 0.2 },
-    // Tucked under the text when there's no room beside it.
-    { anchor: "bottom-start", offsetX: 1.2, offsetY: -0.4 },
-  ]}
+      placement=${{ anchor: "bottom-start", offsetX: -0.6, offsetY: 0.2 }}
     />
   </p>
 </section>
@@ -46,11 +42,13 @@ IntroSection.css = css`
       margin-inline: auto;
     }
 
-    /* Room under the text for the paragraph sparkles' tucked fallback.
-       Kept a bit wider than where the fallback kicks in (~640px). */
+    /* No room beside the text for the paragraph sparkles (they stop fitting
+       at ~620px), so tuck them into padding under it. */
     @media (width < 45rem) {
       p {
         padding-block-end: 1.25em;
+        --sparkle-group-offset-x: 1.2;
+        --sparkle-group-offset-y: -0.4;
       }
     }
   }

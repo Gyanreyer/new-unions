@@ -73,7 +73,11 @@ const DEFAULT_TIMING_SEED = "sparkle-group";
  *   (default 2rem).
  * - `placement`: one `{ anchor, offsetX, offsetY }` object, or an array of up
  *   to 4 tried in order. The browser uses the first one that keeps the group
- *   inside its boundary, and hides the group if none do.
+ *   inside its boundary, and hides the group if none do. Fallbacks are a
+ *   safety net, not a way to switch layouts by screen size: once the browser
+ *   picks a fallback, it keeps it until it stops fitting, even if an earlier
+ *   placement fits again. To change placement by screen size, set the offset
+ *   hooks below in a media query.
  * - `sparkles`: hand-placed `[{ x, y, size }]` (centers from the top-start
  *   corner, all in multiples of `size`). Replaces generated positions;
  *   `spread` defaults to the bounding box. `seed` then only affects timing.
