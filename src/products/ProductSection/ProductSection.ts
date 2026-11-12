@@ -8,7 +8,7 @@ export type ProductSectionImage = {
   caption: string | ReturnType<typeof html>;
 };
 
-export const ProductSection: YetiComponent<{
+export type ProductSectionConfig = {
   id: string;
   title: string;
   description: string | ReturnType<typeof html>;
@@ -18,13 +18,19 @@ export const ProductSection: YetiComponent<{
   };
   priceRange: string | ReturnType<typeof html>;
   images: ProductSectionImage[];
+}
+
+export const ProductSection: YetiComponent<{
+  config: ProductSectionConfig;
 }> = ({
-  id,
-  title,
-  description,
-  link,
-  priceRange,
-  images,
+  config: {
+    id,
+    title,
+    description,
+    link,
+    priceRange,
+    images,
+  },
 }) => html`<section id=${id} class="product-section">
   <h2>${title}</h2>
   <p class="description">${description}</p>
