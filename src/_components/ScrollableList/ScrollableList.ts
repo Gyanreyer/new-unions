@@ -40,7 +40,7 @@ export const ScrollableList: YetiComponent<{
   // The arrow joins the shared icon sprite; the element <use>s it for its buttons
   return html`${html.import("/_icons/arrow.svg", { bundleName: "icons" })}
   <scrollable-list arrow-icon="${html.src("icons")}#arrow" ...${attrs}>
-    <ul role="list" aria-label=${label} tabindex="0">${children}</ul>
+    <ul role="list" aria-label=${label}>${children}</ul>
   </scrollable-list>`;
 };
 
