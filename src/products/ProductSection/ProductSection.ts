@@ -118,6 +118,7 @@ ProductSection.css = css`
       aspect-ratio: 2 / 3;
       object-fit: cover;
       border-radius: 16px;
+      background-color: color-mix(in srgb, var(--blue), var(--white) 15%);
     }
 
     figure {
