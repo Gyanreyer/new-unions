@@ -37,7 +37,7 @@ const OfferingsPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout}
             ...${eagerImageProps}
           /></li>
           <li><${ResponsiveImage}
-            src="/img/loulette/Loulette2025_Final_0059.jpeg"
+            src="/img/loulette/LouletteBride_RosemaryGown_Image1.jpg"
             alt="A model wearing a Loulette wedding dress."
             ...${eagerImageProps}
           /></li>
@@ -99,7 +99,7 @@ const OfferingsPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout}
       <li>
         <ul class="gallery-row" data-orientation="portrait">
           <li><${ResponsiveImage}
-              src="/img/lucy/Lucy_Cant_dance104.JPG"
+              src="/img/lucy/Lucy_Cant_dance104.jpg"
               alt="A model wearing an elaborate white lacey wedding gown."
               aria-labelledby="coming-soon-3"
             />
@@ -145,11 +145,11 @@ const OfferingsPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout}
       <li>
         <ul class="gallery-row" data-orientation="landscape">
           <li><${ResponsiveImage}
-            src="/img/offerings/Headpieces.jpg"
+            src="/img/accessories/Headpieces.jpg"
             alt="A tray of wedding headpieces."
           /></li>
           <li><${ResponsiveImage}
-            src="/img/offerings/Bee_Handbag.jpg"
+            src="/img/accessories/Bee_Handbag.jpg"
             alt="A black handbag with gold beaded bees on it."
           /></li>
           <li><${ResponsiveImage}
@@ -181,7 +181,7 @@ const OfferingsPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout}
       <li>
         <ul class="gallery-row" data-orientation="portrait">
           <li><${ResponsiveImage}
-            src="/img/offerings/Cowboy_Hat_Womens_Blazer_with_bows_Handmade.jpg"
+            src="/img/accessories/Cowboy_Hat_Womens_Blazer_with_bows_Handmade.jpg"
             alt="A handmade brown cowboy hat with lace detail and a tulle bow, paired with a handmade white women's blazer decorated with bows."
           /></li>
           <li><${ResponsiveImage}

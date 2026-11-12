@@ -36,7 +36,9 @@ export const ProductSection: YetiComponent<{
     ${images.map((image) => html`<li>
       <figure>
         <${ResponsiveImage} src=${image.src} alt=${image.alt} />
-        <figcaption>${image.caption}</figcaption>
+        <figcaption>
+          <span class="caption-text">${image.caption}</span>
+        </figcaption>
       </figure>
     </li>`
 )}
@@ -80,11 +82,6 @@ ProductSection.css = css`
       block-size: auto;
       aspect-ratio: 4 / 5;
       object-fit: cover;
-      display: block;
-      inline-size: 100%;
-      block-size: auto;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
       border-radius: 16px;
     }
 
@@ -96,22 +93,36 @@ ProductSection.css = css`
     }
 
     figcaption {
+      font-size: var(--font-size-s);
       position: absolute;
       inset: 0;
-      background: color-mix(in srgb, var(--orange) 50%, transparent);
+      background: color-mix(in srgb, var(--orange) 60%, transparent);
       color: white;
-      padding: var(--space-2xs);
+      padding: var(--space-s) var(--space-xs);
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: safe center;
+      justify-content: safe center;
+      text-align: center;
+      overflow-y: auto;
 
       visibility: hidden;
       opacity: 0;
-      transition: visibility 0.3s, opacity 0.3s;
+      transition-property: visibility, opacity;
+      transition-duration: 0.3s;
+
+      .caption-text {
+        translate: 0 var(--space-xs);
+        transition-property: translate;
+        transition-duration: inherit;
+      }
 
       figure:hover & {
         visibility: visible;
         opacity: 1;
+
+        .caption-text {
+          translate: 0 0;
+        }
       }
     }
   }
