@@ -9,7 +9,7 @@ export const EmployeeSection: YetiComponent<{
   imageSrc: string;
   imageAlt: string;
 }> = ({ name, pronouns, title, bio, imageSrc, imageAlt }) =>
-  html`<section class="employee-section">
+    html`<section class="employee-section">
     <div class="text-column">
       <h2>${name}</h2>
       <h3>${pronouns}, ${title}</h3>
@@ -49,7 +49,8 @@ EmployeeSection.css = css`
 
     aside {
       /* Keep the photo from getting too small next to the text, without forcing it wider than the screen */
-      min-width: min(300px, 100%);
+      flex: 1 1 300px;
+
       img {
         width: 100%;
         height: auto;
