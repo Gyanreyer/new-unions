@@ -24,7 +24,7 @@ export const AdditionalServicesSections = () => html`
         we would love to help you! From veils to accessories,
         let us help you complete your look.
       </p>
-      <a href="mailto:hello@newunionsbridal.com" class="action-btn primary">Send us an email to book</a>
+      <a href="/book/" class="action-btn primary">Book a styling appointment</a>
     </div>
     <aside>
       <${ResponsiveImage} src="/img/offerings/Wildflower_Veil.jpg" alt="" />

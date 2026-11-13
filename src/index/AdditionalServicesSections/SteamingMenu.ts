@@ -62,7 +62,8 @@ export const SteamingMenu: YetiComponent = () => html`
     Please allow your garment to be laid out before your event.
   </p>
   <p class="dropoff">
-    <a href="/#hours">
+    <!-- Close the dialog when clicking the hours link; it's on the same page so the dialog will stay open otherwise -->
+    <a href="/#hours" onclick="document.getElementById('${dialogID}').close()">
       Drop your garment off during our retail hours
     </a>
   </p>
