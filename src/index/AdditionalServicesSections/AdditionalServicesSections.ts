@@ -1,19 +1,17 @@
 import { css, html } from "yeti-js";
 
 import { ResponsiveImage } from "../../_components/ResponsiveImage.component.ts";
+import { Sparkle } from "../../_components/SparkleGroup/Sparkle.component.ts";
 import { SparkleGroup } from "../../_components/SparkleGroup/SparkleGroup.ts";
 import { SteamingMenu, SteamingMenuButton } from "./SteamingMenu.ts";
 
 export const AdditionalServicesSections = () => html`
 <div id="additional-services" class="sparkle-anchor">
-  <${SparkleGroup}
-    seed="services-topleft-4"
-    class="services-sparkles-top"
-    size="var(--services-sparkle-size)"
-    count="3"
-    spread="2 1.6"
-    placement=${{ anchor: "top-start", offsetX: -0.86, offsetY: -0.46 }}
-  />
+  <${SparkleGroup} anchor="top-start" class="services-sparkles-top" size="var(--services-sparkle-size)">
+    <${Sparkle} x="-1.26" y="-0.72" />
+    <${Sparkle} x="-0.39" y="-0.1" scale="0.68" />
+    <${Sparkle} x="-0.28" y="-0.91" scale="0.66" />
+  </${SparkleGroup}>
   <section id="bridal-styling-services" class="service-section styling" itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
     <div class="text-column" itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
       <meta itemprop="name" content="Bridal styling services" />
@@ -54,14 +52,11 @@ export const AdditionalServicesSections = () => html`
       <${ResponsiveImage} src="/img/store/dresses_on_rack.jpg" alt="" />
     </aside>
   </section>
-  <${SparkleGroup}
-    seed="services-bottomright-3"
-    class="services-sparkles-bottom"
-    size="var(--services-sparkle-size)"
-    count="3"
-    spread="2 1.6"
-    placement=${{ anchor: "bottom-end", offsetX: 1.46, offsetY: 0.26 }}
-  />
+  <${SparkleGroup} anchor="bottom-end" class="services-sparkles-bottom" size="var(--services-sparkle-size)">
+    <${Sparkle} x="1.19" y="0.1" />
+    <${Sparkle} x="2.01" y="0.57" scale="0.83" />
+    <${Sparkle} x="2.14" y="-0.25" scale="0.48" />
+  </${SparkleGroup}>
 </div>
 `;
 
@@ -76,18 +71,18 @@ AdditionalServicesSections.css = css`
 
   /* Sparkle placement steps down as the page gutter shrinks. The breakpoints
      leave a few px of room: a group whose placement doesn't fit is hidden.
-     Wide gutter (the placement props): up-left of the heading, and off to
-     the right of the photo's bottom corner. */
+     Wide gutter (as authored): up-left of the heading, and off to the right
+     of the photo's bottom corner. Offsets below nudge from there. */
 
   /* Narrower gutter: tighter to the corners. */
   @media (width < 104rem) {
     .services-sparkles-top {
-      --sparkle-group-offset-x: -0.5;
-      --sparkle-group-offset-y: -0.8;
+      --sparkle-group-offset-x: 0.36;
+      --sparkle-group-offset-y: -0.34;
     }
     .services-sparkles-bottom {
-      --sparkle-group-offset-x: 0.6;
-      --sparkle-group-offset-y: 0.7;
+      --sparkle-group-offset-x: -0.86;
+      --sparkle-group-offset-y: 0.44;
     }
   }
 
@@ -96,12 +91,12 @@ AdditionalServicesSections.css = css`
     padding-block: calc(1.8 * var(--services-sparkle-size));
 
     .services-sparkles-top {
-      --sparkle-group-offset-x: 1;
-      --sparkle-group-offset-y: 0.9;
+      --sparkle-group-offset-x: 1.86;
+      --sparkle-group-offset-y: 1.36;
     }
     .services-sparkles-bottom {
-      --sparkle-group-offset-x: -1;
-      --sparkle-group-offset-y: -0.9;
+      --sparkle-group-offset-x: -2.46;
+      --sparkle-group-offset-y: -1.16;
     }
   }
 
