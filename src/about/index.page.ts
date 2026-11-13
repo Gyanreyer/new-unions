@@ -6,6 +6,8 @@ import { SecondaryPageNavHeader } from "../_components/SecondaryPageNavHeader.co
 import { SecondaryPageMainSectionHeader } from "../_components/SecondaryPageMainSectionHeader.component.ts";
 import { ScrollingImageCarousel } from "../_components/ScrollingImageCarousel.component.ts";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
+import { SparkleGroup } from "../_components/SparkleGroup/SparkleGroup.ts";
+import { Sparkle } from "../_components/SparkleGroup/Sparkle.component.ts";
 
 export const config = {
   // UPDATEME: make sure to bump this date when this page's content meaningfully changes
@@ -43,36 +45,46 @@ const AboutPage: YetiPageComponent = ({
     <${SecondaryPageMainSectionHeader}>
       <h1>Here’s a little about us.</h1>
     </${SecondaryPageMainSectionHeader}>
-    <div class="about-description">
+    <${ScrollingImageCarousel}>
+        ${carouselImages.map((image) => html`
+      <${ResponsiveImage} src=${image.src} alt=${image.alt} />
+      `)}
+    </${ScrollingImageCarousel}>
+    <div class="about-description sparkle-anchor">
+      <${SparkleGroup} anchor="top-start" class="about-description-sparkles-top" size="var(--sparkle-group-size)">
+        <${Sparkle} x="-0.5" y="-0.75" />
+        <${Sparkle} x="-1.25" y="-0.85" scale="0.35" />
+        <${Sparkle} x="-0.85" y="0" scale="0.5" />
+      </${SparkleGroup}>
       <h2>
         Metro Detroit&rsquo;s premier inclusive bridal boutique
       </h2>
       <p>
         At New Unions Bridal, finding your dream wedding attire is an unforgettable, stress-free celebration
-        for every body and every love story.
+        for <strong>every body</strong> and <strong>every love story</strong>.
       </p>
       <p>
         Our Ferndale shop sits in the heart of the Detroit metropolitan area,
         welcoming couples from Royal Oak, Birmingham, Ann Arbor, and all over Southeast Michigan.
-        We specialize in affordable wedding dresses, budget-friendly bridal gowns,
-        off-the-rack designer styles, and modern bridal separates that never compromise on quality or craftsmanship.
+        We specialize in <strong>affordable wedding dresses</strong>, budget-friendly bridal gowns,
+        off-the-rack designer styles, and modern bridal separates that <strong>never compromise on quality or craftsmanship</strong>.
       </p>
       <p>
-        As a proudly LGBTQ+ owned and operated, queer-friendly bridal shop,
+        As a proudly <strong>LGBTQ+ owned</strong> and operated, queer-friendly bridal shop,
         we offer a judgment-free, affirming space dedicated to size-inclusive
         bridal fashion, plus-size wedding gowns, and non-traditional wedding outfits.
       </p>
       <p>
         Whether you are planning a classic Michigan ballroom wedding,
         an intimate backyard ceremony, or a downtown Detroit elopement,
-        we are here to help you say &ldquo;yes&rdquo; to a look that feels authentically you.
+        we are here to help you say &ldquo;yes&rdquo; to a look that feels <strong>authentically you</strong>.
       </p>
+      <${SparkleGroup} anchor="bottom-end" class="about-description-sparkles-bottom" size="var(--sparkle-group-size)">
+        <${Sparkle} x="-0.5" y="0.5" />
+        <${Sparkle} x="-0.1" y="-0.3" scale="0.55" />
+        <${Sparkle} x="0.2" y="0.6" scale="0.35" />
+      </${SparkleGroup}>
     </div>
-    <${ScrollingImageCarousel}>
-        ${carouselImages.map((image) => html`
-      <${ResponsiveImage} src=${image.src} alt=${image.alt} />
-      `)}
-    </${ScrollingImageCarousel}>
     <section id="team">
       <h2 class="section-heading">Meet our team</h2>
       <${EmployeeSection}
@@ -103,6 +115,11 @@ const AboutPage: YetiPageComponent = ({
         imageAlt="Harrison the dog, looking handsome in an orange bowtie laying on a fluffy blanket on his favorite chair."
       />
     </section>
+    <${ScrollingImageCarousel} direction="right">
+        ${carouselImages.map((image) => html`
+      <${ResponsiveImage} src=${image.src} alt=${image.alt} />
+      `)}
+    </${ScrollingImageCarousel}>
   </main>
 </${PageBorderLayout}>`;
 
@@ -111,8 +128,12 @@ AboutPage.css = css`
     justify-items: center;
 
     .about-description {
+      text-align: center;
       text-wrap: pretty;
-      margin-block-end: var(--space-xl);
+      margin-block: var(--space-s) var(--space-xl);
+      max-inline-size: 48ch;
+
+    --sparkle-group-size: clamp(28px, 4cqi, 44px);
 
       h2 {
         margin-block-end: var(--space-s);
@@ -121,25 +142,38 @@ AboutPage.css = css`
       p:not(:last-child) {
         margin-block-end: var(--space-xs);
       }
+
+      @media (width < 900px) {
+        .about-description-sparkles-top {
+          --sparkle-group-offset-x: 1;
+          --sparkle-group-offset-y: -0.15;
+
+          .sparkle:nth-of-type(3) {
+            --sparkle-x: -1;
+            --sparkle-y: -0.27;
+          }
+        }
+      }
     }
 
     .carousel-container {
       margin-block-end: var(--space-2xl);
     }
 
-
     #team {
       h2 {
-        justify-self: start;
+        text-align: center;
         text-underline-offset: var(--space-xs);
         line-height: calc(1em + var(--space-2xs) + 1px);
         text-decoration: underline 3px;
-        margin-block-end: var(--space-m);
+        margin-block-end: var(--space-l);
       }
 
       .employee-section:not(:last-of-type) {
         margin-block-end: var(--space-2xl);
       }
+
+      margin-block-end: var(--space-xl);
     }
   }
 `;
