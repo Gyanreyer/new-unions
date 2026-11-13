@@ -6,9 +6,10 @@ import { readFile } from "node:fs/promises";
 
 const srcsetWidths = [240, 360, 420, 480, 600, 720, 1080, 1920];
 
-// Cloudflare's /cdn-cgi/image/ transforms only exist on Cloudflare's network,
-// not in local dev (`eleventy --watch`/`--serve`), so dev uses the originals.
-const useImageTransforms = process.env.ELEVENTY_RUN_MODE === "build";
+// Cloudflare's /cdn-cgi/image/ transforms only work on the newunionsbridal.com zone.
+// Preview deploys and local dev/builds don't have them, so we'll disable image transforms in those environments.
+// A Cloudflare production deploy will be running against the `main` branch, so we can enable image transforms only when building `main` in CI.
+const useImageTransforms = process.env.WORKERS_CI_BRANCH === "main";
 
 interface ImageMetadata {
   width: number;
