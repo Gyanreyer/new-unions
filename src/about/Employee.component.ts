@@ -9,16 +9,16 @@ export const EmployeeSection: YetiComponent<{
   imageSrc: string;
   imageAlt: string;
 }> = ({ name, pronouns, title, bio, imageSrc, imageAlt }) =>
-    html`<section class="employee-section">
+    html`<article class="employee-section">
     <div class="text-column">
-      <h2>${name}</h2>
-      <h3>${pronouns}, ${title}</h3>
+      <h3>${name}</h3>
+      <h4>${pronouns}, ${title}</h4>
       <p>${bio}</p>
     </div>
     <aside>
       <${ResponsiveImage} src=${imageSrc} alt=${imageAlt} />
     </aside>
-  </section>`;
+  </article>`;
 
 EmployeeSection.css = css`
   .employee-section {
@@ -27,17 +27,15 @@ EmployeeSection.css = css`
     row-gap: var(--space-s);
     flex-wrap: wrap;
 
-    margin-block-end: var(--space-2xl);
-
     .text-column {
       flex: 1 1 300px;
 
-      h2 {
+      h3 {
         font-size: var(--font-size-2xl);
         font-weight: 400;
       }
 
-      h3 {
+      h4 {
         font-size: var(--font-size-l);
         font-weight: 300;
       }
@@ -48,8 +46,8 @@ EmployeeSection.css = css`
     }
 
     aside {
-      /* Keep the photo from getting too small next to the text, without forcing it wider than the screen */
-      flex: 1 1 300px;
+      flex: 0 1;
+      min-width: min(300px, 100%);
 
       img {
         width: 100%;

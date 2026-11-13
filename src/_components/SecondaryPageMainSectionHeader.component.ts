@@ -12,7 +12,7 @@ SecondaryPageMainSectionHeader.css = css`
     margin-inline: auto;
 
     h1 {
-      font-size: var(--font-size-2xl-3xl);
+      font-size: var(--font-size-3xl);
       font-weight: 500;
       text-wrap: balance;
       text-align: center;
