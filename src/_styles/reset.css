@@ -36,6 +36,7 @@
   h1,
   h2,
   h3,
+  h4,
   p {
     margin: 0;
   }
@@ -62,6 +63,7 @@
     text-rendering: geometricPrecision;
     color: var(--white);
     font-size: var(--font-size-m);
+    -webkit-font-smoothing: antialiased;
 
     min-height: 100vh;
     margin: 0;

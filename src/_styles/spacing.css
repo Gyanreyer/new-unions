@@ -1,5 +1,7 @@
-/* @link https://utopia.fyi/space/calculator?c=360,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+/* @link https://utopia.fyi/space/calculator?c=360,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 :root {
+    /* Space 3xs: 5px (fixed) */
+    --space-3xs: 0.3125rem;
     /* Space 2xs: 9px -> 10px */
     --space-2xs: clamp(0.5625rem, 0.5369rem + 0.1136vw, 0.625rem);
     /* Space xs: 14px → 15px */
@@ -18,6 +20,8 @@
     --space-3xl: clamp(6.75rem, 6.4432rem + 1.3636vw, 7.5rem);
 
     /* One-up pairs */
+    /* Space 3xs-2xs: 5px → 10px */
+    --space-3xs-2xs: clamp(0.3125rem, 0.1847rem + 0.5682vw, 0.625rem);
     /* Space 2xs-xs: 9px → 15px */
     --space-2xs-xs: clamp(0.5625rem, 0.4091rem + 0.6818vw, 0.9375rem);
     /* Space xs-s: 14px → 20px */

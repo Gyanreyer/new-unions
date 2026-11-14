@@ -107,9 +107,7 @@ export default FAQPage;
 
 FAQPage.css = css`
   main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-items: center;
   }
 
   #faqs {

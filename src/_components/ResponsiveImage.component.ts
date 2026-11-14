@@ -1,10 +1,15 @@
-import { html, type YetiComponent } from "yeti-js";
+import { css, html, type YetiComponent } from "yeti-js";
 import sharp from "sharp";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readFile } from "node:fs/promises";
 
 const srcsetWidths = [240, 360, 420, 480, 600, 720, 1080, 1920];
+
+// Cloudflare's /cdn-cgi/image/ transforms only work on the newunionsbridal.com zone.
+// Preview deploys and local dev/builds don't have them, so we'll disable image transforms in those environments.
+// A Cloudflare production deploy will be running against the `main` branch, so we can enable image transforms only when building `main` in CI.
+const useImageTransforms = process.env.WORKERS_CI_BRANCH === "main";
 
 interface ImageMetadata {
   width: number;
@@ -58,12 +63,12 @@ export const ResponsiveImage: YetiComponent<{
       <img
         src=${src}
         alt=${alt}
-        srcset=${srcset}
-        sizes=${sizes}
+        ...${useImageTransforms ? { srcset, sizes } : {}}
         width=${width}
         height=${height}
         loading=${loading}
-        onerror="this.onerror=null;this.removeAttribute('srcset');this.src=this.src;"
+        data-responsive-image
+        onerror="this.setAttribute('data-load-failed','')"
         ...${spreadAttrs}
       />`;
   } catch (err) {
@@ -73,3 +78,20 @@ export const ResponsiveImage: YetiComponent<{
     </div>`;
   }
 };
+
+ResponsiveImage.css = css`
+/* Putting alt text styling into critical bundle instead of components bundle
+   because basically every page uses images and we don't really want a flash text */
+${css.bundle("critical")}
+/*
+ * Hide alt text while the image loads, so slow connections don't flash it.
+ * Screen readers still read it. It comes back if the image fails to load.
+ */
+img[data-responsive-image] {
+  color: transparent;
+}
+
+img[data-responsive-image][data-load-failed] {
+  color: inherit;
+}
+`;
