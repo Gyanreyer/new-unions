@@ -11,10 +11,10 @@ import { Sparkle } from "../_components/SparkleGroup/Sparkle.component.ts";
 
 export const config = {
   // UPDATEME: make sure to bump this date when this page's content meaningfully changes
-  lastmod: "2026-11-12",
+  lastmod: "2026-11-13",
 };
 
-const carouselImages: Array<{ src: string; alt: string }> = [
+const topCarouselImages: Array<{ src: string; alt: string }> = [
   {
     src: "/img/other/lace-bodice-jumpsuit-by-ladder.jpg",
     alt: "Person in an ivory bridal jumpsuit with a lace bodice, leaning on a wooden ladder in front of a draped cream backdrop",
@@ -37,6 +37,29 @@ const carouselImages: Array<{ src: string; alt: string }> = [
   },
 ];
 
+const bottomCarouselImages: Array<{ src: string; alt: string }> = [
+  {
+    src: "/img/core/short-dress-red-aerial-silks.jpg",
+    alt: "Person in a short strapless white dress standing in front of red aerial silks in a sunlit park",
+  },
+  {
+    src: "/img/accessories/neck-bow-reclining.jpg",
+    alt: "Person with tattooed arms reclining on a blue armchair in a satin top with a large ivory neck bow",
+  },
+  {
+    src: "/img/circus/cake-candlelight-couple-woods.jpg",
+    alt: "Couple sharing a quiet moment beside a glowing tiered cake on a red-draped table in the woods at dusk",
+  },
+  {
+    src: "/img/other/sheer-sleeve-gown-on-ladder.jpg",
+    alt: "Person leaning on a wooden ladder in a white gown with sheer long sleeves and a flowing tulle skirt, in front of a draped cream backdrop",
+  },
+  {
+    src: "/img/circus/aerial-hoop-pair-sunlit-woods.jpg",
+    alt: "Two people on an aerial hoop in sunlit woods, one in a red dress and short veil above and one in an off-the-shoulder white gown seated below",
+  },
+];
+
 const AboutPage: YetiPageComponent = ({
   page,
 }) => html`<${PageBorderLayout} page=${page}>
@@ -46,7 +69,7 @@ const AboutPage: YetiPageComponent = ({
       <h1>Here’s a little about us.</h1>
     </${SecondaryPageMainSectionHeader}>
     <${ScrollingImageCarousel}>
-        ${carouselImages.map((image) => html`
+        ${topCarouselImages.map((image) => html`
       <${ResponsiveImage} src=${image.src} alt=${image.alt} />
       `)}
     </${ScrollingImageCarousel}>
@@ -116,7 +139,7 @@ const AboutPage: YetiPageComponent = ({
       />
     </section>
     <${ScrollingImageCarousel} direction="right">
-        ${carouselImages.map((image) => html`
+        ${bottomCarouselImages.map((image) => html`
       <${ResponsiveImage} src=${image.src} alt=${image.alt} />
       `)}
     </${ScrollingImageCarousel}>

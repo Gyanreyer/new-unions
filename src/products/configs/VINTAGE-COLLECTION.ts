@@ -42,6 +42,21 @@ export const VINTAGE_COLLECTION_CONFIG: ProductSectionConfig = {
       caption: "When you try on our vintage gowns, we always love talking about how we can make them your own!",
     },
     {
+      src: "/img/vintage/Vintagebridal_Slimgown_2.jpg",
+      alt: "Model with purple hair in a slim vintage column gown with straps and a beaded sweetheart bodice",
+      caption: "This vintage bridal gown is stunningly simple for an elopement, or even engagement photos.",
+    },
+    {
+      src: "/img/vintage/Vintagebridal_Slimgown_3.jpg",
+      alt: "Closer view of the beaded and pearl-embellished bodice on a slim vintage gown",
+      caption: "The beaded detail truly makes this gown special.",
+    },
+    {
+      src: "/img/vintage/Vintagebridal_Slimgown.jpg",
+      alt: "Model in a slim, full-length vintage column gown with a beaded bodice, standing on a platform in the shop",
+      caption: "Vintage gowns can also be great for wedding guests, or a special occasion!",
+    },
+    {
       src: "/img/vintage/Vintage80sBridal_MIL.jpg",
       alt: "1980s satin gown with a beaded lace sweetheart bodice on a dress form, with a pearl necklace",
       caption: "Come see our full rotating vintage bridal collection in store. These gowns don’t last long, and are truly one of a kind!",

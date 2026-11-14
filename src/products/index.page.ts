@@ -15,7 +15,7 @@ import { OCCASION_COLLECTION_CONFIG } from "./configs/OCCASION-COLLECTION.ts";
 
 export const config = {
   // UPDATEME: make sure to bump this date when this page's content meaningfully changes
-  lastmod: "2026-11-12",
+  lastmod: "2026-11-13",
 };
 
 const ProductsPage: YetiPageComponent = ({ page }) => html`
