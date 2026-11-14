@@ -68,7 +68,7 @@ const AboutPage: YetiPageComponent = ({
     <${SecondaryPageMainSectionHeader}>
       <h1>Here’s a little about us.</h1>
     </${SecondaryPageMainSectionHeader}>
-    <${ScrollingImageCarousel}>
+    <${ScrollingImageCarousel} class="top-carousel">
         ${topCarouselImages.map((image) => html`
       <${ResponsiveImage} src=${image.src} alt=${image.alt} />
       `)}
@@ -179,7 +179,7 @@ AboutPage.css = css`
       }
     }
 
-    .carousel-container {
+    .top-carousel {
       margin-block-end: var(--space-2xl);
     }
 
