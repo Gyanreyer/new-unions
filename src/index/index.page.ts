@@ -12,7 +12,7 @@ import { AdditionalServicesSections } from "./AdditionalServicesSections/Additio
 export const config = {
   permalink: "/",
   // UPDATEME: make sure to bump this date when this page's content meaningfully changes
-  lastmod: "2026-10-31",
+  lastmod: "2026-11-13",
 };
 
 const IndexPage: YetiPageComponent =
