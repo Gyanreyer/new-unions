@@ -3,7 +3,7 @@ import { Icon } from "../../_components/Icon.component.ts";
 import { ResponsiveImage } from "../../_components/ResponsiveImage.component.ts";
 import { RovingFocus } from "../../_components/RovingFocus/RovingFocus.ts";
 import { ScrollableList } from "../../_components/ScrollableList/ScrollableList.ts";
-import { formatPriceRange, type PriceRange } from "../../price.ts";
+import { formatPriceRange, type PriceRange } from "../../_utils/price.ts";
 
 export type ProductSectionImage = {
   src: string;

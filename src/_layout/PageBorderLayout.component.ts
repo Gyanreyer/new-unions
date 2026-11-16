@@ -2,6 +2,7 @@ import { css, html, type YetiComponent } from "yeti-js";
 import { BaseLayout } from "./BaseLayout.component.ts";
 import { Icon } from "../_components/Icon.component.ts";
 import { ResponsiveImage } from "../_components/ResponsiveImage.component.ts";
+import { SOCIAL_PROFILES } from "../_constants/business.ts";
 
 /**
  * Layout to wrap page contents in the standard border layout + footer cutout.
@@ -53,13 +54,13 @@ export const PageBorderLayout: YetiComponent = ({ children, ...spreadAttrs }) =>
       </p>
       <div class="social-links">
         <div class="links-wrapper">
-          <a rel='nofollow' href="https://www.facebook.com/profile.php?id=61588584009876" class="fb" itemprop="sameAs" aria-label="New Unions Bridal on Facebook">
+          <a rel='nofollow' href=${SOCIAL_PROFILES.facebook} class="fb" aria-label="New Unions Bridal on Facebook">
             <${Icon} name="facebook" aria-hidden="true" height="23" width="13" />
           </a>
-          <a rel='nofollow' href="https://www.instagram.com/newunionsbridal/" class="insta" itemprop="sameAs" aria-label="New Unions Bridal on Instagram">
+          <a rel='nofollow' href=${SOCIAL_PROFILES.instagram} class="insta" aria-label="New Unions Bridal on Instagram">
             <${Icon} name="instagram" aria-hidden="true" width="20" height="20" />
           </a>
-          <a rel='nofollow' href="https://www.tiktok.com/@newunionsbridal" class="tiktok" itemprop="sameAs" aria-label="New Unions Bridal on TikTok">
+          <a rel='nofollow' href=${SOCIAL_PROFILES.tiktok} class="tiktok" aria-label="New Unions Bridal on TikTok">
             <${Icon} name="tiktok" aria-hidden="true" width="19" height="22" />
           </a>
         </div>
