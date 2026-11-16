@@ -49,13 +49,11 @@ Sparkle.css = css`
 ${css.bundle("components")}
 @keyframes twinkle {
   0% {
-    opacity: 0.5;
     transform: scale(0.82);
     filter: drop-shadow(0 0 0 rgb(255 255 255 / 0));
     animation-timing-function: cubic-bezier(0.3, 0, 0.15, 1);
   }
   14% {
-    opacity: 1;
     filter: drop-shadow(0 0 7px rgb(255 255 255 / 0.55));
     animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
@@ -64,7 +62,6 @@ ${css.bundle("components")}
     animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
   62%, 100% {
-    opacity: 0.5;
     transform: scale(0.82);
     filter: drop-shadow(0 0 0 rgb(255 255 255 / 0));
   }
@@ -75,9 +72,8 @@ ${css.bundle("components")}
   position: relative;
   block-size: auto;
   animation: twinkle 3s infinite;
-  animation-composition: add;
   transform-origin: center;
-  will-change: opacity, transform, filter;
+  will-change: transform, filter;
 }
 
 @media (prefers-reduced-motion: reduce) {
