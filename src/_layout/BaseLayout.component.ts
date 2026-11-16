@@ -42,9 +42,9 @@ export const BaseLayout: YetiComponent<{
         <!-- Preload font -->
         <link
           rel="preload"
-          href="/font/DMSans.ttf"
+          href="/font/DMSans-latin.woff2"
           as="font"
-          type="font/ttf"
+          type="font/woff2"
           crossorigin
         />
 
