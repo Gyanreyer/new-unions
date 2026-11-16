@@ -12,7 +12,7 @@ export const EmployeeSection: YetiComponent<{
     html`<article class="employee-section">
     <div class="text-column">
       <h3>${name}</h3>
-      <h4>${pronouns}, ${title}</h4>
+      <p class="employee-role">${pronouns}, ${title}</p>
       <p>${bio}</p>
     </div>
     <aside>
@@ -35,7 +35,8 @@ EmployeeSection.css = css`
         font-weight: 400;
       }
 
-      h4 {
+      .employee-role {
+        margin-block-start: 0;
         font-size: var(--font-size-l);
         font-weight: 300;
       }

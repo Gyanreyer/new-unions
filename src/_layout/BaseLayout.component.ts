@@ -1,5 +1,7 @@
 import { css, html, js, type YetiComponent, type PageContext } from "yeti-js";
-import { GOOGLE_MAPS_URL, ORIGIN } from "../constants.ts";
+import { ORIGIN } from "../_constants/site.ts";
+import { ADDRESS, BUSINESS_NAME, BUSINESS_SHORT_NAME, FACEBOOK_PAGE_ID } from "../_constants/business.ts";
+import { buildStructuredData, type PageStructuredData } from "./structuredData.ts";
 
 const OG_IMAGE_URL = new URL("/img/newunions_og.png", ORIGIN).toString();
 
@@ -7,10 +9,13 @@ export const BaseLayout: YetiComponent<{
   title: string;
   description: string;
   page: PageContext;
+  /** Page-specific additions to the schema.org structured data; see structuredData.ts */
+  structuredData?: PageStructuredData;
 }> = ({
-  title = "New Unions Bridal",
+  title = BUSINESS_NAME,
   description = "New Unions is a wedding attire experience dedicated to couples that fit outside of the binary.",
   page,
+  structuredData,
   children,
   ...htmlSpreadAttrs
 }) => {
@@ -20,14 +25,15 @@ export const BaseLayout: YetiComponent<{
 
     const canonicalPageURL = new URL(page.url, ORIGIN).toString();
 
+    const structuredDataJSON = buildStructuredData({
+      canonicalURL: canonicalPageURL,
+      title,
+      description,
+      extra: structuredData,
+    });
+
     return html`<!DOCTYPE html>
-    <html
-      lang="en"
-      itemscope
-      itemtype="https://schema.org/ClothingStore"
-      itemid="${ORIGIN}/#store"
-      ...${htmlSpreadAttrs}
-    >
+    <html lang="en" ...${htmlSpreadAttrs}>
       <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -42,9 +48,9 @@ export const BaseLayout: YetiComponent<{
         <!-- Preload font -->
         <link
           rel="preload"
-          href="/font/DMSans.ttf"
+          href="/font/DMSans-latin.woff2"
           as="font"
-          type="font/ttf"
+          type="font/woff2"
           crossorigin
         />
 
@@ -57,7 +63,7 @@ export const BaseLayout: YetiComponent<{
           content="wedding, bridal, attire, LGBTQ+, queer, Metro Detroit, Ferndale, Michigan"
         />
         <meta name="web_author" content="Ryan Geyer, https://geyer.dev" />
-        <meta property="fb:page_id" content="61588584009876" />
+        <meta property="fb:page_id" content=${FACEBOOK_PAGE_ID} />
 
         <!-- OG Metadata -->
         <meta property="og:type" content="website" />
@@ -74,25 +80,21 @@ export const BaseLayout: YetiComponent<{
         <meta property="og:image:height" content="630" />
         <meta property="og:locale" content="en_US" />
         <!-- Business Address Metadata -->
-        <meta property="og:street-address" content="359 Livernois Ave" />
-        <meta property="og:locality" content="Ferndale" />
-        <meta property="og:region" content="MI" />
-        <meta property="og:postal-code" content="48220" />
-        <meta property="og:country-name" content="United States" />
+        <meta property="og:street-address" content=${ADDRESS.street} />
+        <meta property="og:locality" content=${ADDRESS.locality} />
+        <meta property="og:region" content=${ADDRESS.region} />
+        <meta property="og:postal-code" content=${ADDRESS.postalCode} />
+        <meta property="og:country-name" content=${ADDRESS.countryName} />
 
-        <!-- Schema.org Metadata -->
-        <meta itemprop="name" content="New Unions Bridal" />
-        <link itemprop="url" href=${ORIGIN} />
-        <link itemprop="logo" href=${new URL("/img/logo.png", ORIGIN).toString()} />
-        <link itemprop="image" href=${new URL("/img/store/store-exterior-close.jpg", ORIGIN).toString()} />
-        <link itemprop="hasMap" href=${GOOGLE_MAPS_URL} />
+        <!-- Schema.org structured data -->
+        <script type="application/ld+json">${structuredDataJSON}</script>
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <meta name="apple-mobile-web-app-title" content="New Unions" />
+        <meta name="apple-mobile-web-app-title" content=${BUSINESS_SHORT_NAME} />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body>

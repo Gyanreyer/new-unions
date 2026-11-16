@@ -3,7 +3,7 @@ import type EleventyConfig from '@11ty/eleventy/UserConfig';
 import { writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
-import { ORIGIN } from './src/constants.ts';
+import { ORIGIN } from './src/_constants/site.ts';
 
 export default function (eleventyConfig: EleventyConfig) {
   eleventyConfig.ignores.add("**/*.html");

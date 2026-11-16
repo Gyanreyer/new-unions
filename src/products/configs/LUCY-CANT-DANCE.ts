@@ -5,9 +5,10 @@ export const LUCY_CANT_DANCE_CONFIG: ProductSectionConfig = {
   id: "lucy-cant-dance",
   title: "Lucy Can’t Dance",
   description: html`<strong>Exclusive to New Unions Bridal!</strong> Made to measure gowns in any color.`,
-  priceRange: "$1,300 – $3,800+",
+  price: { min: 1300, max: 3800, openEnded: true },
+  brands: ["Lucy Can’t Dance"],
   link: {
-    text: "See more of their collection",
+    text: html`See more of <span aria-hidden="true">their</span><span class="visually-hidden">Lucy Can’t Dance’s</span> collection</span>`,
     href: "https://lucycantdance.com/",
   },
   images: [

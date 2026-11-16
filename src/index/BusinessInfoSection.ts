@@ -1,7 +1,8 @@
 import { css, html } from "yeti-js";
-import { AutoplayVideo } from "../_components/AutoplayVideo.component.ts";
+import { AutoplayVideo } from "../_components/AutoplayVideo/AutoplayVideo.ts";
 
-import { CONTACT_EMAIL, GOOGLE_MAPS_URL } from "../constants.ts";
+import { ADDRESS, CONTACT_EMAIL, GOOGLE_MAPS_URL, PHONE, RETAIL_HOURS } from "../_constants/business.ts";
+import { formatTime } from "../_utils/formatTime.ts";
 
 export const BusinessInfoSection = () => html`
   <section id="business-info">
@@ -11,33 +12,24 @@ export const BusinessInfoSection = () => html`
         <span class="scroll-reveal-underline">to meet you.</span>
       </h2>
       <address>
-        <p
-          itemprop="address"
-          itemscope
-          itemtype="https://schema.org/PostalAddress"
-        >
+        <p>
           <a
             href=${GOOGLE_MAPS_URL}
             class="underlined-link underline-target"
           >
-            <span itemprop="streetAddress">359 Livernois Ave</span>&#32;
-            <span itemprop="extendedAddress">Suite 101</span><br />
-            <span itemprop="addressLocality">Ferndale</span>,
-            <span itemprop="addressRegion">MI</span>&nbsp;<span
-              itemprop="postalCode"
-              >48220</span
-            >
+            ${ADDRESS.street}&#32;${ADDRESS.suite}<br />
+            ${ADDRESS.locality}, ${ADDRESS.region}&nbsp;${ADDRESS.postalCode}
           </a>
         </p>
-        <p itemprop="telephone">
+        <p>
           <a
-            href="tel:+13133143517"
+            href="tel:${PHONE.e164}"
             class="underlined-link underline-target"
           >
-            (313) 314-3517
+            ${PHONE.display}
           </a>
         </p>
-        <p itemprop="email">
+        <p>
           <a
             href="mailto:${CONTACT_EMAIL}"
             class="underlined-link underline-target"
@@ -50,52 +42,17 @@ export const BusinessInfoSection = () => html`
         <h3>Retail Hours</h3>
         <p>Closed Monday</p>
         <p>Tuesday &amp; Wednesday<br/>Appointment Only</p>
-        <p
-          itemprop="openingHoursSpecification"
-          itemscope
-          itemtype="https://schema.org/OpeningHoursSpecification"
-        >
-          <link
-            itemprop="dayOfWeek"
-            href="https://schema.org/Thursday"
-          />Thursday <time itemprop="opens" datetime="12:00">12PM</time> -
-          <time itemprop="closes" datetime="16:30">4:30PM</time>
-        </p>
-        <p
-          itemprop="openingHoursSpecification"
-          itemscope
-          itemtype="https://schema.org/OpeningHoursSpecification"
-        >
-          <link itemprop="dayOfWeek" href="https://schema.org/Friday" />Friday
-          <time itemprop="opens" datetime="11:00">11AM</time> -
-          <time itemprop="closes" datetime="18:00">6PM</time>
-        </p>
-        <p
-          itemprop="openingHoursSpecification"
-          itemscope
-          itemtype="https://schema.org/OpeningHoursSpecification"
-        >
-          <link
-            itemprop="dayOfWeek"
-            href="https://schema.org/Saturday"
-          />Saturday <time itemprop="opens" datetime="11:00">11AM</time> -
-          <time itemprop="closes" datetime="18:00">6PM</time>
-        </p>
-        <p
-          itemprop="openingHoursSpecification"
-          itemscope
-          itemtype="https://schema.org/OpeningHoursSpecification"
-        >
-          <link itemprop="dayOfWeek" href="https://schema.org/Sunday" />Sunday
-          <time itemprop="opens" datetime="12:00">12PM</time> -
-          <time itemprop="closes" datetime="16:30">4:30PM</time>
-        </p>
+        ${RETAIL_HOURS.map(({ day, opens, closes }) => html`<p>
+          ${day} <time datetime=${opens}>${formatTime(opens)}</time> -
+          <time datetime=${closes}>${formatTime(closes)}</time>
+        </p>`)}
       </section>
       <a href="/book/" class="action-btn primary">Book an Appointment</a>
     </div>
     <${AutoplayVideo}
       src="/video/store/store-interior.mp4"
-      aria-label="A looping video of the store's interior, showcasing the space and some of the offerings."
+      poster="/img/store/store-interior-poster.jpg"
+      label="A looping video of the store's interior, showcasing the space and some of the offerings."
       class="store-img"
     />
   </section>
@@ -153,7 +110,6 @@ BusinessInfoSection.css = css`
       margin-block: auto;
       border-radius: 24px;
       aspect-ratio: 72 / 100;
-      object-fit: cover;
       box-shadow: var(--image-drop-shadow);
 
       @media screen and (width <= 1024px) {

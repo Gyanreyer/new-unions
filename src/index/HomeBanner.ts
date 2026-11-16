@@ -2,7 +2,7 @@ import { css, html } from "yeti-js";
 import { Marquee } from "../_components/Marquee/Marquee.ts";
 
 export const HomeBanner = () => html`<section id="home-banner" aria-label="Store announcements">
-  <${Marquee}>
+  <${Marquee} pause-label="Pause announcements" play-label="Play announcements">
     <ul>
       <li>We offer open walk-in retail hours Thursday–Sunday</li>
       <li>Bridal appointments are first come first serve</li>

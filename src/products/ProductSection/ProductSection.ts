@@ -3,6 +3,7 @@ import { Icon } from "../../_components/Icon.component.ts";
 import { ResponsiveImage } from "../../_components/ResponsiveImage.component.ts";
 import { RovingFocus } from "../../_components/RovingFocus/RovingFocus.ts";
 import { ScrollableList } from "../../_components/ScrollableList/ScrollableList.ts";
+import { formatPriceRange, type PriceRange } from "../../_utils/price.ts";
 
 export type ProductSectionImage = {
   src: string;
@@ -15,10 +16,12 @@ export type ProductSectionConfig = {
   title: string;
   description: string | ReturnType<typeof html>;
   link?: {
-    text: string;
+    text: string | ReturnType<typeof html>;
     href: string;
   };
-  priceRange: string | ReturnType<typeof html>;
+  price: PriceRange;
+  /** Designer brands carried in this collection, for structured data */
+  brands?: string[];
   images: ProductSectionImage[];
 }
 
@@ -30,7 +33,7 @@ export const ProductSection: YetiComponent<{
     title,
     description,
     link,
-    priceRange,
+    price,
     images,
   },
 }) => {
@@ -40,7 +43,7 @@ export const ProductSection: YetiComponent<{
   <h2>${title}</h2>
   <p class="description">${description}</p>
   <p class="additional-info">
-    <span class="price-range" aria-label="Price range">${priceRange}</span>
+    <span class="price-range"><span class="visually-hidden">Price range:&#32;</span>${formatPriceRange(price)}</span>
     ${link ? html`<a href="${link.href}" class="product-link">${link.text}</a>` : ""}
   </p>
   <${RovingFocus} id=${rovingFocusId}>
@@ -58,12 +61,12 @@ export const ProductSection: YetiComponent<{
             </figure>
             <button
               type="button" class="caption-toggle"
-              aria-expanded="false" aria-controls=${captionId}
+              aria-pressed="false" aria-describedby=${captionId}
               data-roving-focus-id=${rovingFocusId}
             >
               <${Icon} name="info" class="icon-open" aria-hidden="true" />
               <${Icon} name="close" class="icon-close" aria-hidden="true" />
-              <span class="visually-hidden">Caption</span>
+              <span class="visually-hidden">Show caption</span>
             </button>
           </product-photo>
         </li>`;
@@ -136,7 +139,7 @@ ProductSection.css = css`
       font-size: var(--font-size-s);
       position: absolute;
       inset: 0;
-      background: color-mix(in srgb, var(--orange) 75%, transparent);
+      background: color-mix(in srgb, var(--blue) 75%, transparent);
       color: white;
       /* Bottom padding keeps text clear of the toggle button */
       padding: var(--space-s) var(--space-xs) calc(var(--space-s) + var(--caption-toggle-size));
@@ -169,7 +172,7 @@ ProductSection.css = css`
       }
     }
 
-    product-photo:has(.caption-toggle[aria-expanded="true"]) figcaption {
+    product-photo:has(.caption-toggle[aria-pressed="true"]) figcaption {
       /**
        * Show caption overlay if the toggle is expanded
        */
@@ -216,8 +219,8 @@ ProductSection.css = css`
         block-size: 70%;
       }
 
-      &[aria-expanded="true"] .icon-open,
-      &[aria-expanded="false"] .icon-close {
+      &[aria-pressed="true"] .icon-open,
+      &[aria-pressed="false"] .icon-close {
         display: none;
       }
     }
@@ -231,7 +234,7 @@ ProductSection.css = css`
     }
 
     /** If a caption toggle is actively expanded, make sure the button is visible */
-    .caption-toggle[aria-expanded="true"] {
+    .caption-toggle[aria-pressed="true"] {
       opacity: 1;
       pointer-events: auto;
     }

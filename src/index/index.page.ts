@@ -7,7 +7,8 @@ import { HomePageHeader } from "./HomePageHeader.ts";
 import { IntroSection } from "./IntroSection/IntroSection.ts";
 import { ProductsBanner } from "./ProductsBanner.ts";
 import { ProductHighlightsSection } from "./ProductHighlightsSection.ts";
-import { AdditionalServicesSections } from "./AdditionalServicesSections/AdditionalServicesSections.ts";
+import { AdditionalServicesSections, ADDITIONAL_SERVICES_SCHEMA } from "./AdditionalServicesSections/AdditionalServicesSections.ts";
+import type { PageStructuredData } from "../_layout/structuredData.ts";
 
 export const config = {
   permalink: "/",
@@ -15,8 +16,12 @@ export const config = {
   lastmod: "2026-11-13",
 };
 
+const structuredData: PageStructuredData = {
+  store: { makesOffer: ADDITIONAL_SERVICES_SCHEMA },
+};
+
 const IndexPage: YetiPageComponent =
-  ({ page }) => html`<${PageBorderLayout} page=${page}>
+  ({ page }) => html`<${PageBorderLayout} page=${page} structuredData=${structuredData}>
   <${HomeBanner} />
   <main>
     <${HomePageHeader} />

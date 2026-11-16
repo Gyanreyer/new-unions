@@ -3,7 +3,31 @@ import { css, html } from "yeti-js";
 import { ResponsiveImage } from "../../_components/ResponsiveImage.component.ts";
 import { Sparkle } from "../../_components/SparkleGroup/Sparkle.component.ts";
 import { SparkleGroup } from "../../_components/SparkleGroup/SparkleGroup.ts";
-import { SteamingMenu, SteamingMenuButton } from "./SteamingMenu.ts";
+import { SteamingMenu, SteamingMenuButton, STEAMING_MENU_SCHEMA } from "./SteamingMenu.ts";
+import { ORIGIN } from "../../_constants/site.ts";
+
+/** schema.org Offers for these services, added to the store by the home page's structured data */
+export const ADDITIONAL_SERVICES_SCHEMA = [
+  {
+    "@type": "Offer",
+    url: `${ORIGIN}/#bridal-styling-services`,
+    itemOffered: {
+      "@type": "Service",
+      name: "Bridal styling",
+      serviceType: "Bridal styling",
+    },
+  },
+  {
+    "@type": "Offer",
+    url: `${ORIGIN}/#dress-steaming-services`,
+    itemOffered: {
+      "@type": "Service",
+      name: "Dress steaming",
+      serviceType: "Dress steaming",
+      hasOfferCatalog: STEAMING_MENU_SCHEMA,
+    },
+  },
+];
 
 export const AdditionalServicesSections = () => html`
 <div id="additional-services" class="sparkle-anchor">
@@ -12,13 +36,10 @@ export const AdditionalServicesSections = () => html`
     <${Sparkle} x="-0.39" y="-0.1" scale="0.68" />
     <${Sparkle} x="-0.28" y="-0.91" scale="0.66" />
   </${SparkleGroup}>
-  <section id="bridal-styling-services" class="service-section styling" itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
-    <div class="text-column" itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
-      <meta itemprop="name" content="Bridal styling services" />
-      <meta itemprop="serviceType" content="Bridal styling" />
-
+  <section id="bridal-styling-services" class="service-section styling">
+    <div class="text-column">
       <h2>Looking for styling help?</h2>
-      <p itemprop="description">
+      <p>
         If you already have your main wedding outfit
         but you are still in need of a bit of sparkle,
         we would love to help you! From veils to accessories,
@@ -30,13 +51,10 @@ export const AdditionalServicesSections = () => html`
       <${ResponsiveImage} src="/img/offerings/Wildflower_Veil.jpg" alt="" />
     </aside>
   </section>
-  <section id="dress-steaming-services" class="service-section steaming" itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
-    <div class="text-column" itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
-      <meta itemprop="name" content="Dress steaming services" />
-      <meta itemprop="serviceType" content="Dress steaming" />
-
+  <section id="dress-steaming-services" class="service-section steaming">
+    <div class="text-column">
       <h2>Need a dress steamed?</h2>
-      <p itemprop="description">
+      <p>
         Purchase your look elsewhere but need some help making it perfect?
         We steam wedding gowns and other formal wear too!
       </p>

@@ -1,52 +1,60 @@
 import { css, html, js, type YetiComponent } from "yeti-js";
+import { formatPriceRange, offerPriceSchema, type PriceRange } from "../../_utils/price.ts";
 
 const dialogID = "steaming-menu";
+
+type SteamingOption = {
+  name: string;
+  price: PriceRange;
+};
+
+const STEAMING_OPTIONS: Record<string, SteamingOption> = {
+  basic: { name: "Basic Steam", price: { min: 59 } },
+  bridal: { name: "Bridal Steam", price: { min: 89, max: 99 } },
+  ballGown: { name: "Ball Gown Steam", price: { min: 150, max: 200 } },
+};
+
+/** schema.org OfferCatalog for the steaming menu, used by the home page's structured data */
+export const STEAMING_MENU_SCHEMA = {
+  "@type": "OfferCatalog",
+  name: "Steaming Services Menu",
+  itemListElement: Object.values(STEAMING_OPTIONS).map(({ name, price }) => ({
+    "@type": "Offer",
+    name,
+    ...offerPriceSchema(price),
+  })),
+};
+
+const OptionHeading: YetiComponent<{ option: SteamingOption }> = ({ option }) =>
+  html`<h3>${option.name} ${formatPriceRange(option.price)}</h3>`;
 
 export const SteamingMenu: YetiComponent = () => html`
 <dialog
   id=${dialogID}
   aria-label="Steaming Services Menu"
   closedby="any"
-  itemprop="hasOfferCatalog"
-  itemscope
-  itemtype="https://schema.org/OfferCatalog"
 >
-  <meta itemprop="name" content="Steaming Services Menu" />
-
   <button type="button" commandfor=${dialogID} command="close" aria-label="Close">&#x2715;</button>
 
   <ul>
-    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
-      <h3><span itemprop="name">Basic Steam</span> $<span itemprop="price">59</span></h3>
-      <meta itemprop="priceCurrency" content="USD" />
-      <p itemprop="description">
+    <li>
+      <${OptionHeading} option=${STEAMING_OPTIONS.basic} />
+      <p>
         (Formal gown, bridesmaid dress)<br/>
         Includes linen garment bag
       </p>
     </li>
-    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
-      <h3>
-        <span itemprop="name">Bridal Steam</span>
-        $<span itemprop="priceSpecification" itemscope itemtype="https://schema.org/PriceSpecification">
-          <span itemprop="minPrice">89</span>–<span itemprop="maxPrice">99</span>
-          <meta itemprop="priceCurrency" content="USD" />
-        </span>
-      </h3>
-      <div itemprop="description">
+    <li>
+      <${OptionHeading} option=${STEAMING_OPTIONS.bridal} />
+      <div>
         <p>(Simple bridal gown, price assessed on complexity of garment)</p>
         <p>Includes veil steaming</p>
         <p>Includes linen garment bag</p>
       </div>
     </li>
-    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
-      <h3>
-        <span itemprop="name">Ball Gown Steam</span>
-        $<span itemprop="priceSpecification" itemscope itemtype="https://schema.org/PriceSpecification">
-          <span itemprop="minPrice">150</span>–<span itemprop="maxPrice">200</span>
-          <meta itemprop="priceCurrency" content="USD" />
-        </span>
-      </h3>
-      <div itemprop="description">
+    <li>
+      <${OptionHeading} option=${STEAMING_OPTIONS.ballGown} />
+      <div>
         <p>(Ball gown bridal gown, price assessed on complexity of garment)</p>
         <p>Includes veil steaming</p>
         <p aria-details="oversized-bags-disclaimer">Includes linen garment bag*</p>
