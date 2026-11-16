@@ -1,5 +1,5 @@
 import { css, html } from "yeti-js";
-import { AutoplayVideo } from "../_components/AutoplayVideo.component.ts";
+import { AutoplayVideo } from "../_components/AutoplayVideo/AutoplayVideo.ts";
 
 import { CONTACT_EMAIL, GOOGLE_MAPS_URL } from "../constants.ts";
 
@@ -95,7 +95,8 @@ export const BusinessInfoSection = () => html`
     </div>
     <${AutoplayVideo}
       src="/video/store/store-interior.mp4"
-      aria-label="A looping video of the store's interior, showcasing the space and some of the offerings."
+      poster="/img/store/store-interior-poster.jpg"
+      label="A looping video of the store's interior, showcasing the space and some of the offerings."
       class="store-img"
     />
   </section>
@@ -153,7 +154,6 @@ BusinessInfoSection.css = css`
       margin-block: auto;
       border-radius: 24px;
       aspect-ratio: 72 / 100;
-      object-fit: cover;
       box-shadow: var(--image-drop-shadow);
 
       @media screen and (width <= 1024px) {
