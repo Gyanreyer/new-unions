@@ -9,7 +9,7 @@ export const CORE_COLLECTION_CONFIG: ProductSectionConfig = {
     offered in Ivory & Black. These gowns can be ordered to your size,
     or sold directly off the rack for you to take home the same day!
   `,
-  priceRange: "$500-$1,699",
+  price: { min: 500, max: 1699 },
   images: [
     {
       src: "/img/core/Corsetgownwithscarf.jpg",

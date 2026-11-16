@@ -9,7 +9,7 @@ export const VINTAGE_COLLECTION_CONFIG: ProductSectionConfig = {
     Check in store for our rotating selection!
     <em>*We do not currently accept used wedding gowns that are not older than 25 years old</em>
   `,
-  priceRange: "$200+",
+  price: { min: 200, openEnded: true },
   images: [
     {
       src: "/img/vintage/jessica-mcclintock-gown-cathedral-veil.jpg",

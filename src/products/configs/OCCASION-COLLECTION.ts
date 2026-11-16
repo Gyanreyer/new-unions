@@ -7,7 +7,7 @@ export const OCCASION_COLLECTION_CONFIG: ProductSectionConfig = {
   description: html`
     We offer a rotating collection of off the rack mother of the bride/groom & formal wear.
   `,
-  priceRange: "$100+",
+  price: { min: 100, openEnded: true },
   images: [
     {
       src: "/img/occasion/MOB_Brocade_Blackfloral_3.jpg",

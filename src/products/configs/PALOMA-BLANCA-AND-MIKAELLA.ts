@@ -8,7 +8,8 @@ export const PALOMA_BLANCA_AND_MIKAELLA_CONFIG: ProductSectionConfig = {
     For the more traditional bride, these are handmade designer gowns
     made in Canada with the finest materials. Customizations are available!
   `,
-  priceRange: "$2,200+",
+  price: { min: 2200, openEnded: true },
+  brands: ["Paloma Blanca", "Mikaella"],
   link: {
     text: html`See more of <span aria-hidden="true">their</span><span class="visually-hidden">Paloma Blanca & Mikaella’s</span> collection</span>`,
     href: "https://palomablanca.com/",

@@ -7,7 +7,7 @@ export const ACCESSORIES_COLLECTION_CONFIG: ProductSectionConfig = {
   description: html`
     We don’t just carry bridal headpieces and jewelry, we have something with sparkle for everyone!
   `,
-  priceRange: "$15+",
+  price: { min: 15, openEnded: true },
   images: [
     {
       src: "/img/accessories/bridal-hat.jpg",

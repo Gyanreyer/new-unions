@@ -3,6 +3,7 @@ import { Icon } from "../../_components/Icon.component.ts";
 import { ResponsiveImage } from "../../_components/ResponsiveImage.component.ts";
 import { RovingFocus } from "../../_components/RovingFocus/RovingFocus.ts";
 import { ScrollableList } from "../../_components/ScrollableList/ScrollableList.ts";
+import { formatPriceRange, type PriceRange } from "../../price.ts";
 
 export type ProductSectionImage = {
   src: string;
@@ -18,7 +19,9 @@ export type ProductSectionConfig = {
     text: string | ReturnType<typeof html>;
     href: string;
   };
-  priceRange: string | ReturnType<typeof html>;
+  price: PriceRange;
+  /** Designer brands carried in this collection, for structured data */
+  brands?: string[];
   images: ProductSectionImage[];
 }
 
@@ -30,7 +33,7 @@ export const ProductSection: YetiComponent<{
     title,
     description,
     link,
-    priceRange,
+    price,
     images,
   },
 }) => {
@@ -40,7 +43,7 @@ export const ProductSection: YetiComponent<{
   <h2>${title}</h2>
   <p class="description">${description}</p>
   <p class="additional-info">
-    <span class="price-range"><span class="visually-hidden">Price range:&#32;</span>${priceRange}</span>
+    <span class="price-range"><span class="visually-hidden">Price range:&#32;</span>${formatPriceRange(price)}</span>
     ${link ? html`<a href="${link.href}" class="product-link">${link.text}</a>` : ""}
   </p>
   <${RovingFocus} id=${rovingFocusId}>

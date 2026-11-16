@@ -9,7 +9,8 @@ export const LOULETTE_CONFIG: ProductSectionConfig = {
     Specializing in gender neutral fits, two pieces, and jumpsuits!
     All styles can be customized to you!
   `,
-  priceRange: "$3,000+",
+  price: { min: 3000, openEnded: true },
+  brands: ["Loulette Bride"],
   link: {
     text: html`See more of <span aria-hidden="true">their</span><span class="visually-hidden">Loulette's</span> collection</span>`,
     href: "https://loulettebride.com/",
