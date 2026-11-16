@@ -136,7 +136,7 @@ ProductSection.css = css`
       font-size: var(--font-size-s);
       position: absolute;
       inset: 0;
-      background: color-mix(in srgb, var(--orange) 75%, transparent);
+      background: color-mix(in srgb, var(--blue) 75%, transparent);
       color: white;
       /* Bottom padding keeps text clear of the toggle button */
       padding: var(--space-s) var(--space-xs) calc(var(--space-s) + var(--caption-toggle-size));

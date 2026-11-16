@@ -62,7 +62,7 @@ const bottomCarouselImages: Array<{ src: string; alt: string }> = [
 
 const AboutPage: YetiPageComponent = ({
   page,
-}) => html`<${PageBorderLayout} page=${page}>
+}) => html`<${PageBorderLayout} title="About Us | New Unions Bridal" page=${page}>
   <${SecondaryPageNavHeader} />
   <main>
     <${SecondaryPageMainSectionHeader}>

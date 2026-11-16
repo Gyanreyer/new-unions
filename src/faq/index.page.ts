@@ -34,7 +34,7 @@ const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title
         <h2>How many guests can I bring?</h2>
         <p>
           Our store is an intimate setting, where we only work with one customer (or couple!) at a time.
-          Please limit your guests to 5 or fewer. The ideal about is around 3 to 4.
+          Please limit your guests to 5 or fewer. The ideal amount is around 3 to 4.
           We have our own parking lot and are wheelchair accessible.
         </p>
       </section>
