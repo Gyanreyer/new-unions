@@ -10,7 +10,7 @@ export const PALOMA_BLANCA_AND_MIKAELLA_CONFIG: ProductSectionConfig = {
   `,
   priceRange: "$2,200+",
   link: {
-    text: "See more of their collection",
+    text: html`See more of <span aria-hidden="true">their</span><span class="visually-hidden">Paloma Blanca & Mikaella’s</span> collection</span>`,
     href: "https://palomablanca.com/",
   },
   images: [

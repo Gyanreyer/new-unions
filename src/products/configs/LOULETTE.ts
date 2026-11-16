@@ -11,7 +11,7 @@ export const LOULETTE_CONFIG: ProductSectionConfig = {
   `,
   priceRange: "$3,000+",
   link: {
-    text: "See more of their collection",
+    text: html`See more of <span aria-hidden="true">their</span><span class="visually-hidden">Loulette's</span> collection</span>`,
     href: "https://loulettebride.com/",
   },
   images: [

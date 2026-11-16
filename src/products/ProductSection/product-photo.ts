@@ -1,20 +1,16 @@
 /**
- * Opens and closes a product photo's caption overlay with its toggle button,
- * for touch and keyboard users (mouse users also get the caption on hover).
+ * Opens and closes a product photo's caption hover overlay with a toggle button
+ * for touch and keyboard users.
  *
- * Expected markup (ProductSection renders this):
+ * Expected child structure:
  *
  * <product-photo>
  *   <figure>
  *     <img …>
  *     <figcaption id="…">…</figcaption>
  *   </figure>
- *   <button class="caption-toggle" aria-expanded="false" aria-controls="…">…</button>
+ *   <button class="caption-toggle" aria-pressed="false" aria-describedby="…">…</button>
  * </product-photo>
- *
- * The button flips `aria-expanded`; CSS shows the caption from that. Escape
- * closes the caption (returning focus to the button), and so does tapping
- * the open caption.
  */
 export class ProductPhotoElement extends HTMLElement {
   static TAGNAME = "product-photo";
@@ -41,11 +37,11 @@ export class ProductPhotoElement extends HTMLElement {
   }
 
   get #open() {
-    return this.#toggle?.getAttribute("aria-expanded") === "true";
+    return this.#toggle?.getAttribute("aria-pressed") === "true";
   }
 
   #setOpen(open: boolean) {
-    this.#toggle?.setAttribute("aria-expanded", String(open));
+    this.#toggle?.setAttribute("aria-pressed", String(open));
   }
 
   #onClick = (event: MouseEvent) => {

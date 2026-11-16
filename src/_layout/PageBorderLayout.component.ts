@@ -27,13 +27,13 @@ export const PageBorderLayout: YetiComponent = ({ children, ...spreadAttrs }) =>
     ${children}
     <footer id="page-footer">
       <div class="badges">
-        <a rel='nofollow' target='_blank' href='https://www.theknot.com/marketplace/redirect-2105972?utm_source=vendor_website&utm_medium=banner&utm_term=c676db0a-ae1a-479b-81ef-dac3d37fe82b&utm_campaign=vendor_badge_assets'>
+        <a rel='nofollow' href='https://www.theknot.com/marketplace/redirect-2105972?utm_source=vendor_website&utm_medium=banner&utm_term=c676db0a-ae1a-479b-81ef-dac3d37fe82b&utm_campaign=vendor_badge_assets'>
           <${ResponsiveImage} src="/img/badges/the-knot.png" alt="As seen on The Knot" />
         </a>
-        <a rel='nofollow' target='_blank' href='https://www.weddingwire.com'>
+        <a rel='nofollow' href='https://www.weddingwire.com'>
           <${ResponsiveImage} src="/img/badges/wedding-wire.png" alt="Find me on WeddingWire" />
         </a>
-        <a rel='nofollow' target='_blank' href='https://safespacealliance.com/'>
+        <a rel='nofollow' href='https://safespacealliance.com/'>
           <${ResponsiveImage} src="/img/badges/safe-space-alliance.png" alt="Safe Space Alliance" />
         </a>
       </div>
@@ -53,14 +53,14 @@ export const PageBorderLayout: YetiComponent = ({ children, ...spreadAttrs }) =>
       </p>
       <div class="social-links">
         <div class="links-wrapper">
-          <a rel='nofollow' target='_blank' href="https://www.facebook.com/profile.php?id=61588584009876" class="fb" itemprop="sameAs">
-            <${Icon} name="facebook" label="Facebook Page" height="23" width="13" />
+          <a rel='nofollow' href="https://www.facebook.com/profile.php?id=61588584009876" class="fb" itemprop="sameAs" aria-label="New Unions Bridal on Facebook">
+            <${Icon} name="facebook" aria-hidden="true" height="23" width="13" />
           </a>
-          <a rel='nofollow' target='_blank' href="https://www.instagram.com/newunionsbridal/" class="insta" itemprop="sameAs">
-            <${Icon} name="instagram" label="Instagram Page" width="20" height="20" />
+          <a rel='nofollow' href="https://www.instagram.com/newunionsbridal/" class="insta" itemprop="sameAs" aria-label="New Unions Bridal on Instagram">
+            <${Icon} name="instagram" aria-hidden="true" width="20" height="20" />
           </a>
-          <a rel='nofollow' target='_blank' href="https://www.tiktok.com/@newunionsbridal" class="tiktok" itemprop="sameAs">
-            <${Icon} name="tiktok" label="TikTok Page" width="19" height="22" />
+          <a rel='nofollow' href="https://www.tiktok.com/@newunionsbridal" class="tiktok" itemprop="sameAs" aria-label="New Unions Bridal on TikTok">
+            <${Icon} name="tiktok" aria-hidden="true" width="19" height="22" />
           </a>
         </div>
       </div>

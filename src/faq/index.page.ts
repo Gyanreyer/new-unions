@@ -60,7 +60,7 @@ const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title
           that we can refer you to for your outfits.
         </p>
         <p>
-          <strong><a href="/new-unions-alterations-referral-list.pdf" class="underlined-text">See our alterations referral list here</a></strong>
+          <strong><a href="/new-unions-alterations-referral-list.pdf" class="underlined-text">See our alterations referral list here<span class="visually-hidden">&#32;(PDF)</span></a></strong>
         </p>
       </section>
       <section id="return-policy">
@@ -96,7 +96,7 @@ const FAQPage: YetiPageComponent = ({ page }) => html`<${PageBorderLayout} title
           we have the best vendors who will treat you like we would want to be treated!
         </p>
         <p>
-          <strong><a href="/new-unions-contract.pdf" class="underlined-text">See our purchase agreement here</a></strong>
+          <strong><a href="/new-unions-contract.pdf" class="underlined-text">See our purchase agreement here<span class="visually-hidden">&#32;(PDF)</span></a></strong>
         </p>
       </section>
     </div>
