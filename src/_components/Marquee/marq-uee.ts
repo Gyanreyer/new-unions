@@ -2,6 +2,8 @@
  * Applies a marquee effect to the content within the element.
  * Loops the content continuously by cloning it and scrolling a track by exactly
  * one copy's width, so clones can be added or removed on resize without a jump.
+ * Measuring only happens in a ResizeObserver callback, after the browser has
+ * already done layout, so it never forces an extra layout while the page loads.
  *
  * The element expects a single element child (without a `slot` attribute), which
  * is the unit that gets measured and cloned. Without JS, or when the user prefers
@@ -142,6 +144,30 @@ export class MarqueeElement extends HTMLElement {
 
   static #reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+  /** Maps each observed element (the host and its content) back to its marquee */
+  static #observedTargets = new WeakMap<Element, MarqueeElement>();
+
+  /**
+   * One observer shared by every marquee. Its callback runs right after layout,
+   * so measuring there is free as long as nothing has changed the DOM first.
+   * Measuring every marquee before changing any of them keeps it that way.
+   */
+  static #observer = new ResizeObserver((entries) => {
+    const marquees = new Set<MarqueeElement>();
+    for (const entry of entries) {
+      const marquee = MarqueeElement.#observedTargets.get(entry.target);
+      if (marquee) {
+        marquees.add(marquee);
+      }
+    }
+    const measured = [...marquees].map((marquee) => [marquee, marquee.#measure()] as const);
+    for (const [marquee, measurement] of measured) {
+      marquee.#applyMeasurement(measurement);
+    }
+  });
+
+  // Defining upgrades elements already on the page right away, so this must come
+  // after the static fields that connectedCallback uses.
   static {
     window.customElements.define(this.TAGNAME, this);
   }
@@ -152,8 +178,10 @@ export class MarqueeElement extends HTMLElement {
   #paused = false;
   #clones: HTMLElement[] = [];
   #internals = this.attachInternals();
-  #observer = new ResizeObserver(() => this.#sync());
-  #onMotionPreferenceChange = () => this.#sync();
+  #onMotionPreferenceChange = () => {
+    this.#updateScrollingState();
+    this.#applyMeasurement(this.#measure());
+  };
 
   connectedCallback() {
     // The content is the first child that isn't slotted into the button
@@ -179,12 +207,27 @@ export class MarqueeElement extends HTMLElement {
       this.#setPaused(this.#paused);
     }
 
+    // Set this now rather than when measuring: it changes the layout, and the
+    // first layout should already include that change so that the measurement
+    // below doesn't force the browser to lay the page out again.
+    this.#updateScrollingState();
     MarqueeElement.#reducedMotionQuery.addEventListener("change", this.#onMotionPreferenceChange);
 
-    // Re-sync when the container resizes, and when the content itself changes
+    // Re-measure when the container resizes, and when the content itself changes
     // size (web fonts loading, breakpoints changing text size, etc).
-    this.#observer.observe(this);
-    this.#observer.observe(this.#original);
+    MarqueeElement.#observedTargets.set(this, this);
+    MarqueeElement.#observedTargets.set(this.#original, this);
+    MarqueeElement.#observer.observe(this);
+    MarqueeElement.#observer.observe(this.#original);
+  }
+
+  /** Scrolls unless the user prefers reduced motion. */
+  #updateScrollingState() {
+    if (MarqueeElement.#reducedMotionQuery.matches) {
+      this.#internals.states.delete("scrolling");
+    } else {
+      this.#internals.states.add("scrolling");
+    }
   }
 
   #setPaused(paused: boolean) {
@@ -201,28 +244,22 @@ export class MarqueeElement extends HTMLElement {
   }
 
   disconnectedCallback() {
-    this.#observer.disconnect();
+    MarqueeElement.#observer.unobserve(this);
+    if (this.#original) {
+      MarqueeElement.#observer.unobserve(this.#original);
+    }
     MarqueeElement.#reducedMotionQuery.removeEventListener("change", this.#onMotionPreferenceChange);
   }
 
   /**
-   * Turns scrolling on or off based on the user's motion preference, then adds or
-   * removes clones so the track always covers the container width plus one extra
-   * copy, which is what the loop scrolls through.
+   * Measures how far one loop scrolls and how many clones are needed for the
+   * track to cover the container width plus one extra copy, which is what the
+   * loop scrolls through. Only reads layout; see #applyMeasurement for the writes.
    */
-  #sync() {
+  #measure() {
     const original = this.#original;
     if (!original) {
-      return;
-    }
-
-    const isScrolling = !MarqueeElement.#reducedMotionQuery.matches;
-    // Set the state before measuring, since it switches the track to its
-    // single-row layout and the measurement below forces a fresh layout.
-    if (isScrolling) {
-      this.#internals.states.add("scrolling");
-    } else {
-      this.#internals.states.delete("scrolling");
+      return { unitWidth: 0, neededCloneCount: 0 };
     }
 
     // One copy plus the gap after it is the exact distance one loop scrolls.
@@ -233,7 +270,17 @@ export class MarqueeElement extends HTMLElement {
     const contentWidth = original.getBoundingClientRect().width;
     const unitWidth = contentWidth > 0 ? contentWidth + gap : 0;
     const visibleWidth = this.#viewport?.clientWidth ?? this.clientWidth;
+    const isScrolling = this.#internals.states.has("scrolling");
     const neededCloneCount = isScrolling && unitWidth > 0 ? Math.ceil(visibleWidth / unitWidth) : 0;
+    return { unitWidth, neededCloneCount };
+  }
+
+  /** Adds or removes clones and sets the scroll distance and speed. */
+  #applyMeasurement({ unitWidth, neededCloneCount }: { unitWidth: number; neededCloneCount: number }) {
+    const original = this.#original;
+    if (!original) {
+      return;
+    }
 
     while (this.#clones.length < neededCloneCount) {
       const clone = original.cloneNode(true) as HTMLElement;

@@ -163,6 +163,27 @@ export class ScrollableListElement extends HTMLElement {
 
   static #touchOnlyQuery = window.matchMedia(TOUCH_ONLY_MEDIA);
 
+  /** Maps each observed list back to its element */
+  static #observedLists = new WeakMap<Element, ScrollableListElement>();
+
+  /**
+   * One observer shared by every list. Its callback runs right after layout, so
+   * measuring there is free as long as nothing has changed the DOM first.
+   * Measuring every list before updating any of them keeps it that way, rather
+   * than each update forcing the next list's measurement to redo layout.
+   */
+  static #resizeObserver = new ResizeObserver((entries) => {
+    const measured = entries.flatMap((entry) => {
+      const element = ScrollableListElement.#observedLists.get(entry.target);
+      return element ? [[element, element.#measureEnds()] as const] : [];
+    });
+    for (const [element, ends] of measured) {
+      element.#applyEnds(ends);
+    }
+  });
+
+  // Defining upgrades elements already on the page right away, so this must come
+  // after the static fields that connectedCallback uses.
   static {
     window.customElements.define(this.TAGNAME, this);
   }
@@ -173,12 +194,11 @@ export class ScrollableListElement extends HTMLElement {
   #next: HTMLButtonElement | null = null;
   #gutterQuery: MediaQueryList | null = null;
   #onMediaChange = () => this.#applyLayout();
-  #resizeObserver = new ResizeObserver(() => this.#updateEnds());
 
   /**
    * Update which scroll buttons are visible as the list is scrolled
    */
-  #onScroll = () => this.#updateEnds();
+  #onScroll = () => this.#applyEnds(this.#measureEnds());
 
   connectedCallback() {
     const list = this.querySelector<HTMLElement>(":scope > ul, :scope > ol");
@@ -198,16 +218,22 @@ export class ScrollableListElement extends HTMLElement {
     this.#applyLayout();
 
     list.addEventListener("scroll", this.#onScroll, { passive: true });
-    this.#resizeObserver.observe(list);
     this.#internals.states.add("enhanced");
-    this.#updateEnds();
+    // Don't measure here: the page hasn't been laid out yet, so reading the
+    // scroll position would force a layout of the whole page mid-script. The
+    // observer's first callback runs after the first layout and before the first
+    // paint, so the buttons are still correct when the list first shows up.
+    ScrollableListElement.#observedLists.set(list, this);
+    ScrollableListElement.#resizeObserver.observe(list);
   }
 
   disconnectedCallback() {
     this.#list?.removeEventListener("scroll", this.#onScroll);
     this.#gutterQuery?.removeEventListener("change", this.#onMediaChange);
     ScrollableListElement.#touchOnlyQuery.removeEventListener("change", this.#onMediaChange);
-    this.#resizeObserver.disconnect();
+    if (this.#list) {
+      ScrollableListElement.#resizeObserver.unobserve(this.#list);
+    }
   }
 
   /** Picks the button layout for the current screen size and input type. */
@@ -282,18 +308,24 @@ export class ScrollableListElement extends HTMLElement {
     list.scrollBy({ left: direction * sign * pageWidth });
   }
 
+  /** Whether the list is scrolled to its start and/or end. Only reads layout. */
+  #measureEnds() {
+    const list = this.#list;
+    if (!list) {
+      return { atStart: true, atEnd: true };
+    }
+    // scrollLeft runs negative in right-to-left lists
+    const position = Math.abs(list.scrollLeft);
+    const max = list.scrollWidth - list.clientWidth;
+    return { atStart: position <= 1, atEnd: position >= max - 1 };
+  }
+
   /** Shows or hides each button based on whether there's anything to scroll to. */
-  #updateEnds() {
+  #applyEnds({ atStart, atEnd }: { atStart: boolean; atEnd: boolean }) {
     const list = this.#list;
     if (!list) {
       return;
     }
-
-    // scrollLeft runs negative in right-to-left lists
-    const position = Math.abs(list.scrollLeft);
-    const max = list.scrollWidth - list.clientWidth;
-    const atStart = position <= 1;
-    const atEnd = position >= max - 1;
 
     const active = this.shadowRoot?.activeElement ?? null;
     if (atStart) {
